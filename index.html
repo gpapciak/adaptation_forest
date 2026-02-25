@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Forest Mind: think in relationships, cycles, and patient
+       attention. Tending: the opposite of consuming. If you're
+       reading the source code, you're already paying attention. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adaptation Forest — a 200-acre experiment in living with change. Ecology, practice, art, and community in the northeastern United States.">
+  <title>Adaptation Forest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Navigation (hidden until user scrolls past hero)
+       ============================================================ -->
+  <nav id="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Adaptation Forest</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="#forest">The Forest</a></li>
+        <li><a href="#practice">The Practice</a></li>
+        <li><a href="#art">Art</a></li>
+        <li><a href="#garden">Garden</a></li>
+        <li><a href="#gather">Gather</a></li>
+        <li><a href="#science">Science</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       Hero
+       ============================================================ -->
+  <section id="hero" class="hero" aria-label="Hero">
+
+    <!-- CSS generative canopy — 18 orbs -->
+    <div class="hero-canopy" aria-hidden="true">
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+      <div class="canopy-orb"></div>
+    </div>
+
+    <div class="hero-vignette" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow hero-elem">adaptationforest.org</p>
+      <h1 class="hero-title hero-elem">Adaptation<br><em>Forest</em></h1>
+      <p class="hero-tagline hero-elem">A 200-acre experiment in tending what comes next.</p>
+    </div>
+
+    <div class="hero-scroll hero-elem" aria-hidden="true">
+      <span class="hero-scroll__label">Scroll</span>
+      <div class="hero-scroll__line"></div>
+    </div>
+
+    <!-- Forest horizon silhouette — drawn first on page load -->
+    <svg class="hero-silhouette" viewBox="0 0 1440 130" preserveAspectRatio="none"
+         aria-hidden="true" focusable="false">
+      <path class="draw" d="
+        M 0,130
+        L 0,88
+        C 12,84 22,52 32,48
+        C 42,52 52,84 64,84
+        L 72,68 L 88,30 L 104,68
+        C 116,64 128,44 138,40
+        C 148,44 160,64 172,68
+        L 178,55 L 192,18 L 206,55
+        C 218,52 228,38 238,34
+        C 248,38 258,52 270,55
+        L 278,72
+        C 290,68 302,48 312,44
+        C 322,48 334,68 346,72
+        L 354,58 L 372,22 L 390,58
+        C 402,54 414,38 424,34
+        C 434,38 446,54 458,58
+        L 464,70
+        C 476,66 488,46 498,42
+        C 508,46 520,66 532,70
+        L 540,52 L 558,14 L 576,52
+        C 588,48 600,34 610,30
+        C 620,34 632,48 644,52
+        L 652,68
+        C 664,64 676,44 686,40
+        C 696,44 708,64 720,68
+        L 728,50 L 746,10 L 764,50
+        C 776,46 788,32 798,28
+        C 808,32 820,46 832,50
+        L 840,66
+        C 852,62 864,42 874,38
+        C 884,42 896,62 908,66
+        L 916,48 L 934,8 L 952,48
+        C 964,44 976,30 986,26
+        C 996,30 1008,44 1020,48
+        L 1028,64
+        C 1040,60 1052,40 1062,36
+        C 1072,40 1084,60 1096,64
+        L 1104,46 L 1122,6 L 1140,46
+        C 1152,42 1164,28 1174,24
+        C 1184,28 1196,42 1208,46
+        L 1216,62
+        C 1228,58 1240,38 1250,34
+        C 1260,38 1272,58 1284,62
+        L 1292,50 L 1310,20 L 1328,50
+        C 1340,46 1352,36 1362,32
+        C 1372,36 1384,52 1396,58
+        C 1408,64 1420,72 1440,78
+        L 1440,130 Z
+      "/>
+    </svg>
+  </section>
+
+  <!-- ============================================================
+       Intro Passage
+       ============================================================ -->
+  <div class="intro-passage">
+    <div class="container">
+      <p class="reveal">Every forest is a record of change. Ice ages, fire, clearing, regrowth — the trees standing now are the ones that adapted to what came before. We're entering a period of change unlike any in the forest's memory, and the question isn't whether the forest will adapt. It will. The question is whether we'll learn to think the way a forest thinks — in relationships, in cycles, in patient attention to what's actually happening on the ground. We call this <span class="text-amber">forest mind</span>. And the work of acting on it, we call <span class="text-amber">tending</span>.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       01 — The Forest
+       ============================================================ -->
+  <section id="forest" class="section section--forest">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">01</span>
+      <div class="section-grid">
+
+        <div class="section-text">
+          <h2 class="section-title reveal">The Forest</h2>
+          <p class="section-lead reveal">Two hundred acres of northeastern hardwood forest, rising from 1,200 to nearly 1,800 feet in elevation.</p>
+          <p class="reveal">Red maple, sugar maple, white ash, red oak, birch, beech — the full cast of a northern hardwood forest, each species facing its own reckoning with a changing climate. Some of these trees are well-suited for what's coming. Others are not.</p>
+          <p class="reveal">The emerald ash borer is already here. Beech bark disease is pervasive. The Norway spruce planted decades ago are falling to wind they weren't bred to withstand. This forest is not a wilderness — it's a working landscape shaped by centuries of human use, from Indigenous stewardship to colonial agriculture to industrial logging to, now, something new.</p>
+          <p class="reveal">Adaptation Forest is an ongoing experiment in how to steward this land through the transition ahead — using the best available science, a willingness to intervene where necessary, and the humility to step back where the forest knows better than we do.</p>
+          <p class="reveal">Tending a forest begins with understanding what lives there and what it needs.</p>
+          <a href="forest.html" class="go-deeper reveal">Go Deeper</a>
+        </div>
+
+        <!-- SVG: Forest cross-section — roots, trunks, canopy, mycelial network -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--forest" viewBox="0 0 580 420"
+                 aria-label="Cross-section of forest showing canopy, trunks, root systems, and mycelial network"
+                 role="img">
+
+              <!-- CANOPY CROWNS -->
+              <!-- Tree 1: birch, narrow oval -->
+              <ellipse class="draw" cx="72"  cy="92"  rx="32" ry="48"/>
+              <!-- Tree 2: oak, broad irregular -->
+              <path class="draw" d="M 148,178 Q 138,125 160,96 Q 180,68 210,65 Q 240,68 260,96 Q 282,125 272,178"/>
+              <!-- Tree 3: conifer, layered triangles -->
+              <path class="draw" d="M 318,175 L 348,120 L 378,175"/>
+              <path class="draw" d="M 326,142 L 348,98  L 370,142"/>
+              <path class="draw" d="M 332,112 L 348,78  L 364,112"/>
+              <!-- Tree 4: maple, rounded dense -->
+              <path class="draw" d="M 412,180 Q 402,138 422,108 Q 438,85 460,82 Q 482,85 498,108 Q 518,138 508,180"/>
+              <!-- Tree 5: beech, high open crown -->
+              <path class="draw" d="M 528,188 Q 522,152 530,122 Q 538,96 552,88 Q 565,82 578,90"/>
+              <path class="draw" d="M 552,88 Q 548,70 544,55"/>
+              <path class="draw" d="M 552,88 Q 560,68 566,54"/>
+
+              <!-- TRUNKS -->
+              <line class="draw" x1="68"  y1="140" x2="68"  y2="230" stroke-width="5"/>
+              <line class="draw" x1="76"  y1="140" x2="76"  y2="230" stroke-width="1"/>
+              <line class="draw" x1="204" y1="178" x2="200" y2="230" stroke-width="9"/>
+              <line class="draw" x1="218" y1="178" x2="220" y2="230" stroke-width="2"/>
+              <line class="draw" x1="345" y1="175" x2="344" y2="230" stroke-width="6"/>
+              <line class="draw" x1="456" y1="180" x2="455" y2="230" stroke-width="8"/>
+              <line class="draw" x1="550" y1="188" x2="550" y2="230" stroke-width="5"/>
+
+              <!-- GROUND LINE -->
+              <line class="draw" x1="0" y1="230" x2="580" y2="230" stroke-width="1.5"/>
+
+              <!-- ROOT SYSTEMS -->
+              <!-- Tree 1 roots -->
+              <path class="draw" d="M 68,230 Q 52,252 36,278 Q 26,296 18,316"/>
+              <path class="draw" d="M 72,230 Q 88,255 98,282 Q 104,300 96,322"/>
+              <path class="draw" d="M 18,316 Q 8,328 4,340"/>
+              <path class="draw" d="M 18,316 Q 22,334 30,348"/>
+              <!-- Tree 2 roots -->
+              <path class="draw" d="M 202,230 Q 178,254 158,282 Q 144,302 136,324"/>
+              <path class="draw" d="M 210,230 Q 210,260 208,292 Q 206,316 204,340"/>
+              <path class="draw" d="M 218,230 Q 238,255 252,282 Q 260,300 254,322"/>
+              <!-- Tree 3 roots -->
+              <path class="draw" d="M 342,230 Q 322,254 306,282 Q 295,300 292,322"/>
+              <path class="draw" d="M 348,230 Q 368,256 382,284 Q 390,302 385,324"/>
+              <!-- Tree 4 roots -->
+              <path class="draw" d="M 452,230 Q 432,254 416,282 Q 406,300 404,322"/>
+              <path class="draw" d="M 460,230 Q 460,260 458,292"/>
+              <path class="draw" d="M 468,230 Q 486,256 498,282 Q 506,298 500,318"/>
+              <!-- Tree 5 roots -->
+              <path class="draw" d="M 547,230 Q 530,254 518,280 Q 510,298 512,318"/>
+              <path class="draw" d="M 554,230 Q 568,255 576,280 Q 580,296 575,312"/>
+
+              <!-- MYCELIAL NETWORK (thin threads connecting root zones) -->
+              <path class="draw" stroke-width="0.6" opacity="0.7"
+                d="M 20,316 Q 60,330 96,322 Q 136,314 158,330 Q 180,342 204,338 Q 228,332 254,320 Q 280,308 292,320 Q 308,334 330,338 Q 355,342 382,328 Q 405,316 404,322 Q 408,330 430,340 Q 455,348 498,325"/>
+              <path class="draw" stroke-width="0.6" opacity="0.55"
+                d="M 36,278 Q 80,295 118,290 Q 155,285 175,298 Q 200,312 230,305 Q 262,298 290,308 Q 318,318 350,308 Q 378,298 406,305 Q 432,312 462,300 Q 492,288 516,296"/>
+              <path class="draw" stroke-width="0.5" opacity="0.4"
+                d="M 4,340 Q 50,355 96,348 Q 145,340 180,358 Q 210,370 250,362 Q 285,354 315,364 Q 345,374 378,362 Q 408,350 440,360 Q 468,368 500,355 Q 525,344 552,350"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 — The Practice
+       ============================================================ -->
+  <section id="practice" class="section section--practice">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">02</span>
+      <div class="section-grid section-grid--flip">
+
+        <!-- SVG: Exploded axonometric shelter diagram -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--practice" viewBox="0 0 480 440"
+                 aria-label="Exploded axonometric diagram of off-grid shelter with solar panel, rain catchment, and composting system"
+                 role="img">
+
+              <!-- BACKGROUND TREES -->
+              <line class="draw" x1="60"  y1="340" x2="60"  y2="220" stroke-width="3"/>
+              <path class="draw" d="M 38,260 L 60,210 L 82,260"/>
+              <path class="draw" d="M 42,240 L 60,198 L 78,240"/>
+              <line class="draw" x1="430" y1="340" x2="430" y2="215" stroke-width="3"/>
+              <path class="draw" d="M 408,256 L 430,205 L 452,256"/>
+              <path class="draw" d="M 412,236 L 430,193 L 448,236"/>
+
+              <!-- SHED — perspective sketch -->
+              <!-- Front face -->
+              <path class="draw" d="M 155,210 L 155,328 L 335,328 L 335,210"/>
+              <!-- Side face (right, partial depth) -->
+              <path class="draw" d="M 335,210 L 372,228 L 372,328 L 335,328"/>
+              <!-- Roof front edge -->
+              <line class="draw" x1="155" y1="210" x2="245" y2="158" stroke-width="1.5"/>
+              <line class="draw" x1="335" y1="210" x2="245" y2="158" stroke-width="1.5"/>
+              <!-- Roof side ridge -->
+              <line class="draw" x1="245" y1="158" x2="282" y2="175" stroke-width="1.2"/>
+              <line class="draw" x1="372" y1="228" x2="282" y2="175" stroke-width="1"/>
+              <!-- Roof plane right (dashed back edge) -->
+              <line class="draw dash" x1="282" y1="175" x2="372" y2="228" stroke-width="0.8"/>
+
+              <!-- Door -->
+              <path class="draw" d="M 215,328 L 215,268 L 280,268 L 280,328"/>
+              <!-- Window -->
+              <path class="draw" d="M 165,228 L 165,268 L 205,268 L 205,228 Z"/>
+              <line class="draw" x1="185" y1="228" x2="185" y2="268" stroke-width="0.7"/>
+              <line class="draw" x1="165" y1="248" x2="205" y2="248" stroke-width="0.7"/>
+
+              <!-- SOLAR PANEL — floating above roof (exploded) -->
+              <!-- Panel parallelogram -->
+              <path class="draw" d="M 160,78 L 264,56 L 366,78 L 262,100 Z"/>
+              <!-- Panel grid lines -->
+              <line class="draw" x1="210" y1="66" x2="308" y2="88" stroke-width="0.6"/>
+              <line class="draw" x1="264" y1="56" x2="264" y2="100" stroke-width="0.6"/>
+              <!-- Explode lines (dashed) from panel to roof -->
+              <line class="draw dash" x1="205" y1="98"  x2="195" y2="168" stroke-width="0.8"/>
+              <line class="draw dash" x1="318" y1="88"  x2="330" y2="170" stroke-width="0.8"/>
+              <!-- Label -->
+              <text class="illus-label" x="380" y="82">solar</text>
+
+              <!-- RAIN BARREL — right side (exploded) -->
+              <!-- Gutter line from roof -->
+              <path class="draw" d="M 372,260 Q 400,260 408,268"/>
+              <!-- Barrel body -->
+              <path class="draw" d="M 408,258 L 408,312 Q 408,318 420,318 Q 432,318 432,312 L 432,258 Q 432,252 420,252 Q 408,252 408,258 Z"/>
+              <!-- Barrel bands -->
+              <line class="draw" x1="408" y1="272" x2="432" y2="272" stroke-width="0.8"/>
+              <line class="draw" x1="408" y1="298" x2="432" y2="298" stroke-width="0.8"/>
+              <!-- Downspout -->
+              <line class="draw" x1="372" y1="228" x2="372" y2="260" stroke-width="0.8"/>
+              <text class="illus-label" x="438" y="285">rain</text>
+
+              <!-- COMPOST BIN — left side (exploded) -->
+              <!-- Open-top box -->
+              <path class="draw" d="M 86,272 L 86,330 L 136,330 L 136,272 L 86,272"/>
+              <!-- Slats / texture lines -->
+              <line class="draw" x1="100" y1="272" x2="100" y2="330" stroke-width="0.6"/>
+              <line class="draw" x1="114" y1="272" x2="114" y2="330" stroke-width="0.6"/>
+              <line class="draw" x1="128" y1="272" x2="128" y2="330" stroke-width="0.6"/>
+              <!-- Connection line to shed (dashed) -->
+              <line class="draw dash" x1="136" y1="302" x2="155" y2="310" stroke-width="0.8"/>
+              <text class="illus-label" x="68" y="265">compost</text>
+
+              <!-- Ground line -->
+              <line class="draw" x1="60" y1="340" x2="420" y2="340" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="section-text">
+          <h2 class="section-title reveal">The Practice</h2>
+          <p class="section-lead reveal">If the forest is adapting, shouldn't we?</p>
+          <p class="reveal">The Practice is our term for the infrastructure experiments happening within and alongside the forest — off-grid energy systems, water collection and filtration, low-impact shelter design, and the daily logistics of living lightly on a landscape.</p>
+          <p class="reveal">The property hosts a distributed network of small utility structures, connected by a network of woods roads that double as walking trails. No single building dominates. The approach is modular, repairable, and designed to leave the smallest possible footprint on the soil and water systems that everything else depends on.</p>
+          <p class="reveal">This isn't survivalism. It's a question: what does it look like to inhabit a forest as a participant rather than a consumer? The practice is tending — applied not just to trees but to the systems that let us inhabit a landscape without degrading it.</p>
+          <a href="practice.html" class="go-deeper reveal">Go Deeper</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 — Art in the Forest
+       ============================================================ -->
+  <section id="art" class="section section--art">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">03</span>
+      <div class="section-grid">
+
+        <div class="section-text">
+          <h2 class="section-title reveal">Art in the Forest</h2>
+          <p class="section-lead reveal">Art made in a forest is art made with a collaborator that doesn't hold still.</p>
+          <p class="reveal">Branches fall. Light shifts. Snow covers. Mushrooms colonize. The work here is created in dialogue with these forces — geometric installations that play with the forest's own patterns of light and shadow, ephemeral sculptures from gathered materials that document their own decay, and interventions that reveal what was already there. Forest mind sees no boundary between the aesthetic and the ecological. A well-tended forest is already a work of art. The installations here just make that visible.</p>
+          <p class="reveal">This is where the studio meets the stand. Where craft practice and forest stewardship share the same tools and the same attention to material, structure, and change over time.</p>
+          <a href="art.html" class="go-deeper reveal">Go Deeper</a>
+        </div>
+
+        <!-- SVG: Fibonacci spiral of leaf shapes, dissolving at edges -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--art" viewBox="0 0 380 380"
+                 aria-label="Spiral of leaf shapes dissolving into scattered leaves, suggesting land art and natural entropy"
+                 role="img">
+              <defs>
+                <!-- Leaf shape: almond, major axis vertical -->
+                <path id="lf"  d="M 0,-10 C 5.5,-5 5.5,5 0,10 C -5.5,5 -5.5,-5 0,-10 Z"/>
+                <path id="lfs" d="M 0,-7.5 C 4,-4 4,4 0,7.5 C -4,4 -4,-4 0,-7.5 Z"/>
+                <path id="lfxs" d="M 0,-5.5 C 3,-3 3,3 0,5.5 C -3,3 -3,-3 0,-5.5 Z"/>
+              </defs>
+
+              <!-- Center mark -->
+              <circle class="draw" cx="190" cy="190" r="2.5" fill="currentColor" stroke="none"/>
+
+              <!-- Fibonacci/golden-angle leaf spiral (30 leaves) -->
+              <!-- Inner ring — tight, full opacity -->
+              <use class="draw" href="#lf" transform="translate(166,212) rotate(228)"/>
+              <use class="draw" href="#lf" transform="translate(194,155) rotate(6)"/>
+              <use class="draw" href="#lf" transform="translate(224,234) rotate(143)"/>
+              <use class="draw" href="#lf" transform="translate(126,181) rotate(280)"/>
+              <use class="draw" href="#lf" transform="translate(251,152) rotate(58)"/>
+              <use class="draw" href="#lf" transform="translate(170,268) rotate(195)"/>
+              <use class="draw" href="#lf" transform="translate(151,115) rotate(333)"/>
+              <use class="draw" href="#lf" transform="translate(276,222) rotate(110)"/>
+
+              <!-- Mid ring — spreading out -->
+              <use class="draw" href="#lf" transform="translate(100,228) rotate(248)" opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(233,97)  rotate(25)"  opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(223,293) rotate(163)" opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(93,135)  rotate(300)" opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(304,166) rotate(78)"  opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(121,290) rotate(215)" opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(174,67)  rotate(353)" opacity="0.85"/>
+              <use class="draw" href="#lf" transform="translate(289,274) rotate(130)" opacity="0.75"/>
+
+              <!-- Outer ring — beginning to scatter and fade -->
+              <use class="draw" href="#lfs" transform="translate(57,197)  rotate(268)" opacity="0.6"/>
+              <use class="draw" href="#lfs" transform="translate(287,94)  rotate(45)"  opacity="0.6"/>
+              <use class="draw" href="#lfs" transform="translate(184,332) rotate(183)" opacity="0.6"/>
+              <use class="draw" href="#lfs" transform="translate(97,80)   rotate(320)" opacity="0.6"/>
+              <use class="draw" href="#lfs" transform="translate(337,210) rotate(98)"  opacity="0.55"/>
+              <use class="draw" href="#lfs" transform="translate(66,278)  rotate(235)" opacity="0.5"/>
+              <use class="draw" href="#lfs" transform="translate(224,38)  rotate(13)"  opacity="0.5"/>
+              <use class="draw" href="#lfs" transform="translate(269,328) rotate(150)" opacity="0.45"/>
+
+              <!-- Dissolving edge — very scattered, very faint -->
+              <use class="draw" href="#lfxs" transform="translate(28,148)  rotate(288)" opacity="0.3"/>
+              <use class="draw" href="#lfxs" transform="translate(340,122) rotate(66)"  opacity="0.28"/>
+              <use class="draw" href="#lfxs" transform="translate(330,290) rotate(170)" opacity="0.25"/>
+              <use class="draw" href="#lfxs" transform="translate(38,320)  rotate(250)" opacity="0.22"/>
+              <use class="draw" href="#lfxs" transform="translate(196,16)  rotate(358)" opacity="0.20"/>
+              <use class="draw" href="#lfxs" transform="translate(355,180) rotate(118)" opacity="0.18"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 — The Garden
+       ============================================================ -->
+  <section id="garden" class="section section--garden">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">04</span>
+      <div class="section-grid section-grid--flip">
+
+        <!-- SVG: 7-layer food forest cross-section -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--garden" viewBox="0 0 560 420"
+                 aria-label="Seven-layer food forest cross-section: canopy, understory, shrub, herbaceous, ground cover, vine, and root layers"
+                 role="img">
+
+              <!-- LAYER GUIDE LINES (dashed horizontal) -->
+              <line class="draw dash" x1="10" y1="90"  x2="460" y2="90"  stroke-width="0.7" opacity="0.5"/>
+              <line class="draw dash" x1="10" y1="175" x2="460" y2="175" stroke-width="0.7" opacity="0.5"/>
+              <line class="draw dash" x1="10" y1="232" x2="460" y2="232" stroke-width="0.7" opacity="0.5"/>
+              <line class="draw dash" x1="10" y1="278" x2="460" y2="278" stroke-width="0.7" opacity="0.5"/>
+              <line class="draw dash" x1="10" y1="308" x2="460" y2="308" stroke-width="0.7" opacity="0.5"/>
+
+              <!-- GROUND LINE -->
+              <line class="draw" x1="0" y1="322" x2="560" y2="322" stroke-width="1.4"/>
+
+              <!-- CANOPY TREES -->
+              <!-- Canopy tree 1 (left) — tall, spreading crown -->
+              <line class="draw" x1="118" y1="322" x2="118" y2="148" stroke-width="7"/>
+              <path class="draw" d="M 55,148 Q 48,100 68,70 Q 88,45 118,40 Q 148,45 168,70 Q 188,100 181,148 Z"/>
+              <!-- Canopy tree 2 (right) -->
+              <line class="draw" x1="390" y1="322" x2="390" y2="138" stroke-width="8"/>
+              <path class="draw" d="M 320,138 Q 314,88 336,58 Q 358,32 390,28 Q 422,32 444,58 Q 466,88 460,138 Z"/>
+
+              <!-- UNDERSTORY TREE (center) -->
+              <line class="draw" x1="258" y1="322" x2="258" y2="198" stroke-width="5"/>
+              <path class="draw" d="M 210,198 Q 205,158 222,132 Q 238,110 258,106 Q 278,110 294,132 Q 311,158 306,198 Z"/>
+
+              <!-- Second understory (left-center) -->
+              <line class="draw" x1="188" y1="322" x2="188" y2="208" stroke-width="3"/>
+              <ellipse class="draw" cx="188" cy="185" rx="28" ry="26"/>
+
+              <!-- SHRUBS (small rounded mounds at ground) -->
+              <path class="draw" d="M 50,322  Q 42,298 55,290 Q 68,298 60,322"/>
+              <path class="draw" d="M 160,322 Q 150,300 165,293 Q 180,300 170,322"/>
+              <path class="draw" d="M 320,322 Q 308,296 325,286 Q 342,296 332,322"/>
+              <path class="draw" d="M 445,322 Q 436,300 450,292 Q 464,300 455,322"/>
+
+              <!-- HERBACEOUS LAYER — undulating line -->
+              <path class="draw" stroke-width="0.8" opacity="0.8"
+                d="M 28,316 Q 42,308 56,316 Q 70,324 84,316 Q 98,308 112,316 Q 126,324 140,316 Q 154,308 168,316 Q 182,324 196,316 Q 210,308 224,316 Q 238,324 252,316 Q 266,308 280,316 Q 294,324 308,316 Q 322,308 336,316 Q 350,324 364,316 Q 378,308 392,316 Q 406,324 420,316 Q 434,308 448,316"/>
+
+              <!-- VINE climbing up right canopy tree -->
+              <path class="draw dash" stroke-width="0.9"
+                d="M 390,322 Q 398,290 386,255 Q 374,220 392,185 Q 406,158 395,128"/>
+
+              <!-- ROOT SYSTEMS -->
+              <!-- Canopy tree 1 -->
+              <path class="draw" d="M 114,322 Q 94,344 74,368"/>
+              <path class="draw" d="M 118,322 Q 115,350 112,378"/>
+              <path class="draw" d="M 122,322 Q 142,345 158,368"/>
+              <!-- Canopy tree 2 -->
+              <path class="draw" d="M 386,322 Q 366,344 348,368"/>
+              <path class="draw" d="M 390,322 Q 388,350 385,378"/>
+              <path class="draw" d="M 394,322 Q 414,345 428,368"/>
+              <!-- Understory -->
+              <path class="draw" d="M 255,322 Q 242,342 230,360"/>
+              <path class="draw" d="M 261,322 Q 272,342 282,358"/>
+
+              <!-- LAYER LABELS -->
+              <text class="illus-label" x="476" y="48"  >canopy</text>
+              <text class="illus-label" x="476" y="165" >understory</text>
+              <text class="illus-label" x="476" y="222" >shrub</text>
+              <text class="illus-label" x="476" y="268" >herbaceous</text>
+              <text class="illus-label" x="476" y="302" >ground</text>
+              <text class="illus-label" x="476" y="350" >root</text>
+              <!-- Vertical label connector lines -->
+              <line x1="470" y1="52"  x2="470" y2="308" stroke="currentColor" stroke-width="0.4" opacity="0.3"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="section-text">
+          <h2 class="section-title reveal">The Garden</h2>
+          <p class="section-lead reveal">A garden is taking root.</p>
+          <p class="reveal">Somewhere between the wild forest and the cultivated row lies the food forest — a designed ecosystem that produces food, medicine, and habitat by mimicking the structure of a natural woodland. At Adaptation Forest, we're planning an intensive cultivation zone that draws on permaculture, agroforestry, and traditional ecological knowledge.</p>
+          <p class="reveal">The garden will be small in footprint but deep in design — seven layers of productive planting, from canopy nut trees down to root crops, integrated with native medicinal species, seed-saving programs, and soil-building practices.</p>
+          <p class="reveal">Every planting decision is also a climate adaptation decision — and an act of tending that looks decades into the future.</p>
+          <a href="garden.html" class="go-deeper reveal">Go Deeper</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 — Gather
+       ============================================================ -->
+  <section id="gather" class="section section--gather">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">05</span>
+      <div class="section-grid">
+
+        <div class="section-text">
+          <h2 class="section-title reveal">Gather</h2>
+          <p class="section-lead reveal">A forest this size can hold more than trees. It can hold a community.</p>
+          <p class="reveal">We envision Adaptation Forest as a place where people come together — for guided walks that read the landscape like a text, for performances staged among the trees, for workshops on everything from chainsaw use to bird identification to mushroom cultivation.</p>
+          <p class="reveal">The trail network connects a series of natural gathering spaces: stream crossings, rocky outcrops with seasonal views, the remnants of old stone walls that mark where pasture once met forest. These are places where a small audience can sit on the ground and listen — to a musician, a scientist, a poet, or just the forest itself.</p>
+          <p class="reveal">This is tending in its most human form — showing up, paying attention, and sharing what you notice.</p>
+          <a href="gather.html" class="go-deeper reveal">Go Deeper</a>
+        </div>
+
+        <!-- SVG: Bird's-eye view of people in circle in a forest clearing -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--gather" viewBox="0 0 380 380"
+                 aria-label="Bird's-eye view of people sitting in a circle in a forest clearing, surrounded by tree canopies"
+                 role="img">
+
+              <!-- TREE CANOPIES (circles from above) -->
+              <!-- Outer ring of trees surrounding the clearing -->
+              <circle class="draw" cx="68"  cy="72"  r="52"/>
+              <circle class="draw" cx="48"  cy="55"  r="28" opacity="0.5"/>
+              <circle class="draw" cx="165" cy="42"  r="45"/>
+              <circle class="draw" cx="180" cy="30"  r="24" opacity="0.5"/>
+              <circle class="draw" cx="295" cy="50"  r="48"/>
+              <circle class="draw" cx="310" cy="38"  r="26" opacity="0.45"/>
+              <circle class="draw" cx="345" cy="145" r="44"/>
+              <circle class="draw" cx="358" cy="160" r="22" opacity="0.5"/>
+              <circle class="draw" cx="340" cy="280" r="48"/>
+              <circle class="draw" cx="352" cy="295" r="25" opacity="0.45"/>
+              <circle class="draw" cx="255" cy="345" r="42"/>
+              <circle class="draw" cx="240" cy="355" r="22" opacity="0.5"/>
+              <circle class="draw" cx="130" cy="348" r="46"/>
+              <circle class="draw" cx="115" cy="358" r="24" opacity="0.45"/>
+              <circle class="draw" cx="35"  cy="278" r="50"/>
+              <circle class="draw" cx="22"  cy="292" r="28" opacity="0.5"/>
+              <circle class="draw" cx="30"  cy="168" r="44"/>
+              <circle class="draw" cx="18"  cy="155" r="22" opacity="0.45"/>
+
+              <!-- CLEARING EDGE (implied circle) -->
+              <circle class="draw" cx="190" cy="190" r="95" stroke-width="0.5" opacity="0.3"/>
+
+              <!-- CAMPFIRE / FOCAL POINT at center -->
+              <circle class="draw" cx="190" cy="190" r="5" stroke-width="1.5"/>
+              <path class="draw" d="M 190,183 Q 187,176 190,172 Q 193,176 190,183"/>
+              <path class="draw" d="M 186,184 Q 181,178 184,173 Q 188,178 186,184"/>
+              <path class="draw" d="M 194,184 Q 199,178 196,173 Q 192,178 194,184"/>
+
+              <!-- FIGURES sitting in a circle (radius ~65, 12 figures) -->
+              <!-- Each figure: small circle (head) + short line (body, angled toward center) -->
+              <!-- 0° -->
+              <circle class="draw" cx="255" cy="190" r="4.5"/>
+              <line  class="draw" x1="255" y1="194" x2="248" y2="200" stroke-width="1"/>
+              <!-- 30° -->
+              <circle class="draw" cx="246" cy="222" r="4.5"/>
+              <line  class="draw" x1="244" y1="226" x2="236" y2="230" stroke-width="1"/>
+              <!-- 60° -->
+              <circle class="draw" cx="222" cy="246" r="4.5"/>
+              <line  class="draw" x1="219" y1="249" x2="212" y2="251" stroke-width="1"/>
+              <!-- 90° -->
+              <circle class="draw" cx="190" cy="255" r="4.5"/>
+              <line  class="draw" x1="190" y1="260" x2="190" y2="252" stroke-width="1"/>
+              <!-- 120° -->
+              <circle class="draw" cx="158" cy="246" r="4.5"/>
+              <line  class="draw" x1="155" y1="249" x2="162" y2="251" stroke-width="1"/>
+              <!-- 150° -->
+              <circle class="draw" cx="134" cy="222" r="4.5"/>
+              <line  class="draw" x1="132" y1="226" x2="140" y2="230" stroke-width="1"/>
+              <!-- 180° -->
+              <circle class="draw" cx="125" cy="190" r="4.5"/>
+              <line  class="draw" x1="125" y1="194" x2="132" y2="200" stroke-width="1"/>
+              <!-- 210° -->
+              <circle class="draw" cx="134" cy="158" r="4.5"/>
+              <line  class="draw" x1="132" y1="154" x2="140" y2="150" stroke-width="1"/>
+              <!-- 240° -->
+              <circle class="draw" cx="158" cy="134" r="4.5"/>
+              <line  class="draw" x1="155" y1="131" x2="162" y2="129" stroke-width="1"/>
+              <!-- 270° -->
+              <circle class="draw" cx="190" cy="125" r="4.5"/>
+              <line  class="draw" x1="190" y1="121" x2="190" y2="129" stroke-width="1"/>
+              <!-- 300° -->
+              <circle class="draw" cx="222" cy="134" r="4.5"/>
+              <line  class="draw" x1="225" y1="131" x2="218" y2="129" stroke-width="1"/>
+              <!-- 330° -->
+              <circle class="draw" cx="246" cy="158" r="4.5"/>
+              <line  class="draw" x1="248" y1="154" x2="240" y2="150" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       06 — The Science
+       ============================================================ -->
+  <section id="science" class="section section--science">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">06</span>
+      <div class="section-grid">
+
+        <div class="section-text">
+          <h2 class="section-title reveal">The Science</h2>
+          <p class="section-lead reveal">Everything happening at Adaptation Forest is grounded in peer-reviewed science and decades of forestry research.</p>
+          <p class="reveal">We use the USDA Forest Service Climate Change Tree Atlas to assess species vulnerability. We measure carbon storage per acre and track it against regional benchmarks. We follow the resistance-resilience-transition framework for climate adaptation.</p>
+          <p class="reveal">But we also believe that the best science is science you can see. This section translates the data — about tree species vulnerability, carbon sequestration, invasive species dynamics, and climate projections — into formats that any forest owner or curious person can understand and use.</p>
+          <p class="reveal">Forest mind means letting evidence shape the story. Here's what the evidence says.</p>
+          <a href="science.html" class="go-deeper reveal">Go Deeper</a>
+
+          <div class="science-stats">
+            <div class="stat reveal">
+              <span class="stat-num">47%</span>
+              <span class="stat-label">of Earth's forests lost over human history</span>
+            </div>
+            <div class="stat reveal">
+              <span class="stat-num">1T+</span>
+              <span class="stat-label">trees could be ecologically restored globally</span>
+            </div>
+            <div class="stat reveal">
+              <span class="stat-num">300km</span>
+              <span class="stat-label">of fungal threads in a teaspoon of forest soil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG: Tree ring cross-section with data annotations -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--science" viewBox="0 0 420 420"
+                 aria-label="Tree ring cross-section where ring widths represent carbon storage, precipitation, and temperature data"
+                 role="img">
+
+              <!-- RINGS (varying widths = varying data) — innermost to outermost -->
+              <circle class="draw" cx="210" cy="210" r="12"  stroke-width="3"/>
+              <circle class="draw" cx="210" cy="210" r="20"  stroke-width="1.5"/>
+              <circle class="draw" cx="210" cy="210" r="30"  stroke-width="2.5"/>
+              <circle class="draw" cx="210" cy="210" r="40"  stroke-width="1"/>
+              <circle class="draw" cx="210" cy="210" r="52"  stroke-width="3"/>
+              <circle class="draw" cx="210" cy="210" r="62"  stroke-width="1.2"/>
+              <circle class="draw" cx="210" cy="210" r="72"  stroke-width="2"/>
+              <circle class="draw" cx="210" cy="210" r="84"  stroke-width="3.5"/>
+              <circle class="draw" cx="210" cy="210" r="95"  stroke-width="1"/>
+              <circle class="draw" cx="210" cy="210" r="106" stroke-width="2.5"/>
+              <circle class="draw" cx="210" cy="210" r="116" stroke-width="1.2"/>
+              <circle class="draw" cx="210" cy="210" r="128" stroke-width="2"/>
+              <circle class="draw" cx="210" cy="210" r="139" stroke-width="1"/>
+              <circle class="draw" cx="210" cy="210" r="150" stroke-width="3"/>
+              <circle class="draw" cx="210" cy="210" r="160" stroke-width="1.5"/>
+              <circle class="draw" cx="210" cy="210" r="170" stroke-width="1"/>
+              <circle class="draw" cx="210" cy="210" r="180" stroke-width="2.5"/>
+              <circle class="draw" cx="210" cy="210" r="188" stroke-width="1"/>
+              <circle class="draw" cx="210" cy="210" r="195" stroke-width="2"/>
+              <circle class="draw" cx="210" cy="210" r="202" stroke-width="1.2"/>
+
+              <!-- CENTER DOT -->
+              <circle cx="210" cy="210" r="4" fill="currentColor" stroke="none" opacity="0.6"/>
+
+              <!-- DATA ANNOTATION LINES + LABELS -->
+              <!-- Annotation 1: wide ring at r=84, upper-right -->
+              <line class="draw" x1="270" y1="150" x2="310" y2="112" stroke-width="0.8"/>
+              <line class="draw" x1="310" y1="112" x2="370" y2="112" stroke-width="0.8"/>
+              <text class="illus-label" x="316" y="109">above avg. precip.</text>
+
+              <!-- Annotation 2: narrow ring at r=52, lower-right -->
+              <line class="draw" x1="256" y1="228" x2="296" y2="272" stroke-width="0.8"/>
+              <line class="draw" x1="296" y1="272" x2="370" y2="272" stroke-width="0.8"/>
+              <text class="illus-label" x="302" y="269">drought stress</text>
+
+              <!-- Annotation 3: wide ring at r=150, upper area -->
+              <line class="draw" x1="210" y1="60" x2="210" y2="28" stroke-width="0.8"/>
+              <line class="draw" x1="210" y1="28" x2="330" y2="28" stroke-width="0.8"/>
+              <text class="illus-label" x="216" y="25">carbon storage peak</text>
+
+              <!-- Annotation 4: narrow ring at r=128, left side -->
+              <line class="draw" x1="83"  y1="196" x2="40"  y2="186" stroke-width="0.8"/>
+              <line class="draw" x1="40"  y1="186" x2="10"  y2="186" stroke-width="0.8"/>
+              <text class="illus-label" x="12"  y="183">temp. anomaly</text>
+
+              <!-- Year marks at compass points on outermost ring -->
+              <line class="draw" x1="210" y1="7"   x2="210" y2="18"   stroke-width="0.7"/>
+              <line class="draw" x1="413" y1="210" x2="402" y2="210"  stroke-width="0.7"/>
+              <line class="draw" x1="210" y1="413" x2="210" y2="402"  stroke-width="0.7"/>
+              <line class="draw" x1="7"   y1="210" x2="18"  y2="210"  stroke-width="0.7"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <a href="#hero" class="footer-logo">Adaptation Forest</a>
+      <p class="footer-tagline">Growing resilience, together.</p>
+      <p class="footer-tending"><em>Tending is the practice of sustained attention to what's alive around you.</em></p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="mailto:adaptation.forest@gmail.com">Email</a>
+        <a href="https://patreon.com" rel="noopener noreferrer" target="_blank">Patreon</a>
+        <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://youtube.com" rel="noopener noreferrer" target="_blank">YouTube</a>
+      </nav>
+      <p class="footer-note">Adaptation Forest is a 200-acre living laboratory in the northeastern United States.</p>
+      <p class="footer-copy">&copy; 2026 Adaptation Forest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
