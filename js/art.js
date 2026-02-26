@@ -305,14 +305,20 @@ function buildMandala() {
     ].join(' ');
   }
 
+  // Track rings for the IntersectionObserver callback
+  const rings = [];
+
   // ── Helper: make a ring <g> with animation setup ──────────
+  // Opacity and transition are set via inline styles (like the leaf spiral),
+  // so the observer can directly set style.opacity / style.transform.
   function makeRing(delay, rotOff) {
     const g = document.createElementNS(ns, 'g');
-    g.setAttribute('class', 'mandala-ring');
-    g.style.transitionDelay = `${delay}s`;
-    // Initial rotation offset (snaps to 0 when .mandala--assembled is added)
+    g.style.opacity  = '0';
+    g.style.transition =
+      `opacity 0.9s ease ${delay}s, transform 1.1s cubic-bezier(0.22,0.8,0.42,1) ${delay}s`;
     if (rotOff) g.style.transform = `rotate(${rotOff}deg)`;
     root.appendChild(g);
+    rings.push(g);
     return g;
   }
 
@@ -523,12 +529,17 @@ function buildMandala() {
   }
 
   // ── IntersectionObserver — triggers assembly ───────────────
+  // Directly sets inline opacity + transform on each ring so the
+  // transitions fire reliably (same pattern as buildLeafSpiral).
   const obs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
-      svg.classList.add('mandala--assembled');
+      rings.forEach(g => {
+        g.style.opacity   = '1';
+        g.style.transform = 'rotate(0deg)';
+      });
       obs.disconnect();
     }
-  }, { threshold: 0.15 });
+  }, { threshold: 0.10 });
 
   obs.observe(container);
 }

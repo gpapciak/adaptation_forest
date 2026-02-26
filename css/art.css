@@ -494,32 +494,13 @@
   margin: 5rem auto 0;
   max-width: 580px;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .mandala-svg {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   overflow: visible;
-}
-
-/* ── Ring group animation ──────────────────────────────────
-   Each ring <g> starts rotated slightly off-angle and invisible.
-   JS adds .mandala--assembled to the root SVG via IntersectionObserver,
-   which triggers the CSS transitions defined below.
-   ─────────────────────────────────────────────────────────── */
-.mandala-ring {
-  opacity: 0;
-  transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.22, 0.8, 0.42, 1);
-}
-
-.mandala-svg.mandala--assembled .mandala-ring {
-  opacity: 1;
-  transform: rotate(0deg) !important;   /* overrides inline rotOff */
 }
 
 /* ── Element colours ──────────────────────────────────────── */
