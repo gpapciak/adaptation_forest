@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- The practice of tending is not maintenance. It is attention.
+       What we build here is built to be watched, adjusted, and learned from. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Practice — off-grid infrastructure, energy, water, and shelter at Adaptation Forest. A model for living lightly within an ecological system.">
+  <title>The Practice — Adaptation Forest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forest.css">
+  <link rel="stylesheet" href="css/practice.css">
+</head>
+<body class="page-practice">
+
+  <!-- Page navigation -->
+  <nav class="page-nav" aria-label="Site navigation">
+    <a href="index.html" class="page-nav__back">← Back to home</a>
+    <a href="index.html" class="page-nav__logo">Adaptation Forest</a>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="container">
+      <p class="page-eyebrow">02 — The Practice</p>
+      <h1 class="page-title">The <em>Practice</em></h1>
+      <p class="page-subtitle">Tending the systems that let us live here lightly.</p>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PHILOSOPHY
+       ============================================================ -->
+  <section id="philosophy" class="page-section">
+    <div class="container">
+
+      <p class="field-label reveal">Philosophy</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">The infrastructure at Adaptation Forest isn't designed for self-sufficiency. It's designed for integration — with the landscape, the climate, and the community of people and species that make this place what it is.</p>
+
+        <p class="reveal">The distinction matters. Self-sufficiency is a closed-loop fantasy: the individual or household that produces everything it needs and depends on nothing outside its fence line. Integration is something else. It begins with the recognition that you are already embedded in systems — ecological, social, atmospheric — and asks what it looks like to participate in those systems responsibly. The forest provides water. The sun provides energy. The community provides knowledge, labor, and reciprocal care. The work is to build structures that honor those relationships rather than extract from them or ignore them.</p>
+
+        <p class="reveal">Living here lightly means more than reducing footprint. It means building the capacity to observe, adapt, and respond — to notice when the water table drops, when the solar gain shifts with seasonal canopy, when a new species appears in the understory and suggests a change in the ecosystem's trajectory. The infrastructure becomes a set of instruments for that kind of attention. Every system teaches us something about the conditions we live within, if we're willing to read it.</p>
+
+        <p class="reveal"><span class="text-amber">This isn't survivalism. Survivalism is the individual hoarding against collapse. This is the opposite: building systems that work because they're embedded in a web of relationships — with the land, with weather, with community.</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DISTRIBUTED INFRASTRUCTURE
+       ============================================================ -->
+  <section id="infrastructure" class="page-section page-section--alt">
+    <div class="container">
+
+      <p class="field-label reveal">Distributed Infrastructure</p>
+
+      <div class="section-split reveal">
+
+        <div class="section-split__text">
+          <p class="section-lead">The site plan is deliberately dispersed. Rather than a central compound, structures are scattered across the landscape in ways that follow landform, solar exposure, and existing forest clearings.</p>
+
+          <p>Each node serves a specific function: sleeping, cooking, gathering, storage, tools. The separation is intentional — it reduces the footprint of any single clearing, preserves the visual and acoustic character of the forest, and distributes foot traffic across multiple trail corridors. When one structure needs maintenance, the others continue functioning.</p>
+
+          <p>The connections between nodes matter as much as the nodes themselves. Trails are kept narrow and located on existing deer runs where possible, reinforcing the idea that the paths we make are negotiations with the landscape, not impositions upon it.</p>
+        </div>
+
+        <!-- Site Plan SVG -->
+        <div class="site-plan svg-animate"
+             aria-label="Bird's-eye site plan showing dispersed structures connected by trail lines through a forested landscape with a stream"
+             role="img">
+          <svg viewBox="0 0 440 380" class="site-plan-svg" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Tree field: scattered circles representing canopy crowns -->
+            <circle class="draw tree-dot" cx="30"  cy="28"  r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="55"  cy="18"  r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="90"  cy="32"  r="8"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="140" cy="20"  r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="200" cy="15"  r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="260" cy="22"  r="6"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="310" cy="12"  r="8"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="370" cy="25"  r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="415" cy="18"  r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="18"  cy="75"  r="6"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="75"  cy="80"  r="9"  fill="none" stroke-width="1.3"/>
+            <circle class="draw tree-dot" cx="120" cy="68"  r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="170" cy="85"  r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="240" cy="72"  r="6"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="340" cy="65"  r="8"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="400" cy="78"  r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="22"  cy="140" r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="68"  cy="155" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="390" cy="130" r="8"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="425" cy="148" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="28"  cy="210" r="8"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="70"  cy="225" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="390" cy="200" r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="420" cy="218" r="6"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="20"  cy="275" r="6"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="55"  cy="290" r="8"  fill="none" stroke-width="1.3"/>
+            <circle class="draw tree-dot" cx="100" cy="280" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="370" cy="270" r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="415" cy="285" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="30"  cy="345" r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="90"  cy="355" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="160" cy="348" r="8"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="240" cy="358" r="6"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="310" cy="345" r="5"  fill="none" stroke-width="1"/>
+            <circle class="draw tree-dot" cx="380" cy="358" r="7"  fill="none" stroke-width="1.2"/>
+            <circle class="draw tree-dot" cx="425" cy="348" r="5"  fill="none" stroke-width="1"/>
+
+            <!-- Topographic contour lines -->
+            <path class="draw contour" d="M 0,320 Q 110,305 220,312 Q 330,318 440,308" stroke-width="0.5" fill="none"/>
+            <path class="draw contour" d="M 0,245 Q 100,232 220,238 Q 340,244 440,234" stroke-width="0.5" fill="none"/>
+            <path class="draw contour" d="M 0,168 Q 110,155 220,162 Q 330,168 440,158" stroke-width="0.5" fill="none"/>
+
+            <!-- Trail network (dashed) -->
+            <!-- Main spine south–north -->
+            <path class="draw trail" d="M 220,360 Q 218,300 215,240 Q 213,180 218,130 Q 222,110 220,90" stroke-width="1.4" fill="none" stroke-dasharray="5 4"/>
+            <!-- Branch to Main Lodge -->
+            <path class="draw trail" d="M 218,130 Q 200,128 185,130" stroke-width="1.2" fill="none" stroke-dasharray="5 4"/>
+            <!-- Branch to Workshop -->
+            <path class="draw trail" d="M 215,240 Q 255,238 296,237" stroke-width="1.2" fill="none" stroke-dasharray="5 4"/>
+            <!-- Branch to Solar array -->
+            <path class="draw trail" d="M 220,90 Q 255,86 288,88" stroke-width="1.2" fill="none" stroke-dasharray="5 4"/>
+            <!-- Branch to Guest platform -->
+            <path class="draw trail" d="M 213,180 Q 172,177 145,174" stroke-width="1.2" fill="none" stroke-dasharray="5 4"/>
+
+            <!-- Stream -->
+            <path class="draw stream" d="M 0,195 Q 80,188 140,192 Q 180,195 220,190 Q 265,185 320,178 Q 380,170 440,162" stroke-width="2" fill="none"/>
+
+            <!-- STRUCTURES -->
+
+            <!-- Main Lodge -->
+            <rect class="draw structure" x="183" y="117" width="30" height="24" rx="1.5" stroke-width="1.8" fill="none"/>
+            <line class="draw structure-detail" x1="183" y1="129" x2="213" y2="129" stroke-width="0.8"/>
+
+            <!-- Workshop -->
+            <rect class="draw structure" x="296" y="227" width="24" height="19" rx="1.5" stroke-width="1.8" fill="none"/>
+
+            <!-- Tool Shed (small) -->
+            <rect class="draw structure" x="302" y="176" width="14" height="12" rx="1" stroke-width="1.4" fill="none"/>
+
+            <!-- Guest Platform -->
+            <rect class="draw structure" x="126" y="165" width="22" height="17" rx="1.5" stroke-width="1.8" fill="none"/>
+
+            <!-- Solar array -->
+            <rect class="draw structure" x="288" y="80" width="28" height="15" rx="1" stroke-width="1.5" fill="none"/>
+            <line class="draw structure-detail" x1="302" y1="80" x2="302" y2="95" stroke-width="0.8"/>
+            <line class="draw structure-detail" x1="288" y1="87" x2="316" y2="87" stroke-width="0.8"/>
+
+            <!-- Water catchment cistern -->
+            <ellipse class="draw structure" cx="220" cy="78" rx="10" ry="8" stroke-width="1.5" fill="none"/>
+
+            <!-- Structure labels -->
+            <text class="site-label" x="198" y="112"  text-anchor="middle" font-size="7.5">Main Lodge</text>
+            <text class="site-label" x="308" y="223"  text-anchor="middle" font-size="7">Workshop</text>
+            <text class="site-label" x="137" y="161"  text-anchor="middle" font-size="7">Platform</text>
+            <text class="site-label" x="302" y="76"   text-anchor="middle" font-size="7">Solar</text>
+            <text class="site-label" x="220" y="68"   text-anchor="middle" font-size="7">Water</text>
+            <text class="site-label" x="56"  cy="183" text-anchor="middle" font-size="6.5" font-style="italic">stream</text>
+
+            <!-- Compass rose -->
+            <g class="compass" transform="translate(412,348)">
+              <line class="draw" x1="0" y1="11" x2="0" y2="-11" stroke-width="1"/>
+              <line class="draw" x1="-11" y1="0" x2="11" y2="0" stroke-width="1"/>
+              <text x="0" y="-14" text-anchor="middle" font-size="7">N</text>
+            </g>
+
+          </svg>
+
+          <!-- Legend -->
+          <div class="site-plan-legend">
+            <span class="legend-item legend-item--trail">trails</span>
+            <span class="legend-item legend-item--stream">stream</span>
+            <span class="legend-item legend-item--structure">structures</span>
+            <span class="legend-item legend-item--tree">canopy</span>
+          </div>
+        </div><!-- /.site-plan -->
+
+      </div><!-- /.section-split -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENERGY
+       ============================================================ -->
+  <section id="energy" class="page-section">
+    <div class="container">
+
+      <p class="field-label reveal">Energy</p>
+
+      <div class="section-split reveal">
+
+        <div class="section-split__text">
+          <p class="section-lead">The site runs on a small off-grid solar array. Not because the grid is unavailable — but because the discipline of working within a hard energy budget is itself a form of ecological literacy.</p>
+
+          <p>A fixed array on a south-facing clearing feeds a charge controller and a modest battery bank. From there, 12V DC powers lighting, water pumps, and communications. An inverter handles the occasional AC load — a power tool, a laptop charger. Total capacity is intentionally modest: enough to run essential systems through a cloudy northeastern winter week, but not enough to be careless.</p>
+
+          <p>The constraints matter. When you can watch the battery voltage drop through an overcast stretch and feel the question of whether the sun will return before you lose the pump, energy ceases to be abstract. It becomes weather. It becomes season. It becomes the difference between a south-facing clearing and a north-facing one. <span class="text-amber">Learning to live within a small energy budget is less about sacrifice than about developing a much finer attention to where energy actually comes from.</span></p>
+        </div>
+
+        <!-- Energy flow diagram SVG -->
+        <div class="energy-diagram svg-animate"
+             aria-label="Diagram showing solar panel feeding a charge controller, battery bank, and DC and AC loads"
+             role="img">
+          <svg viewBox="0 0 420 300" class="energy-svg" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Background subtle grid lines -->
+            <line class="draw e-grid" x1="0"   y1="100" x2="420" y2="100" stroke-width="0.4"/>
+            <line class="draw e-grid" x1="0"   y1="200" x2="420" y2="200" stroke-width="0.4"/>
+            <line class="draw e-grid" x1="105" y1="0"   x2="105" y2="300" stroke-width="0.4"/>
+            <line class="draw e-grid" x1="210" y1="0"   x2="210" y2="300" stroke-width="0.4"/>
+            <line class="draw e-grid" x1="315" y1="0"   x2="315" y2="300" stroke-width="0.4"/>
+
+            <!-- ── SOLAR PANEL (left) ── -->
+            <!-- Panel frame -->
+            <rect class="draw e-component" x="18" y="88" width="68" height="50" rx="2" stroke-width="1.6" fill="none"/>
+            <!-- Panel cells (3×2 grid) -->
+            <line class="draw e-cell" x1="40" y1="88" x2="40" y2="138" stroke-width="0.7"/>
+            <line class="draw e-cell" x1="62" y1="88" x2="62" y2="138" stroke-width="0.7"/>
+            <line class="draw e-cell" x1="18" y1="104" x2="86" y2="104" stroke-width="0.7"/>
+            <line class="draw e-cell" x1="18" y1="122" x2="86" y2="122" stroke-width="0.7"/>
+            <!-- Sun rays above panel -->
+            <circle class="draw e-sun" cx="52" cy="58" r="12" stroke-width="1.4" fill="none"/>
+            <line class="draw e-sun" x1="52" y1="42" x2="52" y2="35" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="52" y1="74" x2="52" y2="81" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="36" y1="58" x2="29" y2="58" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="68" y1="58" x2="75" y2="58" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="40" y1="46" x2="35" y2="41" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="64" y1="46" x2="69" y2="41" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="40" y1="70" x2="35" y2="75" stroke-width="1.2"/>
+            <line class="draw e-sun" x1="64" y1="70" x2="69" y2="75" stroke-width="1.2"/>
+            <!-- Label -->
+            <text class="e-label" x="52" y="152" text-anchor="middle" font-size="8">SOLAR</text>
+            <text class="e-label" x="52" y="162" text-anchor="middle" font-size="8">PANELS</text>
+
+            <!-- Wire: panel → controller -->
+            <path class="draw e-wire" d="M 86,113 L 128,113" stroke-width="1.6" fill="none"/>
+            <!-- Arrow -->
+            <polygon class="draw e-arrow" points="124,109 132,113 124,117" fill="currentColor"/>
+
+            <!-- ── CHARGE CONTROLLER ── -->
+            <rect class="draw e-component" x="132" y="90" width="56" height="46" rx="2" stroke-width="1.6" fill="none"/>
+            <!-- Controller detail: small display -->
+            <rect class="draw e-detail" x="140" y="98" width="20" height="12" rx="1" stroke-width="0.8" fill="none"/>
+            <line class="draw e-detail" x1="144" y1="103" x2="156" y2="103" stroke-width="0.6"/>
+            <!-- Terminals -->
+            <circle class="draw e-terminal" cx="145" cy="128" r="3" stroke-width="1" fill="none"/>
+            <circle class="draw e-terminal" cx="175" cy="128" r="3" stroke-width="1" fill="none"/>
+            <text class="e-label" x="160" y="152" text-anchor="middle" font-size="8">CHARGE</text>
+            <text class="e-label" x="160" y="162" text-anchor="middle" font-size="8">CONTROLLER</text>
+
+            <!-- Wire: controller → battery -->
+            <path class="draw e-wire" d="M 188,113 L 230,113" stroke-width="1.6" fill="none"/>
+            <polygon class="draw e-arrow" points="226,109 234,113 226,117" fill="currentColor"/>
+
+            <!-- ── BATTERY BANK ── -->
+            <rect class="draw e-component" x="234" y="84" width="62" height="58" rx="2" stroke-width="1.8" fill="none"/>
+            <!-- Battery cells stacked -->
+            <rect class="draw e-cell" x="241" y="91" width="20" height="44" rx="1" stroke-width="1" fill="none"/>
+            <rect class="draw e-cell" x="265" y="91" width="20" height="44" rx="1" stroke-width="1" fill="none"/>
+            <!-- Battery positive terminals -->
+            <rect class="draw e-terminal" x="245" y="87" width="6" height="5" rx="0.5" stroke-width="0.8" fill="none"/>
+            <rect class="draw e-terminal" x="269" y="87" width="6" height="5" rx="0.5" stroke-width="0.8" fill="none"/>
+            <!-- Charge level lines inside cells -->
+            <line class="draw e-detail" x1="243" y1="118" x2="259" y2="118" stroke-width="0.7"/>
+            <line class="draw e-detail" x1="243" y1="110" x2="259" y2="110" stroke-width="0.7"/>
+            <line class="draw e-detail" x1="267" y1="118" x2="283" y2="118" stroke-width="0.7"/>
+            <text class="e-label" x="265" y="156" text-anchor="middle" font-size="8">BATTERY</text>
+            <text class="e-label" x="265" y="166" text-anchor="middle" font-size="8">BANK</text>
+
+            <!-- Wire: battery → DC loads (direct) -->
+            <path class="draw e-wire" d="M 296,100 L 340,100" stroke-width="1.6" fill="none"/>
+            <polygon class="draw e-arrow" points="336,96 344,100 336,104" fill="currentColor"/>
+
+            <!-- ── DC LOADS ── -->
+            <rect class="draw e-component" x="344" y="82" width="58" height="36" rx="2" stroke-width="1.5" fill="none"/>
+            <!-- Lightbulb icon -->
+            <path class="draw e-icon" d="M 363,91 Q 363,85 370,85 Q 377,85 377,91 Q 377,96 374,99 L 366,99 Q 363,96 363,91 Z" stroke-width="1" fill="none"/>
+            <line class="draw e-icon" x1="366" y1="99" x2="374" y2="99" stroke-width="1"/>
+            <line class="draw e-icon" x1="367" y1="101" x2="373" y2="101" stroke-width="1"/>
+            <!-- Pump squiggle -->
+            <path class="draw e-icon" d="M 383,91 Q 386,88 389,91 Q 392,94 395,91" stroke-width="1.2" fill="none"/>
+            <text class="e-label" x="373" y="130" text-anchor="middle" font-size="8">12V DC</text>
+            <text class="e-label" x="373" y="140" text-anchor="middle" font-size="7.5">lights / pump</text>
+
+            <!-- Wire: battery → inverter (branch down) -->
+            <path class="draw e-wire" d="M 265,142 L 265,178" stroke-width="1.6" fill="none"/>
+            <polygon class="draw e-arrow" points="261,174 265,182 269,174" fill="currentColor"/>
+
+            <!-- ── INVERTER ── -->
+            <rect class="draw e-component" x="234" y="182" width="62" height="40" rx="2" stroke-width="1.5" fill="none"/>
+            <!-- Sine wave symbol -->
+            <path class="draw e-icon" d="M 244,202 Q 249,194 254,202 Q 259,210 264,202 Q 269,194 274,202" stroke-width="1.2" fill="none"/>
+            <!-- AC label -->
+            <text class="draw e-icon-text" x="282" y="206" font-size="8" fill="currentColor">AC</text>
+            <text class="e-label" x="265" y="236" text-anchor="middle" font-size="8">INVERTER</text>
+
+            <!-- Wire: inverter → AC loads -->
+            <path class="draw e-wire" d="M 296,202 L 340,202" stroke-width="1.6" fill="none"/>
+            <polygon class="draw e-arrow" points="336,198 344,202 336,206" fill="currentColor"/>
+
+            <!-- ── AC LOADS ── -->
+            <rect class="draw e-component" x="344" y="182" width="58" height="40" rx="2" stroke-width="1.5" fill="none"/>
+            <!-- Laptop outline -->
+            <rect class="draw e-icon" x="356" y="189" width="22" height="15" rx="1" stroke-width="1" fill="none"/>
+            <line class="draw e-icon" x1="352" y1="204" x2="382" y2="204" stroke-width="1.2"/>
+            <!-- Tool icon -->
+            <path class="draw e-icon" d="M 387,191 L 394,200 L 390,204 L 383,196 Z" stroke-width="1" fill="none"/>
+            <text class="e-label" x="373" y="236" text-anchor="middle" font-size="8">120V AC</text>
+            <text class="e-label" x="373" y="246" text-anchor="middle" font-size="7.5">tools / laptop</text>
+
+            <!-- Flow labels -->
+            <text class="e-flow-label" x="107" y="108" text-anchor="middle" font-size="7">DC power</text>
+            <text class="e-flow-label" x="209" y="108" text-anchor="middle" font-size="7">regulated</text>
+            <text class="e-flow-label" x="318" y="95"  text-anchor="middle" font-size="7">12V DC</text>
+            <text class="e-flow-label" x="308" y="197" text-anchor="middle" font-size="7">120V AC</text>
+            <text class="e-flow-label" x="265" y="173" text-anchor="middle" font-size="7">inverted</text>
+
+          </svg>
+        </div><!-- /.energy-diagram -->
+
+      </div><!-- /.section-split -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WATER
+       ============================================================ -->
+  <section id="water" class="page-section page-section--alt">
+    <div class="container">
+
+      <p class="field-label reveal">Water</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">Everything here begins with water moving through the landscape — falling as rain, filtering through organic matter and mineral soil, emerging as springs and seeps, running as streams. The question isn't how to import water; it's how to intercept and store what the land is already moving.</p>
+
+        <p class="reveal">A spring on the upper slope provides the primary source. Water is collected at the emergence point, gravity-fed through a buried line to a covered cistern lower on the property, then distributed by gravity pressure to use points. No pumping is required for delivery — only for the secondary pressure boost when the elevation drop is insufficient. The whole system runs quietly, powered by nothing but slope and gravity, and has almost no moving parts to fail.</p>
+
+        <p class="reveal">The system is read like a barometer. In wet years the spring runs strong through August. In dry years — increasingly common — it slows to a trickle by midsummer. Rather than engineering around this variability, the approach is to accommodate it: smaller water budgets in dry stretches, attention to where the seeps are still flowing and where they're not, awareness of what the forest is telling us about the aquifer below. <span class="text-amber">Water scarcity isn't a design failure here. It's a signal — one worth learning to hear.</span></p>
+      </div>
+
+      <!-- Water cycle hillside SVG -->
+      <div class="water-diagram svg-animate reveal"
+           aria-label="Cross-section of forested hillside showing rain collection, spring emergence, gravity-fed line to cistern, stream, and water distribution"
+           role="img">
+        <svg viewBox="0 0 900 320" class="water-svg" preserveAspectRatio="xMidYMid meet">
+
+          <!-- Sky / atmosphere band -->
+          <rect class="w-sky" x="0" y="0" width="900" height="80" fill="none"/>
+
+          <!-- Rain clouds -->
+          <!-- Cloud 1 -->
+          <ellipse class="draw w-cloud" cx="120" cy="35" rx="38" ry="18" stroke-width="1.2" fill="none"/>
+          <ellipse class="draw w-cloud" cx="145" cy="25" rx="24" ry="14" stroke-width="1.2" fill="none"/>
+          <ellipse class="draw w-cloud" cx="100" cy="28" rx="20" ry="13" stroke-width="1.2" fill="none"/>
+          <!-- Rain drops from cloud 1 -->
+          <line class="draw w-rain" x1="100" y1="52" x2="96"  y2="64" stroke-width="1.2"/>
+          <line class="draw w-rain" x1="114" y1="54" x2="110" y2="66" stroke-width="1.2"/>
+          <line class="draw w-rain" x1="128" y1="54" x2="124" y2="66" stroke-width="1.2"/>
+          <line class="draw w-rain" x1="142" y1="52" x2="138" y2="64" stroke-width="1.2"/>
+          <!-- Cloud 2 (ridge) -->
+          <ellipse class="draw w-cloud" cx="680" cy="30" rx="42" ry="17" stroke-width="1.2" fill="none"/>
+          <ellipse class="draw w-cloud" cx="708" cy="20" rx="26" ry="13" stroke-width="1.2" fill="none"/>
+          <ellipse class="draw w-cloud" cx="658" cy="24" rx="22" ry="12" stroke-width="1.2" fill="none"/>
+          <!-- Rain drops from cloud 2 -->
+          <line class="draw w-rain" x1="658" y1="46" x2="654" y2="58" stroke-width="1.2"/>
+          <line class="draw w-rain" x1="672" y1="48" x2="668" y2="60" stroke-width="1.2"/>
+          <line class="draw w-rain" x1="686" y1="48" x2="682" y2="60" stroke-width="1.2"/>
+          <line class="draw w-rain" x1="700" y1="46" x2="696" y2="58" stroke-width="1.2"/>
+
+          <!-- Hillside terrain — main slope from ridge (right) down to valley (left) -->
+          <!-- Soil fill (implied by terrain line) -->
+          <path class="draw w-terrain" d="M 0,280 L 0,230 Q 80,225 160,218 Q 280,205 420,185 Q 560,165 680,140 Q 780,122 900,108 L 900,320 L 0,320 Z" stroke-width="2" fill="none"/>
+
+          <!-- Underground soil layer (dashed) -->
+          <path class="draw w-subsoil" d="M 0,260 Q 150,248 300,235 Q 450,220 600,200 Q 750,182 900,168" stroke-width="0.8" fill="none" stroke-dasharray="6 4"/>
+
+          <!-- TREES on hillside -->
+          <!-- Valley trees (left) -->
+          <line class="draw w-tree" x1="50"  y1="230" x2="50"  y2="212" stroke-width="3"/>
+          <ellipse class="draw w-tree" cx="50"  cy="204" rx="14" ry="12"/>
+          <line class="draw w-tree" x1="85"  y1="226" x2="85"  y2="205" stroke-width="4"/>
+          <ellipse class="draw w-tree" cx="85"  cy="195" rx="18" ry="14"/>
+          <line class="draw w-tree" x1="130" y1="220" x2="130" y2="200" stroke-width="3"/>
+          <ellipse class="draw w-tree" cx="130" cy="191" rx="14" ry="12"/>
+          <!-- Mid-slope trees -->
+          <line class="draw w-tree" x1="280" y1="205" x2="280" y2="183" stroke-width="4"/>
+          <ellipse class="draw w-tree" cx="280" cy="173" rx="18" ry="15"/>
+          <line class="draw w-tree" x1="340" y1="197" x2="340" y2="178" stroke-width="3"/>
+          <ellipse class="draw w-tree" cx="340" cy="168" rx="14" ry="12"/>
+          <line class="draw w-tree" x1="400" y1="188" x2="400" y2="168" stroke-width="5"/>
+          <ellipse class="draw w-tree" cx="400" cy="156" rx="22" ry="17"/>
+          <!-- Upper slope trees -->
+          <line class="draw w-tree" x1="560" y1="165" x2="560" y2="145" stroke-width="4"/>
+          <ellipse class="draw w-tree" cx="560" cy="134" rx="17" ry="14"/>
+          <line class="draw w-tree" x1="620" y1="153" x2="620" y2="133" stroke-width="3"/>
+          <ellipse class="draw w-tree" cx="620" cy="123" rx="14" ry="12"/>
+          <!-- Ridge trees -->
+          <line class="draw w-tree" x1="750" y1="122" x2="750" y2="100" stroke-width="5"/>
+          <ellipse class="draw w-tree" cx="750" cy="88"  rx="20" ry="16"/>
+          <line class="draw w-tree" x1="810" y1="114" x2="810" y2="95" stroke-width="3"/>
+          <ellipse class="draw w-tree" cx="810" cy="84"  rx="14" ry="12"/>
+          <line class="draw w-tree" x1="860" y1="108" x2="860" y2="90" stroke-width="4"/>
+          <ellipse class="draw w-tree" cx="860" cy="78"  rx="16" ry="13"/>
+
+          <!-- SPRING EMERGENCE (upper slope ~x=500) -->
+          <!-- Spring box symbol -->
+          <rect class="draw w-spring" x="488" y="168" width="24" height="18" rx="2" stroke-width="1.5" fill="none"/>
+          <line class="draw w-spring" x1="488" y1="177" x2="512" y2="177" stroke-width="0.8"/>
+          <!-- Spring trickle out (short lines) -->
+          <line class="draw w-spring" x1="488" y1="174" x2="476" y2="172" stroke-width="1.2"/>
+          <line class="draw w-spring" x1="488" y1="180" x2="476" y2="179" stroke-width="1.2"/>
+
+          <!-- Underground flow path (rain → spring) -->
+          <path class="draw w-flow-under" d="M 660,150 Q 620,152 580,158 Q 545,163 512,172" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+          <!-- Arrow on underground flow -->
+          <polygon class="w-flow-arrow" points="510,168 518,172 510,176" fill="currentColor" opacity="0.5"/>
+
+          <!-- GRAVITY FEED LINE (spring → cistern) -->
+          <path class="draw w-pipe" d="M 488,177 Q 440,178 380,182 Q 310,186 245,192" stroke-width="2" fill="none" stroke-dasharray="8 3"/>
+          <!-- Arrow on pipe -->
+          <polygon class="w-flow-arrow" points="244,188 252,192 244,196" fill="currentColor" opacity="0.65"/>
+
+          <!-- CISTERN (~x=220, mid-slope) -->
+          <rect class="draw w-cistern" x="205" y="190" width="36" height="28" rx="2" stroke-width="1.8" fill="none"/>
+          <!-- Water level inside cistern -->
+          <line class="draw w-detail" x1="207" y1="208" x2="239" y2="208" stroke-width="0.8"/>
+          <line class="draw w-detail" x1="207" y1="212" x2="239" y2="212" stroke-width="0.6"/>
+
+          <!-- Distribution line (cistern → use point, down-slope) -->
+          <path class="draw w-pipe" d="M 205,204 Q 160,206 120,212 Q 90,216 65,220" stroke-width="2" fill="none" stroke-dasharray="8 3"/>
+          <polygon class="w-flow-arrow" points="64,216 72,220 64,224" fill="currentColor" opacity="0.65"/>
+
+          <!-- USE POINT (small structure) -->
+          <rect class="draw w-structure" x="40" y="216" width="22" height="16" rx="1.5" stroke-width="1.6" fill="none"/>
+
+          <!-- STREAM (bottom of valley) -->
+          <path class="draw w-stream" d="M 0,300 Q 60,292 140,288 Q 220,284 320,280 Q 420,277 520,272 Q 650,266 780,258 Q 860,252 900,248" stroke-width="2.2" fill="none"/>
+          <!-- Surface runoff arrows into stream -->
+          <line class="draw w-runoff" x1="150" y1="250" x2="155" y2="285" stroke-width="1.2"/>
+          <line class="draw w-runoff" x1="260" y1="238" x2="265" y2="275" stroke-width="1.2"/>
+          <line class="draw w-runoff" x1="460" y1="210" x2="465" y2="270" stroke-width="1.2"/>
+
+          <!-- LABELS -->
+          <text class="w-label" x="500" y="160" text-anchor="middle" font-size="8.5">Spring</text>
+          <text class="w-label" x="223" y="188" text-anchor="middle" font-size="8.5">Cistern</text>
+          <text class="w-label" x="51"  y="210" text-anchor="middle" font-size="8.5">Use</text>
+          <text class="w-label w-label--dim" x="680" y="165" text-anchor="middle" font-size="8" font-style="italic">infiltration</text>
+          <text class="w-label w-label--dim" x="360" y="176" text-anchor="middle" font-size="8" font-style="italic">gravity feed</text>
+          <text class="w-label w-label--dim" x="130" y="302" text-anchor="middle" font-size="8" font-style="italic">stream</text>
+
+          <!-- Elevation annotation -->
+          <line class="draw w-elev" x1="885" y1="108" x2="885" y2="295" stroke-width="0.8"/>
+          <line class="draw w-elev" x1="880" y1="108" x2="890" y2="108" stroke-width="0.8"/>
+          <line class="draw w-elev" x1="880" y1="295" x2="890" y2="295" stroke-width="0.8"/>
+          <text class="w-elev-label" x="898" y="200" font-size="7.5" text-anchor="start">~600 ft</text>
+          <text class="w-elev-label" x="898" y="210" font-size="7.5" text-anchor="start">drop</text>
+
+        </svg>
+      </div><!-- /.water-diagram -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHELTER
+       ============================================================ -->
+  <section id="shelter" class="page-section">
+    <div class="container">
+
+      <p class="field-label reveal">Shelter</p>
+
+      <div class="section-split section-split--flip reveal">
+
+        <!-- Shelter elevation SVG (left on flip) -->
+        <div class="shelter-diagram svg-animate"
+             aria-label="Front elevation drawing of a raised platform shelter on timber piers with a pitched roof and canvas walls, set among trees"
+             role="img">
+          <svg viewBox="0 0 700 360" class="shelter-svg" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Ground line and vegetation -->
+            <line class="draw sh-ground" x1="0" y1="272" x2="700" y2="272" stroke-width="1.2"/>
+            <!-- Ground texture marks -->
+            <line class="draw sh-ground-tex" x1="30"  y1="272" x2="24"  y2="282" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="60"  y1="272" x2="54"  y2="283" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="100" y1="272" x2="93"  y2="282" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="160" y1="272" x2="153" y2="282" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="540" y1="272" x2="534" y2="282" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="580" y1="272" x2="574" y2="282" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="620" y1="272" x2="614" y2="283" stroke-width="0.8"/>
+            <line class="draw sh-ground-tex" x1="660" y1="272" x2="654" y2="282" stroke-width="0.8"/>
+
+            <!-- TREES (flanking) -->
+            <!-- Left trees -->
+            <line class="draw sh-tree" x1="60"  y1="272" x2="60"  y2="228" stroke-width="4"/>
+            <ellipse class="draw sh-tree" cx="60"  cy="210" rx="22" ry="20"/>
+            <line class="draw sh-tree" x1="110" y1="272" x2="110" y2="238" stroke-width="3"/>
+            <ellipse class="draw sh-tree" cx="110" cy="222" rx="16" ry="18"/>
+            <line class="draw sh-tree" x1="30"  y1="272" x2="30"  y2="240" stroke-width="3"/>
+            <ellipse class="draw sh-tree" cx="30"  cy="224" rx="14" ry="16"/>
+            <!-- Right trees -->
+            <line class="draw sh-tree" x1="640" y1="272" x2="640" y2="228" stroke-width="4"/>
+            <ellipse class="draw sh-tree" cx="640" cy="210" rx="22" ry="20"/>
+            <line class="draw sh-tree" x1="590" y1="272" x2="590" y2="240" stroke-width="3"/>
+            <ellipse class="draw sh-tree" cx="590" cy="222" rx="17" ry="18"/>
+            <line class="draw sh-tree" x1="672" y1="272" x2="672" y2="242" stroke-width="3"/>
+            <ellipse class="draw sh-tree" cx="672" cy="226" rx="15" ry="17"/>
+
+            <!-- PLATFORM STRUCTURE -->
+            <!-- 4 timber piers from ground up -->
+            <rect class="draw sh-timber" x="194" y="222" width="10" height="50" rx="1"/>
+            <rect class="draw sh-timber" x="254" y="222" width="10" height="50" rx="1"/>
+            <rect class="draw sh-timber" x="436" y="222" width="10" height="50" rx="1"/>
+            <rect class="draw sh-timber" x="496" y="222" width="10" height="50" rx="1"/>
+            <!-- Pier footings (small squares at ground) -->
+            <rect class="draw sh-footing" x="190" y="268" width="18" height="6" rx="0.5"/>
+            <rect class="draw sh-footing" x="250" y="268" width="18" height="6" rx="0.5"/>
+            <rect class="draw sh-footing" x="432" y="268" width="18" height="6" rx="0.5"/>
+            <rect class="draw sh-footing" x="492" y="268" width="18" height="6" rx="0.5"/>
+
+            <!-- Floor beam (horizontal across all piers) -->
+            <rect class="draw sh-timber" x="191" y="216" width="316" height="10" rx="1"/>
+            <!-- Floor joist detail lines -->
+            <line class="draw sh-joist" x1="230" y1="216" x2="230" y2="226" stroke-width="0.8"/>
+            <line class="draw sh-joist" x1="270" y1="216" x2="270" y2="226" stroke-width="0.8"/>
+            <line class="draw sh-joist" x1="310" y1="216" x2="310" y2="226" stroke-width="0.8"/>
+            <line class="draw sh-joist" x1="350" y1="216" x2="350" y2="226" stroke-width="0.8"/>
+            <line class="draw sh-joist" x1="390" y1="216" x2="390" y2="226" stroke-width="0.8"/>
+            <line class="draw sh-joist" x1="430" y1="216" x2="430" y2="226" stroke-width="0.8"/>
+            <line class="draw sh-joist" x1="470" y1="216" x2="470" y2="226" stroke-width="0.8"/>
+
+            <!-- Floor deck (top surface line) -->
+            <line class="draw sh-deck" x1="188" y1="216" x2="512" y2="216" stroke-width="2"/>
+
+            <!-- WALL POSTS (4 corners, on top of deck) -->
+            <line class="draw sh-post" x1="200" y1="216" x2="200" y2="140" stroke-width="5"/>
+            <line class="draw sh-post" x1="500" y1="216" x2="500" y2="140" stroke-width="5"/>
+            <!-- Inner wall posts -->
+            <line class="draw sh-post" x1="260" y1="216" x2="260" y2="140" stroke-width="3"/>
+            <line class="draw sh-post" x1="440" y1="216" x2="440" y2="140" stroke-width="3"/>
+
+            <!-- CANVAS WALLS (dashed — lightweight, removable) -->
+            <rect class="draw sh-canvas" x="200" y="140" width="300" height="76" rx="0" stroke-width="1.2" stroke-dasharray="6 3" fill="none"/>
+            <!-- Wall horizontal rail at mid-height -->
+            <line class="draw sh-canvas-rail" x1="200" y1="178" x2="500" y2="178" stroke-width="0.8" stroke-dasharray="4 3"/>
+
+            <!-- ROOF STRUCTURE -->
+            <!-- Roof plate (wall top) -->
+            <line class="draw sh-timber" x1="196" y1="140" x2="504" y2="140" stroke-width="4"/>
+            <!-- Roof rafters (pitched, meeting at ridge) -->
+            <!-- Ridge point at x=350, y=88 -->
+            <line class="draw sh-rafter" x1="185" y1="140" x2="350" y2="88" stroke-width="3"/>
+            <line class="draw sh-rafter" x1="515" y1="140" x2="350" y2="88" stroke-width="3"/>
+            <!-- Ridge beam -->
+            <line class="draw sh-timber" x1="340" y1="88" x2="360" y2="88" stroke-width="4"/>
+            <!-- Intermediate rafters -->
+            <line class="draw sh-rafter" x1="240" y1="140" x2="350" y2="88" stroke-width="1.5"/>
+            <line class="draw sh-rafter" x1="300" y1="140" x2="350" y2="88" stroke-width="1.5"/>
+            <line class="draw sh-rafter" x1="400" y1="140" x2="350" y2="88" stroke-width="1.5"/>
+            <line class="draw sh-rafter" x1="460" y1="140" x2="350" y2="88" stroke-width="1.5"/>
+            <!-- Roof overhang lines (left and right) -->
+            <line class="draw sh-overhang" x1="165" y1="148" x2="350" y2="88" stroke-width="1" stroke-dasharray="3 2"/>
+            <line class="draw sh-overhang" x1="535" y1="148" x2="350" y2="88" stroke-width="1" stroke-dasharray="3 2"/>
+
+            <!-- Rain drip edge lines -->
+            <line class="draw sh-drip" x1="165" y1="148" x2="162" y2="160" stroke-width="0.8"/>
+            <line class="draw sh-drip" x1="535" y1="148" x2="538" y2="160" stroke-width="0.8"/>
+
+            <!-- DIMENSION / ANNOTATION LINES -->
+            <!-- Platform height annotation -->
+            <line class="draw sh-annot" x1="168" y1="216" x2="168" y2="272" stroke-width="0.7"/>
+            <line class="draw sh-annot" x1="163" y1="216" x2="173" y2="216" stroke-width="0.7"/>
+            <line class="draw sh-annot" x1="163" y1="272" x2="173" y2="272" stroke-width="0.7"/>
+            <text class="sh-annot-label" x="152" y="248" text-anchor="end" font-size="8">3 ft</text>
+            <text class="sh-annot-label" x="152" y="258" text-anchor="end" font-size="7" font-style="italic">raised</text>
+
+            <!-- Span annotation -->
+            <line class="draw sh-annot" x1="200" y1="295" x2="500" y2="295" stroke-width="0.7"/>
+            <line class="draw sh-annot" x1="200" y1="290" x2="200" y2="300" stroke-width="0.7"/>
+            <line class="draw sh-annot" x1="500" y1="290" x2="500" y2="300" stroke-width="0.7"/>
+            <text class="sh-annot-label" x="350" y="310" text-anchor="middle" font-size="8">20 ft platform</text>
+
+            <!-- LABELS -->
+            <text class="sh-label" x="350" y="75"  text-anchor="middle" font-size="9">ridge</text>
+            <text class="sh-label" x="350" y="134" text-anchor="middle" font-size="8.5">roof plate</text>
+            <text class="sh-label sh-label--canvas" x="350" y="165" text-anchor="middle" font-size="8" font-style="italic">canvas walls (removable)</text>
+            <text class="sh-label" x="350" y="231" text-anchor="middle" font-size="8.5">timber frame deck</text>
+            <text class="sh-label" x="350" y="262" text-anchor="middle" font-size="8">piers — no concrete</text>
+
+          </svg>
+        </div><!-- /.shelter-diagram -->
+
+        <div class="section-split__text">
+          <p class="section-lead">Shelter here is a question about relationship to the ground. The less a structure touches the soil, the more the soil continues to function — to drain, to breathe, to support the mycorrhizal networks that run through every forest floor.</p>
+
+          <p>Platform tents on timber piers are the primary sleeping structures. They sit 30–36 inches above grade on point loads rather than continuous foundations, allowing water and air to move freely underneath. The piers are set — not poured — meaning the structure can be removed someday without leaving a trace. Canvas walls let the structure breathe in summer and be enclosed in shoulder seasons. They also acknowledge their own impermanence: these aren't buildings meant to be permanent. They're meant to last as long as the function they serve remains appropriate.</p>
+
+          <p>The main gathering structure is heavier — post and beam, with a metal roof for water catchment and better thermal mass. It uses timber harvested from the property during stand improvement work, milled on site. The structure knows where it comes from. In a forest that is actively changing in composition and structure, having the buildings tell that story — through the species of wood in their frames, through their age — is another form of tending. <span class="text-amber">The best shelter on this land is the kind that, if you removed it, the forest would not take long to reclaim.</span></p>
+        </div>
+
+      </div><!-- /.section-split -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TOOLS & MAINTENANCE — with Seasonal Calendar
+       ============================================================ -->
+  <section id="tools" class="page-section page-section--alt">
+    <div class="container">
+
+      <p class="field-label reveal">Tools &amp; Maintenance</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">The tool inventory here is deliberately small. Not because tools are unimportant — they're essential — but because maintaining a large collection of complex machinery is itself a burden that pulls attention away from the land. Every tool that needs electricity, fuel, or specialized parts is a vulnerability. Every hand tool that can be sharpened and repaired on site is a kind of resilience.</p>
+
+        <p class="reveal">The core kit: a crosscut saw, a felling axe, splitting maul, drawknife, hand planes, chisels, and a good set of files. A small chainsaw for breakdown work. A rototiller for the garden. A single-cylinder diesel tractor — because some work genuinely requires it, and a well-maintained simple machine is more trustworthy than a fleet of finicky ones. The measure of a tool here isn't its power; it's whether one person can understand, maintain, and repair it without sending away for parts.</p>
+
+        <p class="reveal">Maintenance follows a seasonal rhythm. The calendar below records what the land and its systems require, month by month — not as a rigid schedule but as an orientation. <span class="text-amber">The work is always in conversation with the actual conditions of the year.</span></p>
+      </div>
+
+      <!-- Seasonal Calendar -->
+      <div class="calendar-wrap reveal">
+        <p class="field-label" style="margin-bottom:2rem;">Seasonal Calendar</p>
+        <div class="calendar-canvas-wrap">
+          <canvas id="seasonal-calendar" width="480" height="480" aria-label="Interactive seasonal calendar wheel — click a month to see tasks"></canvas>
+          <div class="calendar-task-panel" id="calendar-panel">
+            <p class="calendar-task-panel__month" id="panel-month">Select a month</p>
+            <ul class="calendar-task-panel__tasks" id="panel-tasks">
+              <li>Click any segment of the calendar to see that month's tasks and observations.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="calendar-note">Bird breeding season (May–Aug) — avoid clearing, trail-cutting, and loud machinery near nesting habitat.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="js/practice.js"></script>
+</body>
+</html>

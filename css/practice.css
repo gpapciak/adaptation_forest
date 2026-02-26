@@ -1,0 +1,677 @@
+/* ============================================================
+   Adaptation Forest — practice.css
+   Page-specific styles for practice.html
+   ============================================================ */
+
+/* ============================================================
+   Page Header accent
+   ============================================================ */
+.page-practice .page-header {
+  background: linear-gradient(170deg, var(--clr-humus) 0%, #080d09 100%);
+}
+
+.page-practice .page-header::before {
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(30, 60, 30, 0.18) 0%, transparent 70%);
+}
+
+/* ============================================================
+   Section alternating background
+   ============================================================ */
+.page-section--alt {
+  background: rgba(45, 74, 45, 0.04);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* ============================================================
+   Section Split (text + diagram side by side)
+   ============================================================ */
+.section-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.section-split__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-split__text p {
+  font-family: var(--ff-body);
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: rgba(232, 228, 220, 0.75);
+  line-height: 1.9;
+}
+
+.section-split__text .section-lead {
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  color: rgba(232, 228, 220, 0.9);
+  font-weight: 300;
+}
+
+/* ============================================================
+   Site Plan SVG
+   ============================================================ */
+.site-plan {
+  width: 100%;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  background: rgba(10, 10, 8, 0.6);
+  overflow: hidden;
+  padding: 0.75rem 0.75rem 0.5rem;
+}
+
+.site-plan-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+}
+
+.site-plan-svg .tree-dot {
+  stroke: var(--clr-moss);
+  opacity: 0.55;
+}
+
+.site-plan-svg .contour {
+  stroke: var(--clr-lichen);
+  opacity: 0.22;
+}
+
+.site-plan-svg .trail {
+  stroke: var(--clr-amber);
+  opacity: 0.55;
+}
+
+.site-plan-svg .stream {
+  stroke: #4a7a9b;
+  opacity: 0.6;
+}
+
+.site-plan-svg .structure {
+  stroke: var(--clr-birch);
+  opacity: 0.9;
+}
+
+.site-plan-svg .structure-detail {
+  stroke: var(--clr-lichen);
+  opacity: 0.5;
+}
+
+.site-plan-svg .site-label {
+  font-family: var(--ff-body);
+  letter-spacing: 0.05em;
+  fill: var(--clr-lichen);
+  opacity: 0.75;
+}
+
+.site-plan-svg .compass text {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
+.site-plan-svg .compass line {
+  stroke: var(--clr-lichen);
+  opacity: 0.4;
+}
+
+/* Site plan legend */
+.site-plan-legend {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0.5rem 0.5rem 0.25rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-item::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.legend-item--trail::before {
+  background: var(--clr-amber);
+  opacity: 0.7;
+  border-top: 2px dashed var(--clr-amber);
+  height: 0;
+}
+
+.legend-item--stream::before {
+  background: #4a7a9b;
+}
+
+.legend-item--structure::before {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--clr-birch);
+  background: transparent;
+  border-radius: 1px;
+}
+
+.legend-item--tree::before {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--clr-moss);
+  border-radius: 50%;
+  background: transparent;
+}
+
+/* ============================================================
+   Seasonal Calendar (placeholder — Section 6)
+   ============================================================ */
+.calendar-wrap {
+  margin-top: 4rem;
+}
+
+.calendar-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.calendar-canvas-wrap canvas {
+  border-radius: 50%;
+  display: block;
+}
+
+.calendar-task-panel {
+  flex: 0 0 280px;
+  background: rgba(45, 74, 45, 0.06);
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  min-height: 200px;
+}
+
+.calendar-task-panel__month {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--clr-amber);
+  margin-bottom: 0.75rem;
+}
+
+.calendar-task-panel__tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.calendar-task-panel__tasks li {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  color: rgba(232, 228, 220, 0.75);
+  line-height: 1.55;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.calendar-task-panel__tasks li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--clr-amber);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   Energy Diagram — Section 3
+   ============================================================ */
+.energy-diagram {
+  width: 100%;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  background: rgba(10, 10, 8, 0.55);
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.energy-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+}
+
+.energy-svg .e-grid {
+  stroke: var(--clr-lichen);
+  opacity: 0.08;
+}
+
+.energy-svg .e-component {
+  stroke: var(--clr-birch);
+  opacity: 0.85;
+}
+
+.energy-svg .e-sun {
+  stroke: var(--clr-amber);
+  opacity: 0.85;
+}
+
+.energy-svg .e-wire {
+  stroke: var(--clr-amber);
+  opacity: 0.6;
+}
+
+.energy-svg .e-arrow {
+  stroke: none;
+  fill: var(--clr-amber);
+  opacity: 0.6;
+}
+
+.energy-svg .e-cell {
+  stroke: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+.energy-svg .e-detail {
+  stroke: var(--clr-lichen);
+  opacity: 0.35;
+}
+
+.energy-svg .e-terminal {
+  stroke: var(--clr-birch);
+  opacity: 0.55;
+}
+
+.energy-svg .e-icon {
+  stroke: var(--clr-lichen);
+  opacity: 0.6;
+}
+
+.energy-svg .e-icon-text {
+  fill: var(--clr-lichen);
+  opacity: 0.6;
+  font-family: var(--ff-body);
+  letter-spacing: 0.05em;
+}
+
+.energy-svg .e-label {
+  font-family: var(--ff-body);
+  letter-spacing: 0.08em;
+  fill: var(--clr-lichen);
+  opacity: 0.7;
+}
+
+.energy-svg .e-flow-label {
+  font-family: var(--ff-body);
+  font-style: italic;
+  fill: var(--clr-amber);
+  opacity: 0.45;
+}
+
+/* ============================================================
+   Water Diagram — Section 4
+   ============================================================ */
+.water-diagram {
+  width: 100%;
+  margin-top: 3.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  background: rgba(10, 10, 8, 0.55);
+  overflow: hidden;
+  padding: 0.75rem;
+}
+
+.water-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+}
+
+.water-svg .w-cloud {
+  stroke: var(--clr-lichen);
+  opacity: 0.4;
+}
+
+.water-svg .w-rain {
+  stroke: #4a7a9b;
+  opacity: 0.55;
+}
+
+.water-svg .w-terrain {
+  stroke: var(--clr-lichen);
+  opacity: 0.5;
+}
+
+.water-svg .w-subsoil {
+  stroke: var(--clr-lichen);
+  opacity: 0.2;
+}
+
+.water-svg .w-tree {
+  stroke: var(--clr-moss);
+  opacity: 0.65;
+  fill: none;
+}
+
+.water-svg .w-spring {
+  stroke: #4a7a9b;
+  opacity: 0.75;
+}
+
+.water-svg .w-flow-under {
+  stroke: #4a7a9b;
+  opacity: 0.35;
+}
+
+.water-svg .w-flow-arrow {
+  fill: #4a7a9b;
+}
+
+.water-svg .w-pipe {
+  stroke: var(--clr-amber);
+  opacity: 0.55;
+}
+
+.water-svg .w-cistern {
+  stroke: var(--clr-birch);
+  opacity: 0.8;
+}
+
+.water-svg .w-detail {
+  stroke: #4a7a9b;
+  opacity: 0.45;
+}
+
+.water-svg .w-structure {
+  stroke: var(--clr-birch);
+  opacity: 0.75;
+}
+
+.water-svg .w-stream {
+  stroke: #4a7a9b;
+  opacity: 0.65;
+}
+
+.water-svg .w-runoff {
+  stroke: #4a7a9b;
+  opacity: 0.3;
+}
+
+.water-svg .w-label {
+  font-family: var(--ff-body);
+  letter-spacing: 0.07em;
+  fill: var(--clr-lichen);
+  opacity: 0.8;
+}
+
+.water-svg .w-label--dim {
+  opacity: 0.45;
+}
+
+.water-svg .w-elev {
+  stroke: var(--clr-lichen);
+  opacity: 0.25;
+}
+
+.water-svg .w-elev-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.35;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   Section Split — flipped (diagram left, text right)
+   ============================================================ */
+.section-split--flip {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-split--flip > *:first-child { order: 1; }
+.section-split--flip > *:last-child  { order: 2; }
+
+@media (max-width: 860px) {
+  .section-split--flip > *:first-child { order: 2; }
+  .section-split--flip > *:last-child  { order: 1; }
+}
+
+/* ============================================================
+   Shelter Diagram — Section 5
+   ============================================================ */
+.shelter-diagram {
+  width: 100%;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  background: rgba(10, 10, 8, 0.55);
+  overflow: hidden;
+  padding: 0.75rem;
+}
+
+.shelter-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+}
+
+.shelter-svg .sh-ground {
+  stroke: var(--clr-lichen);
+  opacity: 0.5;
+}
+
+.shelter-svg .sh-ground-tex {
+  stroke: var(--clr-lichen);
+  opacity: 0.3;
+}
+
+.shelter-svg .sh-tree {
+  stroke: var(--clr-moss);
+  opacity: 0.6;
+  fill: none;
+}
+
+.shelter-svg .sh-timber {
+  stroke: var(--clr-birch);
+  opacity: 0.85;
+  fill: none;
+}
+
+.shelter-svg .sh-footing {
+  stroke: var(--clr-lichen);
+  opacity: 0.55;
+  fill: none;
+}
+
+.shelter-svg .sh-joist {
+  stroke: var(--clr-lichen);
+  opacity: 0.35;
+}
+
+.shelter-svg .sh-deck {
+  stroke: var(--clr-birch);
+  opacity: 0.7;
+}
+
+.shelter-svg .sh-post {
+  stroke: var(--clr-birch);
+  opacity: 0.85;
+  fill: none;
+}
+
+.shelter-svg .sh-canvas {
+  stroke: var(--clr-lichen);
+  opacity: 0.5;
+}
+
+.shelter-svg .sh-canvas-rail {
+  stroke: var(--clr-lichen);
+  opacity: 0.3;
+}
+
+.shelter-svg .sh-rafter {
+  stroke: var(--clr-birch);
+  opacity: 0.7;
+  fill: none;
+}
+
+.shelter-svg .sh-overhang {
+  stroke: var(--clr-lichen);
+  opacity: 0.4;
+  fill: none;
+}
+
+.shelter-svg .sh-drip {
+  stroke: #4a7a9b;
+  opacity: 0.4;
+}
+
+.shelter-svg .sh-annot {
+  stroke: var(--clr-lichen);
+  opacity: 0.25;
+}
+
+.shelter-svg .sh-annot-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.45;
+  letter-spacing: 0.04em;
+}
+
+.shelter-svg .sh-label {
+  font-family: var(--ff-body);
+  letter-spacing: 0.07em;
+  fill: var(--clr-lichen);
+  opacity: 0.65;
+}
+
+.shelter-svg .sh-label--canvas {
+  opacity: 0.4;
+}
+
+/* ============================================================
+   Seasonal Calendar — Section 6
+   ============================================================ */
+.calendar-wrap {
+  margin-top: 4rem;
+}
+
+.calendar-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.calendar-canvas-wrap canvas {
+  display: block;
+  max-width: 480px;
+  width: 100%;
+  cursor: default;
+  border-radius: 50%;
+}
+
+.calendar-task-panel {
+  flex: 0 0 280px;
+  background: rgba(45, 74, 45, 0.06);
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  min-height: 220px;
+}
+
+.calendar-task-panel__month {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--clr-amber);
+  margin-bottom: 0.85rem;
+}
+
+.calendar-task-panel__tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.calendar-task-panel__tasks li {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  color: rgba(232, 228, 220, 0.75);
+  line-height: 1.6;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.calendar-task-panel__tasks li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--clr-amber);
+  opacity: 0.55;
+}
+
+.calendar-note {
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  color: var(--clr-cardinal);
+  opacity: 0.65;
+  text-align: center;
+  margin-top: 2rem;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 860px) {
+  .section-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .calendar-canvas-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-task-panel {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-plan-legend {
+    gap: 1rem;
+  }
+}

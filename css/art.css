@@ -1,0 +1,554 @@
+/* ============================================================
+   Adaptation Forest — art.css
+   Art in the Forest page — pages/art.html
+   ============================================================ */
+
+/* ============================================================
+   Page Header — more atmospheric, more height
+   ============================================================ */
+.page-art .page-header {
+  padding-top: 16rem;
+  padding-bottom: 12rem;
+  background: linear-gradient(180deg, var(--clr-humus) 0%, #050906 55%, #080d07 100%);
+  text-align: center;
+}
+
+.page-art .page-header::before {
+  background: radial-gradient(ellipse 55% 55% at 50% 15%,
+    rgba(45, 74, 45, 0.10) 0%, transparent 70%);
+}
+
+/* Larger, more open title */
+.art-page-title {
+  font-size: clamp(3.2rem, 9vw, 7rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin-bottom: 2.5rem;
+}
+
+.art-page-title em {
+  color: var(--clr-moss);
+  font-style: italic;
+}
+
+.art-page-subtitle {
+  font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+  line-height: 1.85;
+  color: rgba(232, 228, 220, 0.55);
+  letter-spacing: 0.01em;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Art Sections — generous breathing room
+   ============================================================ */
+.art-section {
+  padding-block: 8rem;
+}
+
+/* Centered art prose — wider than default, more air */
+.art-prose {
+  max-width: 740px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.art-prose p {
+  font-family: var(--ff-body);
+  font-size: clamp(1rem, 1.75vw, 1.12rem);
+  color: rgba(232, 228, 220, 0.76);
+  line-height: 2.05;
+}
+
+.art-prose .section-lead {
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  color: rgba(232, 228, 220, 0.92);
+  font-weight: 300;
+}
+
+/* Illustration caption */
+.art-illustration-caption {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  color: var(--clr-lichen);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+}
+
+/* Pull quote */
+.art-pullquote {
+  max-width: 660px;
+  margin: 4rem auto;
+  text-align: center;
+  padding-inline: 2rem;
+  position: relative;
+}
+
+.art-pullquote::before,
+.art-pullquote::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--clr-amber);
+  opacity: 0.35;
+  margin-inline: auto;
+}
+
+.art-pullquote::before { margin-bottom: 2.25rem; }
+.art-pullquote::after  { margin-top: 2.25rem; }
+
+.art-pullquote p {
+  font-family: var(--ff-display);
+  font-size: clamp(1.15rem, 2.3vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--clr-amber);
+  line-height: 1.72;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   Leaf Spiral
+   ============================================================ */
+.leaf-spiral-container {
+  margin: 5rem auto 0;
+  max-width: 580px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaf-spiral-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* Leaf element colors via CSS */
+.leaf-outline {
+  stroke: var(--clr-lichen);
+  opacity: 0.72;
+}
+
+.leaf-midrib {
+  stroke: var(--clr-lichen);
+  opacity: 0.38;
+}
+
+.leaf-vein {
+  stroke: var(--clr-lichen);
+  opacity: 0.22;
+}
+
+/* ============================================================
+   Art Dividers — organic SVG separators
+   ============================================================ */
+.art-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  padding-block: 0;
+}
+
+.art-divider svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  opacity: 0.28;
+}
+
+/* ============================================================
+   Light Canvas — interactive installation
+   ============================================================ */
+.light-canvas-wrap {
+  margin: 4rem auto 0;
+  max-width: 820px;
+}
+
+.light-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+  cursor: crosshair;
+  border: 1px solid rgba(138, 145, 122, 0.15);
+}
+
+.canvas-hint {
+  text-align: center;
+  margin-top: 0.85rem;
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+.canvas-clear {
+  display: block;
+  margin: 0.65rem auto 0;
+  background: none;
+  border: 1px solid rgba(138, 145, 122, 0.22);
+  color: var(--clr-lichen);
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.canvas-clear:hover {
+  opacity: 0.85;
+  border-color: rgba(196, 136, 58, 0.5);
+  color: var(--clr-amber);
+}
+
+/* ============================================================
+   Gallery Grid
+   ============================================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4.5rem;
+}
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gallery-card__image {
+  aspect-ratio: 4 / 3;
+  background: #07090605;
+  border: 1px solid rgba(138, 145, 122, 0.14);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #07090a;
+}
+
+/* Subtle hatched texture — suggests an artwork surface */
+.gallery-card__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    88deg,
+    rgba(138, 145, 122, 0.035) 0px,
+    rgba(138, 145, 122, 0.035) 1px,
+    transparent 1px,
+    transparent 26px
+  ),
+  repeating-linear-gradient(
+    178deg,
+    rgba(138, 145, 122, 0.02) 0px,
+    rgba(138, 145, 122, 0.02) 1px,
+    transparent 1px,
+    transparent 42px
+  );
+}
+
+.gallery-card__placeholder {
+  font-family: var(--ff-display);
+  font-size: 0.8rem;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: var(--clr-lichen);
+  opacity: 0.22;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-card__title {
+  font-family: var(--ff-display);
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.gallery-card__caption {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  color: var(--clr-lichen);
+  opacity: 0.5;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Gallery closing note */
+.gallery-note {
+  margin-top: 3.5rem;
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--clr-lichen);
+  opacity: 0.45;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Meridian — Installation Section
+   ============================================================ */
+.art-section--installation {
+  background: rgba(45, 74, 45, 0.03);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.installation-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--clr-birch);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.installation-tagline {
+  font-family: var(--ff-body);
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  opacity: 0.75;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Meridian SVG container */
+.meridian-diagram {
+  width: 100%;
+  margin-top: 4rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  background: rgba(8, 10, 8, 0.6);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.meridian-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tree forms — moss colored */
+.meridian-svg .mer-tree {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.7;
+}
+
+/* Background tree field — appears at low opacity without animation */
+.meridian-svg .mer-tree-field {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.25;
+}
+
+.meridian-svg .mer-ground {
+  stroke: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+.meridian-svg .mer-ground-tex {
+  stroke: var(--clr-lichen);
+  opacity: 0.25;
+}
+
+/* Installation members — birch, precise */
+.meridian-svg .inst-lower,
+.meridian-svg .inst-upper {
+  stroke: var(--clr-birch);
+  opacity: 0.9;
+}
+
+.meridian-svg .inst-verticals {
+  stroke: var(--clr-birch);
+  opacity: 0.7;
+}
+
+.meridian-svg .inst-braces {
+  stroke: var(--clr-lichen);
+  opacity: 0.55;
+}
+
+/* Connection nodes — small filled amber squares */
+.meridian-svg .inst-node {
+  fill: var(--clr-amber);
+  stroke: none;
+  opacity: 0.8;
+}
+
+/* Right-angle annotation marks */
+.meridian-svg .inst-angle {
+  stroke: var(--clr-amber);
+  opacity: 0.4;
+}
+
+/* Entrance / ridge annotations */
+.meridian-svg .mer-annot {
+  stroke: var(--clr-lichen);
+  opacity: 0.35;
+}
+
+.meridian-svg .mer-annot-fill {
+  fill: var(--clr-lichen);
+  opacity: 0.35;
+  stroke: none;
+}
+
+.meridian-svg .mer-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.45;
+  letter-spacing: 0.06em;
+}
+
+.meridian-svg .mer-title-label {
+  font-family: var(--ff-display);
+  fill: var(--clr-lichen);
+  opacity: 0.12;
+}
+
+/* Installation specs table */
+.installation-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 3.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.installation-spec {
+  padding: 1.4rem 1.6rem;
+  border-right: 1px solid var(--clr-border);
+}
+
+.installation-spec:last-child {
+  border-right: none;
+}
+
+.installation-specs dt {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.installation-specs dd {
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  color: rgba(232, 228, 220, 0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .art-section {
+    padding-block: 5.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .leaf-spiral-container {
+    max-width: 420px;
+  }
+
+  .installation-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .installation-spec:nth-child(2) {
+    border-right: none;
+  }
+
+  .installation-spec:nth-child(1),
+  .installation-spec:nth-child(2) {
+    border-bottom: 1px solid var(--clr-border);
+  }
+}
+
+@media (max-width: 560px) {
+  .page-art .page-header {
+    padding-top: 11rem;
+    padding-bottom: 8rem;
+  }
+
+  .art-section {
+    padding-block: 4rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin-inline: auto;
+    gap: 2rem;
+  }
+
+  .art-pullquote {
+    padding-inline: 0;
+  }
+
+  .leaf-spiral-container {
+    max-width: 320px;
+  }
+
+  .installation-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .installation-spec {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .installation-spec:last-child {
+    border-bottom: none;
+  }
+
+  .installation-spec:nth-child(1),
+  .installation-spec:nth-child(2) {
+    border-bottom: 1px solid var(--clr-border);
+  }
+}
