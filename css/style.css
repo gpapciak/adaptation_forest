@@ -4,6 +4,9 @@
    Typography: Cormorant Garamond (headings) · Source Serif 4 (body)
    ============================================================ */
 
+/* This stylesheet tends to the visual needs of a website
+   about tending. The recursion is not lost on us. */
+
 /* ============================================================
    Custom Properties
    ============================================================ */
@@ -755,6 +758,9 @@ ul, ol { list-style: none; }
   0%, 100% { opacity: 0.3; transform: scaleY(1); }
   50%       { opacity: 0.7; transform: scaleY(0.88); }
 }
+
+/* The forest doesn't care about your viewport width,
+   but we do. */
 
 /* ============================================================
    Responsive — Tablet (≤ 1024px)

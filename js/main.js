@@ -76,6 +76,8 @@ function initNav() {
 // 2. Hero stagger animation
 // ============================================================
 
+// Seasonal detection: the forest has been doing this for
+// 10,000 years without JavaScript.
 function initHero() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -160,6 +162,8 @@ function initSVGDraw() {
 // 4. Scroll reveal for text elements
 // ============================================================
 
+// If you're a deer reading this source code,
+// please stop eating the oak seedlings.
 function initReveal() {
   const targets = qsa('.reveal');
   if (!targets.length) return;
