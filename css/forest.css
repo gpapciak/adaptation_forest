@@ -714,3 +714,52 @@
   .threat-item { grid-template-columns: 1fr; }
   .threat-icon-wrap { display: none; }
 }
+
+/* ============================================================
+   Section Split — shared two-column layout
+   Used by practice.html, garden.html and any future sub-page
+   ============================================================ */
+.section-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.section-split__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-split__text p {
+  font-family: var(--ff-body);
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: rgba(232, 228, 220, 0.75);
+  line-height: 1.9;
+}
+
+.section-split__text .section-lead {
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  color: rgba(232, 228, 220, 0.9);
+  font-weight: 300;
+}
+
+/* Flipped variant: SVG left, text right */
+.section-split--flip {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-split--flip > *:first-child { order: 1; }
+.section-split--flip > *:last-child  { order: 2; }
+
+@media (max-width: 860px) {
+  .section-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .section-split--flip > *:first-child { order: 2; }
+  .section-split--flip > *:last-child  { order: 1; }
+}

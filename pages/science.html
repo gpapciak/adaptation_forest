@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Data is not the opposite of forest mind. It is part of it.
+       You cannot tend what you cannot measure. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Science at Adaptation Forest — climate projections, species vulnerability, carbon accounting, monitoring protocols, and resources.">
+  <title>The Science — Adaptation Forest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/forest.css">
+  <link rel="stylesheet" href="../css/science.css">
+</head>
+<body class="page-science">
+
+  <nav class="page-nav" aria-label="Site navigation">
+    <a href="../index.html" class="page-nav__back">← Back to home</a>
+    <a href="../index.html" class="page-nav__logo">Adaptation Forest</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <p class="page-eyebrow">06 — The Science</p>
+      <h1 class="page-title">The <em>Science</em></h1>
+      <p class="page-subtitle">Forest mind is evidence-based. Here's the evidence.</p>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       CLIMATE PROJECTIONS
+       ============================================================ -->
+  <section id="climate" class="page-section">
+    <div class="container">
+
+      <p class="field-label reveal">Climate Projections</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">The northeastern United States is warming faster than the global average. Temperature records, phenological data, range-shift observations, and climate model ensembles are all pointing in the same direction. The projections differ in magnitude depending on how aggressively the global economy reduces emissions — but they do not differ in direction. The forest is already responding, and the management choices made in the next 20 years will determine whether that response is managed or chaotic.</p>
+
+        <p class="reveal">What models project for the northeastern US by 2100: temperatures +3 to 10°F above the late-twentieth-century baseline, more annual precipitation overall, but distributed differently — more intense rain events, less snowpack, longer summer dry spells between storms. More severe wind and ice events. A longer frost-free growing season — already measurably longer than in 1970 — that extends both spring and fall but also increases evapotranspiration demand during summer. The net effect on water availability in forests is negative despite more precipitation on paper.</p>
+
+        <p class="reveal">These projections aren't predictions of doom. They're the conditions we're tending within. Forest mind starts with accepting what's measurably true.</p>
+      </div>
+
+      <!-- Climate projection line graph -->
+      <div class="climate-chart-wrap reveal">
+        <canvas id="climate-chart" width="900" height="360"
+                aria-label="Line chart showing temperature projections for the northeastern US, 2020 to 2100, with low and high emission scenarios">
+        </canvas>
+        <div class="chart-legend">
+          <span class="chart-legend__item chart-legend__item--low">
+            <span class="chart-legend__swatch"></span>
+            Lower emissions (SSP2 / RCP 4.5) — +3°F by 2100
+          </span>
+          <span class="chart-legend__item chart-legend__item--high">
+            <span class="chart-legend__swatch"></span>
+            Higher emissions (SSP5 / RCP 8.5) — +10°F by 2100
+          </span>
+        </div>
+        <p class="chart-source">Source: IPCC AR6 · NOAA National Climate Assessment · Northeast Regional Climate Center. Values represent median projections above 1986–2015 baseline for the northeastern US.</p>
+      </div>
+
+      <div class="prose-column" style="margin-top:3.5rem;">
+        <div class="sci-bullets reveal">
+          <div class="sci-bullet">
+            <span class="sci-bullet__val">+3–10°F</span>
+            <span class="sci-bullet__label">temperature rise by 2100 (low to high scenarios)</span>
+          </div>
+          <div class="sci-bullet">
+            <span class="sci-bullet__val">+10–20%</span>
+            <span class="sci-bullet__label">more annual precipitation — but less as snow</span>
+          </div>
+          <div class="sci-bullet">
+            <span class="sci-bullet__val">2–4×</span>
+            <span class="sci-bullet__label">more frequent summer drought periods</span>
+          </div>
+          <div class="sci-bullet">
+            <span class="sci-bullet__val">14 days</span>
+            <span class="sci-bullet__label">longer frost-free season already observed since 1980</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPECIES VULNERABILITY ASSESSMENT
+       ============================================================ -->
+  <section id="species" class="page-section page-section--field">
+    <div class="container">
+
+      <p class="field-label reveal">Species Vulnerability Assessment</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">Not all trees face the same future. The USDA Forest Service Climate Change Tree Atlas models projected habitat suitability for over 130 northeastern tree species under different warming scenarios. The table below summarizes the most relevant species on this property and in this region — the ones whose presence, decline, or expansion will shape what this forest looks like in 50 years.</p>
+
+        <p class="reveal">This table is the basis for every management decision on the property. Tending means knowing which members of the community are struggling and why. Species rated Poor for climate adaptation aren't being written off — they're being tended with particular attention, because their decline would change everything around them. But the planting program also reflects this table: the species being added to the understory and gap planting are weighted toward those with Good or Fair adaptation trajectories.</p>
+      </div>
+
+      <!-- Sortable table -->
+      <div class="species-table-wrap reveal">
+        <div class="species-table-scroll">
+          <table class="species-table" id="species-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-col="species">
+                  Species <span class="sort-arrow" aria-hidden="true">↕</span>
+                </th>
+                <th class="sortable" data-col="adaptation">
+                  Climate Adaptation <span class="sort-arrow" aria-hidden="true">↕</span>
+                </th>
+                <th class="sortable" data-col="storm">
+                  Storm <span class="sort-arrow" aria-hidden="true">↕</span>
+                </th>
+                <th class="sortable" data-col="drought">
+                  Drought <span class="sort-arrow" aria-hidden="true">↕</span>
+                </th>
+                <th class="sortable" data-col="pest">
+                  Pest / Disease <span class="sort-arrow" aria-hidden="true">↕</span>
+                </th>
+                <th class="sortable" data-col="regen">
+                  Regeneration <span class="sort-arrow" aria-hidden="true">↕</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-species="Red Maple" data-adaptation="Good" data-storm="Fair" data-drought="Fair" data-pest="Fair" data-regen="Good">
+                <td class="species-name"><strong>Red Maple</strong> <em>Acer rubrum</em></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+              </tr>
+              <tr class="row--vulnerable" data-species="Sugar Maple" data-adaptation="Poor" data-storm="Good" data-drought="Poor" data-pest="Fair" data-regen="Fair">
+                <td class="species-name"><strong>Sugar Maple</strong> <em>Acer saccharum</em></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+              </tr>
+              <tr class="row--vulnerable" data-species="White Ash" data-adaptation="Poor" data-storm="Fair" data-drought="Fair" data-pest="Poor" data-regen="Poor">
+                <td class="species-name"><strong>White Ash</strong> <em>Fraxinus americana</em></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--poor">Poor</span> <span class="rating-note">EAB</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+              </tr>
+              <tr data-species="Red Oak" data-adaptation="Good" data-storm="Good" data-drought="Good" data-pest="Fair" data-regen="Good">
+                <td class="species-name"><strong>Red Oak</strong> <em>Quercus rubra</em></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+              </tr>
+              <tr data-species="Sweet Birch" data-adaptation="Fair" data-storm="Good" data-drought="Fair" data-pest="Good" data-regen="Fair">
+                <td class="species-name"><strong>Sweet Birch</strong> <em>Betula lenta</em></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+              </tr>
+              <tr data-species="Red Pine" data-adaptation="Fair" data-storm="Poor" data-drought="Fair" data-pest="Poor" data-regen="Fair">
+                <td class="species-name"><strong>Red Pine</strong> <em>Pinus resinosa</em></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+              </tr>
+              <tr class="row--vulnerable" data-species="American Beech" data-adaptation="Poor" data-storm="Good" data-drought="Fair" data-pest="Poor" data-regen="Poor">
+                <td class="species-name"><strong>American Beech</strong> <em>Fagus grandifolia</em></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--poor">Poor</span> <span class="rating-note">BBD</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+              </tr>
+              <tr data-species="Black Cherry" data-adaptation="Good" data-storm="Poor" data-drought="Fair" data-pest="Fair" data-regen="Good">
+                <td class="species-name"><strong>Black Cherry</strong> <em>Prunus serotina</em></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+              </tr>
+              <tr data-species="Yellow Birch" data-adaptation="Fair" data-storm="Good" data-drought="Fair" data-pest="Fair" data-regen="Fair">
+                <td class="species-name"><strong>Yellow Birch</strong> <em>Betula alleghaniensis</em></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+              </tr>
+              <tr class="row--vulnerable" data-species="Eastern Hemlock" data-adaptation="Poor" data-storm="Fair" data-drought="Poor" data-pest="Poor" data-regen="Fair">
+                <td class="species-name"><strong>Eastern Hemlock</strong> <em>Tsuga canadensis</em></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--poor">Poor</span> <span class="rating-note">HWA</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+              </tr>
+              <tr data-species="White Pine" data-adaptation="Good" data-storm="Poor" data-drought="Fair" data-pest="Fair" data-regen="Good">
+                <td class="species-name"><strong>White Pine</strong> <em>Pinus strobus</em></td>
+                <td><span class="rating rating--good">Good</span></td>
+                <td><span class="rating rating--poor">Poor</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--fair">Fair</span></td>
+                <td><span class="rating rating--good">Good</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <p class="table-source">Source: USDA Forest Service Climate Change Tree Atlas · EAB = Emerald Ash Borer · BBD = Beech Bark Disease · HWA = Hemlock Woolly Adelgid</p>
+          <p class="table-hint">Click column headers to sort ↕</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CARBON ACCOUNTING
+       ============================================================ -->
+  <section id="carbon" class="page-section">
+    <div class="container">
+
+      <p class="field-label reveal">Carbon Accounting</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">A mature northeastern hardwood forest stores roughly 150–200 tons of carbon per acre across all its pools — above-ground biomass, roots, dead wood, forest floor litter, and soil organic matter. Soil is typically the largest pool, and the least understood. Above-ground biomass is the most visible and the most frequently measured. All of it matters. All of it can be lost faster than it was gained.</p>
+
+        <p class="reveal">The distinction between sequestration and storage matters. Young forests sequester carbon rapidly — a 20-year-old stand might fix 1.5–2.0 tons of carbon per acre per year. Old forests sequester much more slowly, sometimes near zero annually, because growth and decomposition are roughly balanced. But old forests store vastly more carbon in total, and that stored carbon took a century or more to accumulate. When an old-growth forest is logged, decades of sequestration are needed to return to the same stock — and the soil carbon lost in the disturbance may never fully return.</p>
+
+        <p class="reveal">Carbon is the language the rest of the world uses to talk about forests. Forest mind knows the forest is more than its carbon — but it also knows that speaking this language opens doors that need opening.</p>
+      </div>
+
+      <!-- Carbon tree + pool split -->
+      <div class="section-split carbon-split reveal">
+
+        <!-- Carbon tree SVG -->
+        <div class="carbon-svg-wrap svg-animate"
+             aria-label="Diagram of a tree showing carbon stored in crown, trunk, roots, and soil, with CO2 arrows flowing in from the atmosphere"
+             role="img">
+          <svg viewBox="0 0 420 500" class="carbon-svg" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Soil fill (no draw — appears immediately, provides ground context) -->
+            <rect class="sc-soil-fill" x="0" y="298" width="420" height="202"/>
+
+            <!-- CO2 cloud -->
+            <ellipse class="draw sc-co2-cloud" cx="185" cy="40" rx="32" ry="22" stroke-width="1" fill="none"/>
+            <ellipse class="draw sc-co2-cloud" cx="210" cy="30" rx="28" ry="20" stroke-width="1" fill="none"/>
+            <ellipse class="draw sc-co2-cloud" cx="236" cy="40" rx="30" ry="22" stroke-width="1" fill="none"/>
+            <text class="sc-co2-label" x="210" y="37" text-anchor="middle" font-size="11">CO₂</text>
+
+            <!-- CO2 arrows flowing down from cloud to crown (dashed) -->
+            <path class="draw sc-co2-arrow"
+              d="M 190,62 L 190,90"
+              stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+            <path class="draw sc-co2-arrow"
+              d="M 210,58 L 210,90"
+              stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+            <path class="draw sc-co2-arrow"
+              d="M 230,62 L 230,90"
+              stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+            <!-- Arrowheads -->
+            <path class="draw sc-co2-arrow" d="M 186,87 L 190,94 L 194,87" stroke-width="1.2" fill="none"/>
+            <path class="draw sc-co2-arrow" d="M 206,87 L 210,94 L 214,87" stroke-width="1.2" fill="none"/>
+            <path class="draw sc-co2-arrow" d="M 226,87 L 230,94 L 234,87" stroke-width="1.2" fill="none"/>
+
+            <!-- Crown outline -->
+            <path class="draw sc-crown"
+              d="M 210,175 Q 95,175 82,128 Q 68,82 128,68 Q 152,48 210,52
+                 Q 268,48 292,68 Q 352,82 338,128 Q 325,175 210,175 Z"
+              stroke-width="1.6" fill="none"/>
+
+            <!-- Crown branches -->
+            <line class="draw sc-branch" x1="210" y1="175" x2="155" y2="125" stroke-width="2.5"/>
+            <line class="draw sc-branch" x1="210" y1="175" x2="265" y2="122" stroke-width="2.5"/>
+            <line class="draw sc-branch" x1="210" y1="160" x2="210" y2="96"  stroke-width="2"/>
+            <line class="draw sc-branch" x1="155" y1="125" x2="128" y2="100" stroke-width="1.6"/>
+            <line class="draw sc-branch" x1="155" y1="125" x2="162" y2="96"  stroke-width="1.6"/>
+            <line class="draw sc-branch" x1="265" y1="122" x2="292" y2="98"  stroke-width="1.6"/>
+            <line class="draw sc-branch" x1="265" y1="122" x2="258" y2="95"  stroke-width="1.6"/>
+            <line class="draw sc-branch" x1="210" y1="108" x2="192" y2="82"  stroke-width="1.2"/>
+            <line class="draw sc-branch" x1="210" y1="108" x2="228" y2="80"  stroke-width="1.2"/>
+
+            <!-- Trunk -->
+            <line class="draw sc-trunk" x1="210" y1="175" x2="210" y2="298" stroke-width="16"/>
+
+            <!-- Ground line -->
+            <line class="draw sc-ground" x1="18" y1="298" x2="402" y2="298" stroke-width="1.2"/>
+            <!-- Ground texture -->
+            <path class="draw sc-ground"
+              d="M 35,298 L 28,310 M 80,298 L 73,312 M 140,298 L 133,310
+                 M 210,298 L 203,312 M 280,298 L 273,310 M 340,298 L 333,312
+                 M 390,298 L 383,310"
+              stroke-width="0.8" fill="none"/>
+
+            <!-- Root zone — main taproot -->
+            <line class="draw sc-root" x1="210" y1="298" x2="210" y2="440" stroke-width="5"/>
+            <!-- Lateral roots upper -->
+            <path class="draw sc-root" d="M 210,320 Q 162,328 130,322 M 210,320 Q 258,328 290,322" stroke-width="2.5" fill="none"/>
+            <!-- Lateral roots middle -->
+            <path class="draw sc-root" d="M 210,355 Q 148,364 112,356 M 210,355 Q 272,364 308,356" stroke-width="2" fill="none"/>
+            <!-- Lateral roots lower -->
+            <path class="draw sc-root" d="M 210,392 Q 168,400 148,392 M 210,392 Q 252,400 272,392" stroke-width="1.5" fill="none"/>
+            <!-- Fine feeder roots -->
+            <path class="draw sc-root-fine"
+              d="M 130,322 Q 108,332 98,326 M 130,322 Q 118,334 112,342
+                 M 290,322 Q 312,332 322,326 M 290,322 Q 302,334 308,342
+                 M 112,356 Q 92,364 80,360 M 148,392 Q 130,400 118,396
+                 M 308,356 Q 328,364 340,360 M 272,392 Q 290,400 302,396"
+              stroke-width="0.9" fill="none"/>
+
+            <!-- Mycelium network in soil -->
+            <path class="draw sc-mycelium"
+              d="M 40,316 Q 90,310 140,318 Q 190,326 240,316 Q 290,306 340,318 Q 370,324 395,316"
+              stroke-width="0.6" fill="none"/>
+            <path class="draw sc-mycelium"
+              d="M 55,336 Q 105,330 155,338 Q 205,346 255,336 Q 305,326 355,338"
+              stroke-width="0.4" fill="none"/>
+            <!-- Mycelium branching -->
+            <path class="draw sc-mycelium"
+              d="M 140,318 L 135,330 M 240,316 L 245,328 M 340,318 L 335,330"
+              stroke-width="0.4" fill="none"/>
+
+          </svg>
+        </div><!-- /.carbon-svg-wrap -->
+
+        <!-- Carbon pool cards -->
+        <div class="carbon-pools">
+          <p class="carbon-pools__intro">Estimated carbon storage for 80–100 year mixed hardwood forest, northeastern US</p>
+
+          <div class="carbon-pool-card">
+            <div class="pool-bar-wrap">
+              <div class="pool-bar pool-bar--biomass" style="--pct: 36%"></div>
+            </div>
+            <div class="pool-info">
+              <span class="pool-name">Above-ground biomass</span>
+              <span class="pool-value"><span class="counter" data-target="58">0</span> <span class="pool-unit">t C/acre</span></span>
+            </div>
+            <p class="pool-note">Trunks, limbs, and crowns. Young forests accumulate fast; old forests accumulate slowly but hold more total stock.</p>
+          </div>
+
+          <div class="carbon-pool-card">
+            <div class="pool-bar-wrap">
+              <div class="pool-bar pool-bar--roots" style="--pct: 10%"></div>
+            </div>
+            <div class="pool-info">
+              <span class="pool-name">Root systems</span>
+              <span class="pool-value"><span class="counter" data-target="16">0</span> <span class="pool-unit">t C/acre</span></span>
+            </div>
+            <p class="pool-note">Coarse and fine roots. Typically 25–30% of above-ground biomass. Fine roots turn over continuously, feeding soil carbon.</p>
+          </div>
+
+          <div class="carbon-pool-card">
+            <div class="pool-bar-wrap">
+              <div class="pool-bar pool-bar--deadwood" style="--pct: 5%"></div>
+            </div>
+            <div class="pool-info">
+              <span class="pool-name">Dead wood &amp; snags</span>
+              <span class="pool-value"><span class="counter" data-target="7">0</span> <span class="pool-unit">t C/acre</span></span>
+            </div>
+            <p class="pool-note">Standing dead trees and fallen logs. Wildlife habitat and a slow-release carbon input to the soil as decomposition proceeds.</p>
+          </div>
+
+          <div class="carbon-pool-card">
+            <div class="pool-bar-wrap">
+              <div class="pool-bar pool-bar--litter" style="--pct: 3%"></div>
+            </div>
+            <div class="pool-info">
+              <span class="pool-name">Forest floor &amp; litter</span>
+              <span class="pool-value"><span class="counter" data-target="5">0</span> <span class="pool-unit">t C/acre</span></span>
+            </div>
+            <p class="pool-note">The O horizon — fresh and partially decomposed leaf litter. Highly sensitive to warming; decomposition accelerates as temperatures rise.</p>
+          </div>
+
+          <div class="carbon-pool-card carbon-pool-card--large">
+            <div class="pool-bar-wrap">
+              <div class="pool-bar pool-bar--soil" style="--pct: 48%"></div>
+            </div>
+            <div class="pool-info">
+              <span class="pool-name">Soil organic carbon</span>
+              <span class="pool-value"><span class="counter" data-target="76">0</span> <span class="pool-unit">t C/acre</span></span>
+            </div>
+            <p class="pool-note">The largest pool and the least visible. Accumulated over centuries. Highly vulnerable to disturbance — tillage, compaction, and warming can release it rapidly.</p>
+          </div>
+
+          <div class="carbon-total">
+            <span class="carbon-total__label">Estimated total</span>
+            <span class="carbon-total__value"><span class="counter" data-target="162">0</span> t C/acre</span>
+          </div>
+
+        </div><!-- /.carbon-pools -->
+
+      </div><!-- /.section-split -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MONITORING PROTOCOLS
+       ============================================================ -->
+  <section id="monitoring" class="page-section page-section--field">
+    <div class="container">
+
+      <p class="field-label reveal">Monitoring Protocols</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">Monitoring is tending with a clipboard. It's the practice of returning to the same places, asking the same questions, and being honest about what's changed. Without it, management is guesswork; with it, every decision builds on evidence accumulated over time. The protocols below are being established on this property and are documented as a template other landowners could adapt.</p>
+
+        <p class="reveal">The goal is not comprehensive scientific monitoring — this isn't a research station. The goal is informed tending: enough data, taken consistently enough, to understand whether the management choices being made are working. Change is the thing to measure. Baseline is what makes change visible.</p>
+      </div>
+
+      <div class="protocols-grid reveal">
+
+        <div class="protocol-card">
+          <div class="protocol-icon">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <!-- Camera: rectangle + lens circle -->
+              <rect class="draw proto-mark" x="4" y="12" width="36" height="26" rx="2" stroke-width="1.4" fill="none"/>
+              <circle class="draw proto-mark" cx="22" cy="25" r="8" stroke-width="1.4" fill="none"/>
+              <circle class="draw proto-mark" cx="22" cy="25" r="4" stroke-width="1" fill="none"/>
+              <path class="draw proto-mark" d="M 14,12 L 16,6 L 28,6 L 30,12" stroke-width="1.2" fill="none"/>
+              <circle class="draw proto-mark" cx="36" cy="16" r="2" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="protocol-card__title">Photo Points</h3>
+          <p class="protocol-card__desc">Fixed camera positions at 12 locations across the property — canopy gaps, forest edges, stream corridor, road cuts. Photographed quarterly (or at key seasonal moments) from the same bearing and elevation. The resulting time series makes canopy closure, invasive spread, gap regrowth, and understory change visually legible across years.</p>
+          <span class="protocol-card__freq">Quarterly · 12 stations</span>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-icon">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <!-- Inventory plot: circle with tick marks at cardinal points -->
+              <circle class="draw proto-mark" cx="22" cy="22" r="14" stroke-width="1.2" fill="none"/>
+              <line class="draw proto-mark" x1="22" y1="4"  x2="22" y2="8"  stroke-width="1.4"/>
+              <line class="draw proto-mark" x1="22" y1="36" x2="22" y2="40" stroke-width="1.4"/>
+              <line class="draw proto-mark" x1="4"  y1="22" x2="8"  y2="22" stroke-width="1.4"/>
+              <line class="draw proto-mark" x1="36" y1="22" x2="40" y2="22" stroke-width="1.4"/>
+              <circle class="draw proto-mark" cx="22" cy="22" r="3" stroke-width="1" fill="none"/>
+              <!-- Tree symbols inside -->
+              <line class="draw proto-mark" x1="18" y1="22" x2="18" y2="17" stroke-width="1.8"/>
+              <line class="draw proto-mark" x1="26" y1="22" x2="26" y2="16" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <h3 class="protocol-card__title">Inventory Plots</h3>
+          <p class="protocol-card__desc">Six permanent circular plots (1/5 acre each), distributed across the major forest types on the property. Each plot records: species and diameter of all stems above 2-inch DBH, tree condition, crown class, and regeneration species/density. Re-measured every 5 years. This data drives the forest management plan and tracks growth rates, mortality, and regeneration success over time.</p>
+          <span class="protocol-card__freq">Every 5 years · 6 plots</span>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-icon">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <!-- Mapping: grid + pin -->
+              <rect class="draw proto-mark" x="4" y="6" width="32" height="30" rx="1.5" stroke-width="1.2" fill="none"/>
+              <line class="draw proto-mark" x1="4"  y1="16" x2="36" y2="16" stroke-width="0.7"/>
+              <line class="draw proto-mark" x1="4"  y1="26" x2="36" y2="26" stroke-width="0.7"/>
+              <line class="draw proto-mark" x1="15" y1="6"  x2="15" y2="36" stroke-width="0.7"/>
+              <line class="draw proto-mark" x1="25" y1="6"  x2="25" y2="36" stroke-width="0.7"/>
+              <!-- Pin -->
+              <path class="draw proto-mark" d="M 30,8 Q 35,8 35,13 Q 35,18 30,22 L 30,30" stroke-width="1.4" fill="none"/>
+              <circle class="draw proto-mark" cx="30" cy="10" r="3" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="protocol-card__title">Invasive Species Mapping</h3>
+          <p class="protocol-card__desc">Annual GPS-based mapping of all known invasive plant populations: multiflora rose, bittersweet, garlic mustard, Japanese knotweed, barberry, and others. Polygon boundaries are updated each year to track spread or retreat in response to control efforts. The map layer integrates with the management plan — active control zones are prioritized based on spread rate and proximity to high-value habitat.</p>
+          <span class="protocol-card__freq">Annual survey · GPS mapped</span>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-icon">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <!-- Bird: stylized flying bird silhouette -->
+              <path class="draw proto-mark"
+                d="M 22,24 Q 14,16 6,18 Q 12,22 22,24 Q 32,22 38,18 Q 30,16 22,24"
+                stroke-width="1.4" fill="none"/>
+              <path class="draw proto-mark" d="M 22,24 Q 22,28 20,34" stroke-width="1.2" fill="none"/>
+              <path class="draw proto-mark" d="M 22,24 Q 24,27 26,26" stroke-width="1" fill="none"/>
+              <!-- Second smaller bird -->
+              <path class="draw proto-mark"
+                d="M 34,14 Q 29,10 24,12 Q 28,13 34,14 Q 39,12 36,10"
+                stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="protocol-card__title">Wildlife Observation</h3>
+          <p class="protocol-card__desc">Annual breeding bird surveys (May–June) following point-count protocol at 8 fixed stations, timed to correspond with Breeding Bird Atlas grid coverage. Deer browse pressure assessed by paired plot comparison (exclosed vs. open) at regeneration monitoring points. Ad hoc documentation of other wildlife sign — trail camera data from 3 permanent stations — maintained in a shared log accessible to future stewards of the property.</p>
+          <span class="protocol-card__freq">Annual · 8 survey points</span>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-icon">
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <!-- Water quality: wave + temperature indicator -->
+              <path class="draw proto-mark"
+                d="M 4,26 Q 9,20 14,26 Q 19,32 24,26 Q 29,20 34,26 Q 39,32 40,26"
+                stroke-width="1.4" fill="none"/>
+              <path class="draw proto-mark"
+                d="M 4,32 Q 9,26 14,32 Q 19,38 24,32 Q 29,26 34,32"
+                stroke-width="1" fill="none"/>
+              <!-- Thermometer -->
+              <line class="draw proto-mark" x1="34" y1="6" x2="34" y2="22" stroke-width="1.4"/>
+              <circle class="draw proto-mark" cx="34" cy="22" r="3.5" stroke-width="1.2" fill="none"/>
+              <line class="draw proto-mark" x1="29" y1="10" x2="33" y2="10" stroke-width="1"/>
+              <line class="draw proto-mark" x1="29" y1="14" x2="33" y2="14" stroke-width="1"/>
+              <line class="draw proto-mark" x1="29" y1="18" x2="33" y2="18" stroke-width="1"/>
+            </svg>
+          </div>
+          <h3 class="protocol-card__title">Water Quality</h3>
+          <p class="protocol-card__desc">Continuous stream temperature logging at two stations on the main stream channel — one in open canopy, one under intact forest cover — using submersible data loggers. Spot measurements of flow volume during seasonal low-flow periods, turbidity and visual clarity assessments after major storm events. Stream temperature is among the most sensitive indicators of canopy health and a direct driver of cold-water fisheries habitat quality.</p>
+          <span class="protocol-card__freq">Continuous logging · 2 stations</span>
+        </div>
+
+      </div><!-- /.protocols-grid -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESOURCES
+       ============================================================ -->
+  <section id="resources" class="page-section">
+    <div class="container">
+
+      <p class="field-label reveal">Resources</p>
+
+      <div class="prose-column">
+        <p class="section-lead reveal">Forest mind is not proprietary. Everything we've learned, we learned from sources like these. Here they are.</p>
+      </div>
+
+      <ul class="resources-list reveal">
+
+        <li class="resource-item">
+          <div class="resource-item__header">
+            <h3 class="resource-item__title">USDA Forest Service Climate Change Tree Atlas</h3>
+            <span class="resource-item__org">US Forest Service</span>
+          </div>
+          <p class="resource-item__desc">Modeled habitat suitability for 134 tree species across the eastern US under multiple climate scenarios. The primary basis for regional species vulnerability assessment. Searchable by species or by geographic area.</p>
+          <a href="https://www.nrs.fs.usda.gov/atlas/" class="resource-item__link" target="_blank" rel="noopener">nrs.fs.usda.gov/atlas</a>
+        </li>
+
+        <li class="resource-item">
+          <div class="resource-item__header">
+            <h3 class="resource-item__title">Mass Audubon Breeding Bird Atlas</h3>
+            <span class="resource-item__org">Mass Audubon</span>
+          </div>
+          <p class="resource-item__desc">Comprehensive survey of all breeding bird species in Massachusetts, mapped by grid block. The 2011–2015 second atlas allows direct comparison with the 1974–1979 first atlas — making range shifts, population changes, and habitat associations visible at the block level over 40 years.</p>
+          <a href="https://www.massaudubon.org/bird-atlas" class="resource-item__link" target="_blank" rel="noopener">massaudubon.org/bird-atlas</a>
+        </li>
+
+        <li class="resource-item">
+          <div class="resource-item__header">
+            <h3 class="resource-item__title">Massachusetts BioMap</h3>
+            <span class="resource-item__org">MA Division of Fisheries &amp; Wildlife</span>
+          </div>
+          <p class="resource-item__desc">Statewide spatial data on biodiversity, core habitat, critical natural landscape, and rare species occurrences. The essential tool for understanding a parcel's conservation significance and connectivity in the regional landscape. Queryable by address or parcel.</p>
+          <a href="https://www.mass.gov/biomap" class="resource-item__link" target="_blank" rel="noopener">mass.gov/biomap</a>
+        </li>
+
+        <li class="resource-item">
+          <div class="resource-item__header">
+            <h3 class="resource-item__title">Caring for Your Woods</h3>
+            <span class="resource-item__org">UVM Extension / Yale Forests</span>
+          </div>
+          <p class="resource-item__desc">A practical forestry guide for private woodland owners in the northeastern US, written explicitly through a climate adaptation lens. Covers species selection, harvest timing, regeneration, invasive management, and working with a licensed forester. Written for people who own land and want to manage it thoughtfully.</p>
+          <a href="https://www.uvm.edu/extension/nrfw" class="resource-item__link" target="_blank" rel="noopener">uvm.edu/extension/nrfw</a>
+        </li>
+
+        <li class="resource-item">
+          <div class="resource-item__header">
+            <h3 class="resource-item__title">Invasive Plant Atlas of New England</h3>
+            <span class="resource-item__org">UConn / IPANE</span>
+          </div>
+          <p class="resource-item__desc">Species-level data on invasive plants across the New England region: distribution, ecology, identification, and management. Includes searchable occurrence records and management guidance for each species. The starting point for any invasive plant control program in this region.</p>
+          <a href="https://www.eddmaps.org/ipane/" class="resource-item__link" target="_blank" rel="noopener">eddmaps.org/ipane</a>
+        </li>
+
+      </ul>
+
+      <p class="resources-close reveal">All of these tools are publicly available and free. The knowledge that should be shaping land management decisions in the northeastern US is not behind a paywall — it's just not being used at the scale it needs to be. That gap is part of what this project exists to close.</p>
+
+    </div>
+  </section>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/science.js"></script>
+</body>
+</html>

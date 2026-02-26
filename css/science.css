@@ -1,0 +1,780 @@
+/* ============================================================
+   Adaptation Forest — science.css
+   The Science page — pages/science.html
+   ============================================================ */
+
+/* ============================================================
+   Page Header
+   ============================================================ */
+.page-science .page-header {
+  padding-top: 15rem;
+  padding-bottom: 11rem;
+  background: linear-gradient(180deg, var(--clr-humus) 0%, #060809 55%, #080d08 100%);
+  text-align: center;
+}
+
+.page-science .page-header::before {
+  background: radial-gradient(ellipse 60% 45% at 50% 18%,
+    rgba(45, 74, 45, 0.09) 0%, transparent 70%);
+}
+
+/* ============================================================
+   Climate Chart
+   ============================================================ */
+.climate-chart-wrap {
+  margin-top: 4rem;
+}
+
+#climate-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.5rem;
+  margin-top: 1rem;
+  padding: 0 0.25rem;
+}
+
+.chart-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  color: var(--clr-lichen);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+.chart-legend__swatch {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  flex-shrink: 0;
+}
+
+.chart-legend__item--low .chart-legend__swatch {
+  background: rgba(74, 140, 74, 0.85);
+}
+
+.chart-legend__item--high .chart-legend__swatch {
+  background: rgba(196, 136, 58, 0.85);
+}
+
+.chart-source {
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  color: var(--clr-lichen);
+  opacity: 0.42;
+  letter-spacing: 0.04em;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Stat bullets
+   ============================================================ */
+.sci-bullets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.sci-bullet {
+  padding: 1.5rem 1.4rem;
+  border-right: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.sci-bullet:last-child {
+  border-right: none;
+}
+
+.sci-bullet__val {
+  font-family: var(--ff-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--clr-amber);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.sci-bullet__label {
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  color: rgba(232, 228, 220, 0.55);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   Species Vulnerability Table
+   ============================================================ */
+.species-table-wrap {
+  margin-top: 3.5rem;
+}
+
+.species-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+}
+
+.species-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Header */
+.species-table thead tr {
+  background: rgba(10, 12, 10, 0.8);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.species-table th {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.7;
+}
+
+.species-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+
+.species-table th.sortable:hover {
+  color: var(--clr-birch);
+  opacity: 1;
+}
+
+.species-table th.sort-asc,
+.species-table th.sort-desc {
+  color: var(--clr-amber);
+  opacity: 0.9;
+}
+
+.sort-arrow {
+  display: inline-block;
+  margin-left: 0.3em;
+  opacity: 0.5;
+  font-size: 0.75em;
+}
+
+.sort-arrow.asc::before  { content: '↑'; }
+.sort-arrow.desc::before { content: '↓'; }
+
+/* Body rows */
+.species-table tbody tr {
+  border-bottom: 1px solid rgba(138, 145, 122, 0.1);
+  transition: background 0.15s;
+}
+
+.species-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.species-table tbody tr:hover {
+  background: rgba(138, 145, 122, 0.04);
+}
+
+/* Vulnerable rows — subtle red tint */
+.species-table tbody tr.row--vulnerable {
+  background: rgba(139, 37, 0, 0.045);
+}
+
+.species-table tbody tr.row--vulnerable:hover {
+  background: rgba(139, 37, 0, 0.07);
+}
+
+.species-table td {
+  padding: 0.85rem 1.1rem;
+  color: rgba(232, 228, 220, 0.72);
+  vertical-align: middle;
+}
+
+/* Species name cell */
+.species-name strong {
+  color: var(--clr-birch);
+  font-weight: 400;
+  display: block;
+}
+
+.species-name em {
+  font-size: 0.78rem;
+  color: var(--clr-lichen);
+  opacity: 0.6;
+  font-style: italic;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+/* Rating badges */
+.rating {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+.rating--good {
+  color: rgba(74, 140, 74, 0.95);
+  background: rgba(45, 74, 45, 0.18);
+}
+
+.rating--fair {
+  color: rgba(196, 178, 120, 0.9);
+  background: rgba(138, 120, 60, 0.12);
+}
+
+.rating--poor {
+  color: rgba(200, 80, 40, 0.9);
+  background: rgba(139, 37, 0, 0.15);
+}
+
+/* Pest/disease abbreviation notes */
+.rating-note {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--clr-lichen);
+  opacity: 0.55;
+  margin-left: 0.35rem;
+}
+
+/* Table footer */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  padding: 0 0.1rem;
+}
+
+.table-source {
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  color: var(--clr-lichen);
+  opacity: 0.42;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.table-hint {
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  color: var(--clr-lichen);
+  opacity: 0.38;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Carbon Section
+   ============================================================ */
+.carbon-split {
+  margin-top: 4rem;
+  align-items: start;
+  gap: 4.5rem;
+}
+
+/* SVG container */
+.carbon-svg-wrap {
+  flex-shrink: 0;
+}
+
+.carbon-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* CO2 cloud */
+.carbon-svg .sc-co2-cloud {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.45;
+}
+
+.carbon-svg .sc-co2-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.5;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+}
+
+/* CO2 arrows (dashed, amber) */
+.carbon-svg .sc-co2-arrow {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.55;
+}
+
+/* Crown */
+.carbon-svg .sc-crown {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.72;
+}
+
+/* Branches */
+.carbon-svg .sc-branch {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.58;
+}
+
+/* Trunk — darker, bolder */
+.carbon-svg .sc-trunk {
+  stroke: #1e3a1e;
+  fill: none;
+  opacity: 0.85;
+}
+
+/* Ground line */
+.carbon-svg .sc-ground {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.4;
+}
+
+/* Roots */
+.carbon-svg .sc-root {
+  stroke: #8a6040;
+  fill: none;
+  opacity: 0.65;
+}
+
+.carbon-svg .sc-root-fine {
+  stroke: #8a6040;
+  fill: none;
+  opacity: 0.38;
+}
+
+/* Soil fill — no draw, appears immediately */
+.carbon-svg .sc-soil-fill {
+  fill: rgba(20, 14, 8, 0.45);
+  stroke: none;
+}
+
+/* Soil texture marks */
+.carbon-svg .sc-soil {
+  stroke: #6a4a28;
+  fill: none;
+  opacity: 0.25;
+}
+
+/* Mycelium */
+.carbon-svg .sc-mycelium {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.22;
+}
+
+/* ── Carbon Pool Cards ── */
+.carbon-pools {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0.5rem;
+}
+
+.carbon-pools__intro {
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.5;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.carbon-pool-card {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(138, 145, 122, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.carbon-pool-card--large {
+  border-bottom: 1px solid rgba(138, 145, 122, 0.2);
+}
+
+/* Proportional bar */
+.pool-bar-wrap {
+  height: 3px;
+  background: rgba(138, 145, 122, 0.1);
+  border-radius: 1.5px;
+  overflow: hidden;
+}
+
+.pool-bar {
+  height: 100%;
+  width: var(--pct, 0%);
+  border-radius: 1.5px;
+  transition: width 1.2s ease;
+}
+
+.pool-bar--biomass { background: rgba(74, 122, 74, 0.65); }
+.pool-bar--roots   { background: rgba(138, 96, 64, 0.65); }
+.pool-bar--deadwood{ background: rgba(138, 145, 122, 0.55); }
+.pool-bar--litter  { background: rgba(138, 145, 122, 0.38); }
+.pool-bar--soil    { background: rgba(196, 136, 58, 0.55); }
+
+.pool-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.pool-name {
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  color: rgba(232, 228, 220, 0.75);
+  letter-spacing: 0.01em;
+}
+
+.pool-value {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--clr-birch);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.pool-unit {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  color: var(--clr-lichen);
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+  font-style: normal;
+}
+
+.pool-note {
+  font-family: var(--ff-body);
+  font-size: 0.76rem;
+  color: rgba(232, 228, 220, 0.45);
+  line-height: 1.65;
+}
+
+/* Total row */
+.carbon-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.1rem 0 0;
+  gap: 1rem;
+}
+
+.carbon-total__label {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.55;
+}
+
+.carbon-total__value {
+  font-family: var(--ff-display);
+  font-size: 1.45rem;
+  font-weight: 300;
+  color: var(--clr-amber);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   Monitoring Protocols Grid
+   ============================================================ */
+.protocols-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.protocol-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+  background: rgba(10, 12, 10, 0.4);
+  transition: border-color 0.2s;
+}
+
+.protocol-card:hover {
+  border-color: rgba(138, 145, 122, 0.28);
+}
+
+/* Last two cards centered in 3-col grid */
+.protocols-grid .protocol-card:nth-child(4) {
+  grid-column-start: 1;
+}
+
+.protocol-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.protocol-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.protocol-icon .proto-mark {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.7;
+}
+
+.protocol-card__title {
+  font-family: var(--ff-display);
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.protocol-card__desc {
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  color: rgba(232, 228, 220, 0.58);
+  line-height: 1.82;
+  flex: 1;
+}
+
+.protocol-card__freq {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  opacity: 0.65;
+  margin-top: 0.25rem;
+}
+
+/* ============================================================
+   Resources
+   ============================================================ */
+.resources-list {
+  list-style: none;
+  padding: 0;
+  margin: 3.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.resource-item {
+  padding-block: 2.25rem;
+  border-bottom: 1px solid rgba(138, 145, 122, 0.12);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 3rem;
+  row-gap: 0.6rem;
+}
+
+.resource-item:first-child {
+  border-top: 1px solid rgba(138, 145, 122, 0.12);
+}
+
+.resource-item__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.resource-item__title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.resource-item__org {
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.5;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resource-item__desc {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  color: rgba(232, 228, 220, 0.6);
+  line-height: 1.85;
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 680px;
+}
+
+.resource-item__link {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-amber);
+  opacity: 0.75;
+  text-decoration: none;
+  grid-column: 1;
+  grid-row: 3;
+  align-self: end;
+  border-bottom: 1px solid rgba(196, 136, 58, 0.3);
+  padding-bottom: 0.1rem;
+  display: inline-block;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.resource-item__link:hover {
+  opacity: 1;
+  border-color: rgba(196, 136, 58, 0.65);
+}
+
+/* Closing note */
+.resources-close {
+  margin-top: 3.5rem;
+  max-width: 620px;
+  margin-inline: auto;
+  font-family: var(--ff-body);
+  font-size: clamp(0.9rem, 1.6vw, 1.02rem);
+  color: rgba(232, 228, 220, 0.55);
+  line-height: 1.95;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1100px) {
+  .protocols-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .protocols-grid .protocol-card:nth-child(4) {
+    grid-column-start: auto;
+  }
+
+  /* Last card spans full width on 2-col */
+  .protocols-grid .protocol-card:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sci-bullets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sci-bullet:nth-child(2) {
+    border-right: none;
+  }
+
+  .sci-bullet:nth-child(1),
+  .sci-bullet:nth-child(2) {
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .carbon-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .carbon-svg-wrap {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+
+  .resource-item {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-item__org {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-science .page-header {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+  }
+
+  .sci-bullets {
+    grid-template-columns: 1fr;
+  }
+
+  .sci-bullet {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .sci-bullet:last-child {
+    border-bottom: none;
+  }
+
+  .sci-bullet:nth-child(2) {
+    border-right: none;
+  }
+
+  .protocols-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protocols-grid .protocol-card:nth-child(5) {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .table-hint {
+    display: none;
+  }
+}

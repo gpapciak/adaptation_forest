@@ -1,0 +1,679 @@
+/* ============================================================
+   Adaptation Forest — gather.css
+   Gather page — pages/gather.html
+   ============================================================ */
+
+/* ============================================================
+   Page Header
+   ============================================================ */
+.page-gather .page-header {
+  padding-top: 15rem;
+  padding-bottom: 11rem;
+  background: linear-gradient(180deg, var(--clr-humus) 0%, #060908 50%, #080d07 100%);
+  text-align: center;
+}
+
+.page-gather .page-header::before {
+  background: radial-gradient(ellipse 65% 45% at 50% 20%,
+    rgba(45, 74, 45, 0.10) 0%, transparent 70%);
+}
+
+/* ============================================================
+   Gathering Spaces Grid
+   ============================================================ */
+.spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.space-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+  background: rgba(10, 12, 10, 0.4);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.space-card:hover {
+  border-color: rgba(138, 145, 122, 0.28);
+  background: rgba(10, 12, 10, 0.65);
+}
+
+/* Last card centered if 5 cards in 3-col grid */
+.spaces-grid .space-card:last-child:nth-child(3n - 1) {
+  grid-column-start: 2;
+}
+
+.space-card__icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.space-card__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.space-card__icon .space-icon-mark {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.7;
+}
+
+.space-card__title {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.space-card__desc {
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  color: rgba(232, 228, 220, 0.6);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   Trail Map
+   ============================================================ */
+.trail-map-wrap {
+  margin-top: 4.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  background: rgba(6, 8, 6, 0.7);
+  overflow: hidden;
+  padding: 1.25rem 1rem 0.75rem;
+}
+
+.trail-map-label {
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.45;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.trail-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Property boundary */
+.trail-map-svg .tm-boundary {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.22;
+}
+
+/* Contour lines (no .draw — appear immediately, very faint) */
+.trail-map-svg .tm-contour {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.10;
+}
+
+/* Stream */
+.trail-map-svg .tm-stream {
+  stroke: #5a8a9a;
+  fill: none;
+  opacity: 0.55;
+}
+
+/* Main trail — amber dashed */
+.trail-map-svg .tm-trail-main {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.65;
+}
+
+/* Branch trails — lichen dashed */
+.trail-map-svg .tm-trail-branch {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.5;
+}
+
+/* Gathering point rings */
+.trail-map-svg .tm-point-ring {
+  stroke: var(--clr-amber);
+  fill: rgba(196, 136, 58, 0.08);
+  opacity: 0.75;
+}
+
+/* Point icon marks */
+.trail-map-svg .tm-point-icon {
+  stroke: var(--clr-birch);
+  fill: none;
+  opacity: 0.72;
+}
+
+/* Point labels */
+.trail-map-svg .tm-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.55;
+  letter-spacing: 0.04em;
+}
+
+/* Compass */
+.trail-map-svg .tm-compass {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.35;
+}
+
+.trail-map-svg .tm-compass-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.35;
+  letter-spacing: 0.06em;
+}
+
+/* Legend */
+.trail-map-svg .tm-legend-text {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.42;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   Walks List
+   ============================================================ */
+.walks-list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.walk-item {
+  padding-block: 3rem;
+}
+
+.walk-divider {
+  height: 1px;
+  background: var(--clr-border);
+  opacity: 0.6;
+}
+
+.walk-item__header {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.walk-item__number {
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--clr-amber);
+  opacity: 0.65;
+}
+
+.walk-item__title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.walk-item__tag {
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+.walk-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 780px;
+  padding-left: 3.5rem;
+}
+
+.walk-item__body p {
+  font-family: var(--ff-body);
+  font-size: clamp(0.9rem, 1.6vw, 1.02rem);
+  color: rgba(232, 228, 220, 0.68);
+  line-height: 1.95;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .spaces-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spaces-grid .space-card:last-child:nth-child(3n - 1) {
+    grid-column-start: auto;
+  }
+
+  .walk-item__header {
+    grid-template-columns: 2rem 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .walk-item__tag {
+    grid-column: 2;
+    margin-top: -0.5rem;
+  }
+
+  .walk-item__body {
+    padding-left: 3rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-gather .page-header {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+  }
+
+  .spaces-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .walk-item__header {
+    grid-template-columns: 1fr;
+  }
+
+  .walk-item__number {
+    display: none;
+  }
+
+  .walk-item__tag {
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  .walk-item__body {
+    padding-left: 0;
+  }
+}
+
+/* ============================================================
+   Performances & Events
+   ============================================================ */
+.performance-scene-wrap {
+  margin-top: 4.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  background: rgba(5, 8, 5, 0.75);
+  overflow: hidden;
+  padding: 1.5rem 1rem 1rem;
+}
+
+.performance-scene-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Background treeline fill — no stroke, no draw */
+.performance-scene-svg .perf-treeline-far {
+  stroke: none;
+}
+
+.performance-scene-svg .perf-ground {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.28;
+}
+
+/* Large flanking trees — moss */
+.performance-scene-svg .perf-tree {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.72;
+}
+
+/* Mid-distance trees — lighter */
+.performance-scene-svg .perf-tree-mid {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.42;
+}
+
+/* Audience figures — lichen */
+.performance-scene-svg .perf-figure {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.55;
+}
+
+/* Performer — birch, brighter */
+.performance-scene-svg .perf-performer {
+  stroke: var(--clr-birch);
+  fill: none;
+  opacity: 0.88;
+}
+
+/* Warm glow around performer — amber radial */
+.performance-scene-svg .perf-glow {
+  fill: radial-gradient(circle, rgba(196,136,58,0.12) 0%, transparent 100%);
+  /* fallback for SVG — use fill with low opacity */
+  fill: rgba(196, 136, 58, 0.07);
+  stroke: none;
+}
+
+.performance-scene-svg .perf-caption {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.32;
+  letter-spacing: 0.06em;
+}
+
+/* Pull quote — gather page variant */
+.gather-pullquote {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding-inline: 2rem;
+  position: relative;
+}
+
+.gather-pullquote::before,
+.gather-pullquote::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--clr-lichen);
+  opacity: 0.3;
+  margin-inline: auto;
+}
+
+.gather-pullquote::before { margin-bottom: 2rem; }
+.gather-pullquote::after  { margin-top: 2rem; }
+
+.gather-pullquote p {
+  font-family: var(--ff-display);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--clr-birch);
+  opacity: 0.82;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   Workshops Grid
+   ============================================================ */
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 3.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.workshop-card {
+  padding: 1.6rem 1.4rem;
+  border-right: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: background 0.2s;
+}
+
+.workshop-card:hover {
+  background: rgba(45, 74, 45, 0.05);
+}
+
+/* Remove right border from last in each row (4-col) */
+.workshop-card:nth-child(4n) {
+  border-right: none;
+}
+
+/* Remove bottom border from last row (cards 5–8) */
+.workshop-card:nth-child(n+5) {
+  border-bottom: none;
+}
+
+.workshop-card__num {
+  font-family: var(--ff-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--clr-amber);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.workshop-card__title {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.28;
+  letter-spacing: 0.01em;
+}
+
+.workshop-card__desc {
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  color: rgba(232, 228, 220, 0.58);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.workshop-card__tag {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  opacity: 0.5;
+  margin-top: 0.25rem;
+}
+
+/* ============================================================
+   Getting Involved
+   ============================================================ */
+.involved-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.involved-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+  background: rgba(10, 12, 10, 0.35);
+}
+
+.involved-card__title {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.involved-card__desc {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  color: rgba(232, 228, 220, 0.62);
+  line-height: 1.82;
+  flex: 1;
+}
+
+.involved-card__action {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-amber);
+  opacity: 0.8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196, 136, 58, 0.3);
+  padding-bottom: 0.1rem;
+  align-self: flex-start;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.involved-card__action:hover {
+  opacity: 1;
+  border-color: rgba(196, 136, 58, 0.7);
+}
+
+/* Social links row */
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--clr-border);
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--clr-lichen);
+  opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.social-link:hover {
+  opacity: 1;
+  color: var(--clr-birch);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.social-icon .soc-mark {
+  stroke: currentColor;
+  fill: none;
+}
+
+.social-icon .soc-dot {
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.social-link span {
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+/* Closing paragraph */
+.gather-close {
+  margin-top: 5rem;
+  max-width: 600px;
+  margin-inline: auto;
+  font-family: var(--ff-body);
+  font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+  color: rgba(232, 228, 220, 0.6);
+  line-height: 1.95;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================================
+   Responsive additions
+   ============================================================ */
+@media (max-width: 1100px) {
+  .workshops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workshop-card:nth-child(4n) {
+    border-right: 1px solid var(--clr-border);
+  }
+
+  .workshop-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .workshop-card:nth-child(n+5) {
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .workshop-card:nth-child(n+7) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .involved-grid {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin-inline: auto;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .workshops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-card {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .workshop-card:last-child {
+    border-bottom: none;
+  }
+
+  .workshop-card:nth-child(2n),
+  .workshop-card:nth-child(4n),
+  .workshop-card:nth-child(n+5),
+  .workshop-card:nth-child(n+7) {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .workshop-card:last-child {
+    border-bottom: none;
+  }
+
+  .social-row {
+    gap: 1.5rem 2.5rem;
+  }
+}

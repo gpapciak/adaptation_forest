@@ -1,0 +1,523 @@
+/* ============================================================
+   Adaptation Forest — garden.css
+   The Garden page — pages/garden.html
+   ============================================================ */
+
+/* ============================================================
+   Phase Note Banner
+   ============================================================ */
+.garden-phase-note {
+  background: rgba(45, 74, 45, 0.06);
+  border-bottom: 1px solid var(--clr-border);
+  padding: 1rem 0;
+}
+
+.garden-phase-note p {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  color: var(--clr-lichen);
+  opacity: 0.65;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Page Header
+   ============================================================ */
+.page-garden .page-header {
+  padding-top: 14rem;
+  padding-bottom: 10rem;
+  background: linear-gradient(180deg, var(--clr-humus) 0%, #050a05 60%, #080d07 100%);
+  text-align: center;
+}
+
+.page-garden .page-header::before {
+  background: radial-gradient(ellipse 60% 50% at 50% 20%,
+    rgba(45, 74, 45, 0.12) 0%, transparent 70%);
+}
+
+/* ============================================================
+   Food Forest Diagram
+   ============================================================ */
+.food-forest-wrap {
+  margin-top: 4rem;
+}
+
+.food-forest-svg-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.food-forest-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* Canopy trees — moss green, solid and bold */
+.food-forest-svg .ff-canopy {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.82;
+}
+
+.food-forest-svg .ff-canopy-detail {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.45;
+}
+
+/* Understory — slightly lighter moss */
+.food-forest-svg .ff-understory {
+  stroke: #3d6b3d;
+  fill: none;
+  opacity: 0.75;
+}
+
+/* Shrubs — lichen with slight green cast */
+.food-forest-svg .ff-shrub {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.72;
+}
+
+/* Vines — amber, delicate */
+.food-forest-svg .ff-vine {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.55;
+}
+
+/* Herbaceous — birch, lighter */
+.food-forest-svg .ff-herb {
+  stroke: var(--clr-birch);
+  fill: none;
+  opacity: 0.52;
+}
+
+/* Ground cover — very faint lichen */
+.food-forest-svg .ff-groundcover {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.45;
+}
+
+/* Root zone — warm umber-lichen */
+.food-forest-svg .ff-root {
+  stroke: #a07858;
+  fill: none;
+  opacity: 0.55;
+}
+
+/* Mycelium network — faint amber threads */
+.food-forest-svg .ff-mycelium {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.28;
+}
+
+/* Root vegetables — amber outlines */
+.food-forest-svg .ff-root-veg {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.42;
+}
+
+/* Ground and guide lines */
+.food-forest-svg .ff-ground {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.55;
+}
+
+.food-forest-svg .ff-guide {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.22;
+}
+
+/* Zone guide bracket (static — no .draw class) */
+.food-forest-svg .ff-zone-guide {
+  stroke: var(--clr-lichen);
+  opacity: 0.25;
+}
+
+/* Layer labels */
+.food-forest-svg .ff-zone-label {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.45;
+  letter-spacing: 0.08em;
+}
+
+.food-forest-svg .ff-hint {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.28;
+  letter-spacing: 0.05em;
+}
+
+/* Interactive layer zones — transparent hit targets */
+.food-forest-svg .layer-zone {
+  fill: transparent;
+  cursor: pointer;
+  transition: fill 0.18s ease;
+}
+
+.food-forest-svg .layer-zone:hover,
+.food-forest-svg .layer-zone.is-active {
+  fill: rgba(138, 145, 122, 0.06);
+}
+
+/* ── Layer Information Panel ── */
+.layer-panel {
+  margin-top: 2rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+  background: rgba(10, 12, 10, 0.6);
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.layer-panel__inner {
+  padding: 1.5rem 2rem;
+}
+
+.layer-panel__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.layer-panel__name {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  letter-spacing: 0.02em;
+}
+
+.layer-panel__height {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  opacity: 0.75;
+}
+
+.layer-panel__desc {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  color: rgba(232, 228, 220, 0.62);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.layer-panel__species {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.layer-panel__species li {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--clr-lichen);
+  opacity: 0.72;
+  letter-spacing: 0.02em;
+}
+
+.layer-panel__species li::before {
+  content: '—';
+  margin-right: 0.4em;
+  opacity: 0.5;
+  font-style: normal;
+}
+
+/* ============================================================
+   Seed Packet
+   ============================================================ */
+.seed-packet-wrap {
+  max-width: 300px;
+  flex-shrink: 0;
+}
+
+.seed-packet-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Borders and rules */
+.seed-packet-svg .sp-border,
+.seed-packet-svg .sp-rule {
+  stroke: var(--clr-lichen);
+  opacity: 0.38;
+}
+
+/* Corner ornaments */
+.seed-packet-svg .sp-ornament {
+  stroke: var(--clr-lichen);
+  opacity: 0.28;
+}
+
+/* Tree above ground */
+.seed-packet-svg .sp-tree {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.78;
+}
+
+/* Ground line */
+.seed-packet-svg .sp-ground {
+  stroke: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+/* DNA helix strands */
+.seed-packet-svg .sp-helix-l {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.65;
+}
+
+.seed-packet-svg .sp-helix-r {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.65;
+}
+
+/* Helix rungs */
+.seed-packet-svg .sp-rung {
+  stroke: var(--clr-lichen);
+  opacity: 0.35;
+}
+
+/* Root tips */
+.seed-packet-svg .sp-root-tip {
+  stroke: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+/* Text */
+.seed-packet-svg .sp-header-text {
+  font-family: var(--ff-body);
+  fill: var(--clr-birch);
+  opacity: 0.72;
+}
+
+.seed-packet-svg .sp-subheader-text {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.55;
+}
+
+.seed-packet-svg .sp-footer-text {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+/* ============================================================
+   Soil Profile Diagram
+   ============================================================ */
+.soil-diagram {
+  flex-shrink: 0;
+  max-width: 380px;
+  width: 100%;
+}
+
+.soil-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Horizon boundary lines and bracket */
+.soil-svg .soil-line {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.35;
+}
+
+/* O Horizon — organic marks */
+.soil-svg .soil-o {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.55;
+}
+
+/* A Horizon — dark topsoil hatching */
+.soil-svg .soil-a {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.32;
+}
+
+/* B Horizon — lighter subsoil */
+.soil-svg .soil-b {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.18;
+}
+
+/* C Horizon — rocky parent material */
+.soil-svg .soil-c {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.28;
+}
+
+/* Root system */
+.soil-svg .soil-root {
+  stroke: #a07858;
+  fill: none;
+  opacity: 0.55;
+}
+
+/* Fungal network */
+.soil-svg .soil-fungi {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.32;
+}
+
+/* Horizon labels */
+.soil-svg .soil-label {
+  font-family: var(--ff-display);
+  fill: var(--clr-birch);
+  font-style: italic;
+  opacity: 0.65;
+}
+
+.soil-svg .soil-label-desc {
+  font-family: var(--ff-body);
+  fill: var(--clr-lichen);
+  opacity: 0.45;
+}
+
+/* ============================================================
+   Garden Seasonal Calendar
+   ============================================================ */
+.garden-calendar-wrap {
+  margin-top: 4rem;
+}
+
+.garden-calendar-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+#garden-calendar {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.garden-cal-panel {
+  flex: 1;
+  min-width: 0;
+  padding-top: 1.5rem;
+}
+
+.garden-cal-panel__month {
+  font-family: var(--ff-display);
+  font-size: 1.35rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--clr-birch);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.garden-cal-panel__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.garden-cal-panel__items li {
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  color: rgba(232, 228, 220, 0.62);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.garden-cal-panel__items li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--clr-lichen);
+  opacity: 0.55;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .garden-calendar-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #garden-calendar {
+    max-width: 380px;
+  }
+
+  .garden-cal-panel {
+    width: 100%;
+    max-width: 460px;
+    padding-top: 0;
+  }
+
+  .seed-packet-wrap {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-garden .page-header {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+  }
+
+  .layer-panel__inner {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .soil-diagram {
+    max-width: 100%;
+  }
+
+  #garden-calendar {
+    max-width: 300px;
+  }
+
+  .seed-packet-wrap {
+    max-width: 200px;
+    margin-inline: auto;
+  }
+}
