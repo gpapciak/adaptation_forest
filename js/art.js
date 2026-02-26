@@ -253,9 +253,291 @@ function initLightCanvas() {
 }
 
 /* ============================================================
+   Botanical Mandala — Kathy Klein / danmala section
+   Generates a 600×600 SVG inside #mandala-svg.
+   Six concentric rings (each a <g class="mandala-ring">) start
+   slightly rotated and invisible; an IntersectionObserver adds
+   .mandala--assembled to the SVG, triggering CSS transitions
+   that spin each ring to 0° and fade it in with its own delay.
+   ============================================================ */
+
+function buildMandala() {
+  const container = document.getElementById('mandala-svg');
+  if (!container) return;
+
+  const ns   = 'http://www.w3.org/2000/svg';
+  const SIZE = 600;
+  const CX   = SIZE / 2;   // 300
+  const CY   = SIZE / 2;   // 300
+
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${SIZE} ${SIZE}`);
+  svg.setAttribute('class', 'mandala-svg');
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  svg.setAttribute('aria-hidden', 'true');
+  container.appendChild(svg);
+
+  // Root group — everything relative to mandala centre
+  const root = document.createElementNS(ns, 'g');
+  root.setAttribute('transform', `translate(${CX},${CY})`);
+  svg.appendChild(root);
+
+  // ── Helper: make a SVG element with class + attrs ─────────
+  function el(tag, cls, attrs) {
+    const e = document.createElementNS(ns, tag);
+    if (cls) e.setAttribute('class', cls);
+    if (attrs) Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v));
+    return e;
+  }
+
+  // ── Helper: leaf shape (symmetric bezier, pointed ends) ───
+  function leafPath(len, wRatio) {
+    const hl = len / 2;
+    const w  = len * wRatio;
+    return [
+      `M 0 ${hl.toFixed(2)}`,
+      `C ${(-w).toFixed(2)} ${(hl / 2).toFixed(2)}`,
+      `  ${(-w).toFixed(2)} ${(-hl / 2).toFixed(2)}`,
+      `  0 ${(-hl).toFixed(2)}`,
+      `C ${w.toFixed(2)} ${(-hl / 2).toFixed(2)}`,
+      `  ${w.toFixed(2)} ${(hl / 2).toFixed(2)}`,
+      `  0 ${hl.toFixed(2)} Z`,
+    ].join(' ');
+  }
+
+  // ── Helper: make a ring <g> with animation setup ──────────
+  function makeRing(delay, rotOff) {
+    const g = document.createElementNS(ns, 'g');
+    g.setAttribute('class', 'mandala-ring');
+    g.style.transitionDelay = `${delay}s`;
+    // Initial rotation offset (snaps to 0 when .mandala--assembled is added)
+    if (rotOff) g.style.transform = `rotate(${rotOff}deg)`;
+    root.appendChild(g);
+    return g;
+  }
+
+  // ── Ring 0: Centre flower ──────────────────────────────────
+  {
+    const g = makeRing(0, 0);
+    // Small amber centre dot
+    g.appendChild(el('circle', 'mandala-center-dot', { r: '4', cx: '0', cy: '0' }));
+    // 6 petals
+    for (let i = 0; i < 6; i++) {
+      const angle = (i * 60) * Math.PI / 180;
+      const r = 22;
+      const px = (r * Math.sin(angle)).toFixed(2);
+      const py = (-r * Math.cos(angle)).toFixed(2);
+      const pg = document.createElementNS(ns, 'g');
+      pg.setAttribute('transform', `translate(${px},${py}) rotate(${i * 60})`);
+      const petal = el('path', 'mandala-center', {
+        d: leafPath(24, 0.38),
+        'stroke-width': '1',
+      });
+      pg.appendChild(petal);
+      g.appendChild(pg);
+    }
+    // Outer ring of centre
+    g.appendChild(el('circle', 'mandala-center', {
+      cx: '0', cy: '0', r: '42', 'stroke-width': '0.7',
+    }));
+  }
+
+  // ── Ring 1: 8 leaves at r=72 ──────────────────────────────
+  {
+    const g = makeRing(0.25, -7);
+    const count = 8;
+    for (let i = 0; i < count; i++) {
+      const angle  = (i / count) * Math.PI * 2;
+      const r      = 72;
+      const px     = (r * Math.sin(angle)).toFixed(2);
+      const py     = (-r * Math.cos(angle)).toFixed(2);
+      const rotDeg = (i / count * 360).toFixed(1);
+      const lg = document.createElementNS(ns, 'g');
+      lg.setAttribute('transform', `translate(${px},${py}) rotate(${rotDeg})`);
+
+      const leafLen = 28;
+      const hl      = leafLen / 2;
+      const w       = leafLen * 0.32;
+
+      lg.appendChild(el('path', 'mandala-leaf', {
+        d: leafPath(leafLen, 0.32),
+        'stroke-width': '0.95',
+      }));
+      lg.appendChild(el('line', 'mandala-midrib', {
+        x1: '0', y1: `${hl}`, x2: '0', y2: `${-hl}`, 'stroke-width': '0.5',
+      }));
+      // Two veins per side
+      [0.35, 0.65].forEach(vt => {
+        const vy   = hl - vt * leafLen;
+        const vLen = w * (0.45 + 0.38 * Math.sin(vt * Math.PI));
+        [-1, 1].forEach(side => {
+          lg.appendChild(el('line', 'mandala-vein', {
+            x1: '0', y1: vy.toFixed(2),
+            x2: (side * vLen).toFixed(2), y2: (vy - vLen * 0.44).toFixed(2),
+            'stroke-width': '0.4',
+          }));
+        });
+      });
+
+      g.appendChild(lg);
+    }
+  }
+
+  // ── Ring 2: 16 petals at r=115 ────────────────────────────
+  {
+    const g = makeRing(0.55, 11);
+    const count = 16;
+    for (let i = 0; i < count; i++) {
+      const angle  = (i / count) * Math.PI * 2;
+      const r      = 115;
+      const px     = (r * Math.sin(angle)).toFixed(2);
+      const py     = (-r * Math.cos(angle)).toFixed(2);
+      const rotDeg = (i / count * 360).toFixed(1);
+      const pg     = document.createElementNS(ns, 'g');
+      pg.setAttribute('transform', `translate(${px},${py}) rotate(${rotDeg})`);
+      pg.appendChild(el('path', 'mandala-petal', {
+        d: leafPath(20, 0.30),
+        'stroke-width': '0.8',
+      }));
+      g.appendChild(pg);
+    }
+    // Dashed reference circle
+    g.appendChild(el('circle', 'mandala-border', {
+      cx: '0', cy: '0', r: '130',
+      'stroke-width': '0.5', 'stroke-dasharray': '2 5',
+    }));
+  }
+
+  // ── Ring 3: 8 botanical sprigs at r=158 ───────────────────
+  {
+    const g = makeRing(0.85, -10);
+    const count = 8;
+    for (let i = 0; i < count; i++) {
+      const angle  = (i / count) * Math.PI * 2;
+      const r      = 158;
+      const px     = (r * Math.sin(angle)).toFixed(2);
+      const py     = (-r * Math.cos(angle)).toFixed(2);
+      const rotDeg = (i / count * 360).toFixed(1);
+      const sg     = document.createElementNS(ns, 'g');
+      sg.setAttribute('transform', `translate(${px},${py}) rotate(${rotDeg})`);
+
+      // Stem
+      sg.appendChild(el('line', 'mandala-sprig-stem', {
+        x1: '0', y1: '14', x2: '0', y2: '-14', 'stroke-width': '0.75',
+      }));
+      // Two side leaves
+      [{ t: -3, ang: -38 }, { t: 3, ang: 38 }].forEach(({ t, ang }) => {
+        const slg = document.createElementNS(ns, 'g');
+        slg.setAttribute('transform', `translate(0,${t}) rotate(${ang})`);
+        slg.appendChild(el('path', 'mandala-sprig-leaf', {
+          d: leafPath(10, 0.35),
+          'stroke-width': '0.7',
+        }));
+        sg.appendChild(slg);
+      });
+      // Terminal bud (small leaf)
+      const bg = document.createElementNS(ns, 'g');
+      bg.setAttribute('transform', 'translate(0,-14)');
+      bg.appendChild(el('path', 'mandala-sprig-bud', {
+        d: leafPath(8, 0.30),
+        'stroke-width': '0.65',
+      }));
+      sg.appendChild(bg);
+
+      g.appendChild(sg);
+    }
+  }
+
+  // ── Ring 4: 24 seed ellipses at r=198 ─────────────────────
+  {
+    const g = makeRing(1.15, 8);
+    const count = 24;
+    for (let i = 0; i < count; i++) {
+      const angle  = (i / count) * Math.PI * 2;
+      const r      = 198;
+      const px     = (r * Math.sin(angle)).toFixed(2);
+      const py     = (-r * Math.cos(angle)).toFixed(2);
+      const rotDeg = (i / count * 360).toFixed(1);
+      const eg     = document.createElementNS(ns, 'g');
+      eg.setAttribute('transform', `translate(${px},${py}) rotate(${rotDeg})`);
+      eg.appendChild(el('ellipse', 'mandala-seed', {
+        cx: '0', cy: '0', rx: '3.5', ry: '6.5', 'stroke-width': '0.7',
+      }));
+      // Tiny notch line (seed crease)
+      eg.appendChild(el('line', 'mandala-seed', {
+        x1: '0', y1: '-3', x2: '0', y2: '3', 'stroke-width': '0.35',
+      }));
+      g.appendChild(eg);
+    }
+  }
+
+  // ── Ring 5: 12 leaves at r=235 ────────────────────────────
+  {
+    const g = makeRing(1.45, -6);
+    const count = 12;
+    for (let i = 0; i < count; i++) {
+      const angle  = (i / count) * Math.PI * 2;
+      const r      = 235;
+      const px     = (r * Math.sin(angle)).toFixed(2);
+      const py     = (-r * Math.cos(angle)).toFixed(2);
+      const rotDeg = (i / count * 360).toFixed(1);
+      const lg     = document.createElementNS(ns, 'g');
+      lg.setAttribute('transform', `translate(${px},${py}) rotate(${rotDeg})`);
+
+      const leafLen = 26;
+      const hl      = leafLen / 2;
+      const w       = leafLen * 0.31;
+
+      lg.appendChild(el('path', 'mandala-leaf', {
+        d: leafPath(leafLen, 0.31),
+        'stroke-width': '0.9',
+      }));
+      lg.appendChild(el('line', 'mandala-midrib', {
+        x1: '0', y1: `${hl}`, x2: '0', y2: `${-hl}`, 'stroke-width': '0.45',
+      }));
+      [0.32, 0.60].forEach(vt => {
+        const vy   = hl - vt * leafLen;
+        const vLen = w * (0.42 + 0.36 * Math.sin(vt * Math.PI));
+        [-1, 1].forEach(side => {
+          lg.appendChild(el('line', 'mandala-vein', {
+            x1: '0', y1: vy.toFixed(2),
+            x2: (side * vLen).toFixed(2), y2: (vy - vLen * 0.44).toFixed(2),
+            'stroke-width': '0.35',
+          }));
+        });
+      });
+
+      g.appendChild(lg);
+    }
+  }
+
+  // ── Border: two concentric circles ────────────────────────
+  {
+    const g = makeRing(1.75, 0);
+    g.appendChild(el('circle', 'mandala-border', {
+      cx: '0', cy: '0', r: '268', 'stroke-width': '0.6',
+    }));
+    g.appendChild(el('circle', 'mandala-border', {
+      cx: '0', cy: '0', r: '274', 'stroke-width': '0.35',
+    }));
+  }
+
+  // ── IntersectionObserver — triggers assembly ───────────────
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      svg.classList.add('mandala--assembled');
+      obs.disconnect();
+    }
+  }, { threshold: 0.15 });
+
+  obs.observe(container);
+}
+
+/* ============================================================
    Boot
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   buildLeafSpiral();
+  buildMandala();
   initLightCanvas();
 });

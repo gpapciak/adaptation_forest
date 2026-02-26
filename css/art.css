@@ -479,6 +479,129 @@
 }
 
 /* ============================================================
+   Danmala / Botanical Mandala — Kathy Klein section
+   ============================================================ */
+
+/* Section background — slightly warmer than neighbouring sections */
+.art-section--danmala {
+  background: rgba(196, 136, 58, 0.018);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* Centred SVG container */
+.mandala-container {
+  margin: 5rem auto 0;
+  max-width: 580px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mandala-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* ── Ring group animation ──────────────────────────────────
+   Each ring <g> starts rotated slightly off-angle and invisible.
+   JS adds .mandala--assembled to the root SVG via IntersectionObserver,
+   which triggers the CSS transitions defined below.
+   ─────────────────────────────────────────────────────────── */
+.mandala-ring {
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.22, 0.8, 0.42, 1);
+}
+
+.mandala-svg.mandala--assembled .mandala-ring {
+  opacity: 1;
+  transform: rotate(0deg) !important;   /* overrides inline rotOff */
+}
+
+/* ── Element colours ──────────────────────────────────────── */
+.mandala-petal {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.62;
+}
+
+.mandala-leaf {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.7;
+}
+
+.mandala-midrib {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.32;
+}
+
+.mandala-vein {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.2;
+}
+
+.mandala-center {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.6;
+}
+
+.mandala-center-dot {
+  fill: var(--clr-amber);
+  stroke: none;
+  opacity: 0.4;
+}
+
+.mandala-seed {
+  stroke: var(--clr-amber);
+  fill: none;
+  opacity: 0.42;
+}
+
+.mandala-sprig-stem {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.5;
+}
+
+.mandala-sprig-leaf {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.55;
+}
+
+.mandala-sprig-bud {
+  stroke: var(--clr-moss);
+  fill: none;
+  opacity: 0.48;
+}
+
+.mandala-border {
+  stroke: var(--clr-lichen);
+  fill: none;
+  opacity: 0.18;
+}
+
+/* ── Caption & pull quote spacing within the section ─────── */
+.danmala-caption {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  color: var(--clr-lichen);
+  opacity: 0.45;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 900px) {
@@ -491,7 +614,8 @@
     gap: 1.5rem;
   }
 
-  .leaf-spiral-container {
+  .leaf-spiral-container,
+  .mandala-container {
     max-width: 420px;
   }
 
@@ -530,7 +654,8 @@
     padding-inline: 0;
   }
 
-  .leaf-spiral-container {
+  .leaf-spiral-container,
+  .mandala-container {
     max-width: 320px;
   }
 
