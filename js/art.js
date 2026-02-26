@@ -305,17 +305,16 @@ function buildMandala() {
     ].join(' ');
   }
 
-  // Track rings for the IntersectionObserver callback
+  // Track ring groups — scroll handler reveals them one by one
   const rings = [];
 
   // ── Helper: make a ring <g> with animation setup ──────────
-  // Opacity and transition are set via inline styles (like the leaf spiral),
-  // so the observer can directly set style.opacity / style.transform.
-  function makeRing(delay, rotOff) {
+  // No transition delay — scroll position controls which ring fires next.
+  // The CSS transition handles the smooth rotate-in for each ring.
+  function makeRing(rotOff) {
     const g = document.createElementNS(ns, 'g');
-    g.style.opacity  = '0';
-    g.style.transition =
-      `opacity 0.9s ease ${delay}s, transform 1.1s cubic-bezier(0.22,0.8,0.42,1) ${delay}s`;
+    g.style.opacity    = '0';
+    g.style.transition = 'opacity 0.85s ease, transform 1.05s cubic-bezier(0.22,0.8,0.42,1)';
     if (rotOff) g.style.transform = `rotate(${rotOff}deg)`;
     root.appendChild(g);
     rings.push(g);
@@ -324,7 +323,7 @@ function buildMandala() {
 
   // ── Ring 0: Centre flower ──────────────────────────────────
   {
-    const g = makeRing(0, 0);
+    const g = makeRing(0);
     // Small amber centre dot
     g.appendChild(el('circle', 'mandala-center-dot', { r: '4', cx: '0', cy: '0' }));
     // 6 petals
@@ -350,7 +349,7 @@ function buildMandala() {
 
   // ── Ring 1: 8 leaves at r=72 ──────────────────────────────
   {
-    const g = makeRing(0.25, -7);
+    const g = makeRing(-7);
     const count = 8;
     for (let i = 0; i < count; i++) {
       const angle  = (i / count) * Math.PI * 2;
@@ -391,7 +390,7 @@ function buildMandala() {
 
   // ── Ring 2: 16 petals at r=115 ────────────────────────────
   {
-    const g = makeRing(0.55, 11);
+    const g = makeRing(11);
     const count = 16;
     for (let i = 0; i < count; i++) {
       const angle  = (i / count) * Math.PI * 2;
@@ -416,7 +415,7 @@ function buildMandala() {
 
   // ── Ring 3: 8 botanical sprigs at r=158 ───────────────────
   {
-    const g = makeRing(0.85, -10);
+    const g = makeRing(-10);
     const count = 8;
     for (let i = 0; i < count; i++) {
       const angle  = (i / count) * Math.PI * 2;
@@ -456,7 +455,7 @@ function buildMandala() {
 
   // ── Ring 4: 24 seed ellipses at r=198 ─────────────────────
   {
-    const g = makeRing(1.15, 8);
+    const g = makeRing(8);
     const count = 24;
     for (let i = 0; i < count; i++) {
       const angle  = (i / count) * Math.PI * 2;
@@ -479,7 +478,7 @@ function buildMandala() {
 
   // ── Ring 5: 12 leaves at r=235 ────────────────────────────
   {
-    const g = makeRing(1.45, -6);
+    const g = makeRing(-6);
     const count = 12;
     for (let i = 0; i < count; i++) {
       const angle  = (i / count) * Math.PI * 2;
@@ -519,7 +518,7 @@ function buildMandala() {
 
   // ── Border: two concentric circles ────────────────────────
   {
-    const g = makeRing(1.75, 0);
+    const g = makeRing(0);
     g.appendChild(el('circle', 'mandala-border', {
       cx: '0', cy: '0', r: '268', 'stroke-width': '0.6',
     }));
@@ -528,20 +527,34 @@ function buildMandala() {
     }));
   }
 
-  // ── IntersectionObserver — triggers assembly ───────────────
-  // Directly sets inline opacity + transform on each ring so the
-  // transitions fire reliably (same pattern as buildLeafSpiral).
-  const obs = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      rings.forEach(g => {
-        g.style.opacity   = '1';
-        g.style.transform = 'rotate(0deg)';
-      });
-      obs.disconnect();
-    }
-  }, { threshold: 0.10 });
+  // ── Scroll-driven reveal ───────────────────────────────────
+  // Progress 0 → top of container at viewport bottom (just visible).
+  // Progress 1 → top of container at 28% from viewport top (well in view).
+  // Each of the 7 rings reveals as progress crosses its threshold.
+  let revealed = -1;
 
-  obs.observe(container);
+  function scrollProgress() {
+    const rect = container.getBoundingClientRect();
+    const vh   = window.innerHeight;
+    return Math.max(0, Math.min(1, (vh - rect.top) / (vh * 0.72)));
+  }
+
+  function revealRings() {
+    const prog    = scrollProgress();
+    const target  = Math.min(rings.length - 1, Math.floor(prog * rings.length));
+    if (target <= revealed) return;
+    for (let i = revealed + 1; i <= target; i++) {
+      rings[i].style.opacity   = '1';
+      rings[i].style.transform = 'rotate(0deg)';
+    }
+    revealed = target;
+    if (revealed >= rings.length - 1) {
+      window.removeEventListener('scroll', revealRings, { passive: true });
+    }
+  }
+
+  window.addEventListener('scroll', revealRings, { passive: true });
+  revealRings(); // catch case where element is already in view on load
 }
 
 /* ============================================================
