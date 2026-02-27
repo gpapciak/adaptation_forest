@@ -675,3 +675,250 @@
     gap: 1rem;
   }
 }
+
+/* ============================================================
+   Inventory List — #now section
+   ============================================================ */
+.inventory-list {
+  margin-top: 3rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+.inventory-item {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--clr-border);
+  align-items: flex-start;
+}
+
+.inventory-item__status {
+  flex-shrink: 0;
+  width: 68px;
+  padding-top: 2px;
+}
+
+.inventory-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.inventory-item__name {
+  font-family: var(--ff-display);
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--clr-birch);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.inventory-item__desc {
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  color: rgba(232, 228, 220, 0.6);
+  line-height: 1.82;
+  margin: 0;
+}
+
+/* ============================================================
+   Status Badges
+   ============================================================ */
+.status-exists,
+.status-planned {
+  font-family: var(--ff-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 1px;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.status-exists {
+  border: 1px solid rgba(122, 171, 132, 0.35);
+  background: rgba(122, 171, 132, 0.06);
+  color: #7aab84;
+}
+
+.status-planned {
+  border: 1px solid rgba(196, 136, 58, 0.35);
+  background: rgba(196, 136, 58, 0.06);
+  color: var(--clr-amber);
+}
+
+/* ============================================================
+   Practice Blockquote
+   ============================================================ */
+.practice-quote {
+  border-left: 1px solid var(--clr-border);
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.practice-quote p {
+  font-family: var(--ff-display);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(232, 228, 220, 0.58);
+  line-height: 1.72;
+  margin: 0;
+}
+
+.practice-quote--inline {
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Cabin Elevation SVG — #cabins section
+   ============================================================ */
+.cabin-diagram {
+  width: 100%;
+  border: 1px solid var(--clr-border);
+  border-radius: 2px;
+  background: rgba(8, 10, 8, 0.7);
+  padding: 1.5rem 1.25rem;
+  overflow: hidden;
+}
+
+.cabin-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+/* ============================================================
+   Soaking Tubs Section — dark treatment
+   ============================================================ */
+.tubs-section {
+  background: linear-gradient(180deg, #070c0b 0%, #080e0d 60%, var(--clr-humus) 100%);
+  border-top: 1px solid rgba(138, 145, 122, 0.1);
+  border-bottom: 1px solid rgba(138, 145, 122, 0.1);
+}
+
+/* ============================================================
+   Tub Atmospheric SVG — #tubs section
+   ============================================================ */
+.tub-diagram {
+  max-width: 440px;
+  margin: 2.5rem auto 0;
+}
+
+.tub-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+/* ============================================================
+   Equipment Grid — #equipment section
+   ============================================================ */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  margin-top: 3rem;
+}
+
+.equipment-group__label {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.equipment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.equipment-list li {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(138, 145, 122, 0.1);
+}
+
+.equipment-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.equipment-list strong {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--clr-birch);
+  margin-bottom: 0.3rem;
+}
+
+.equipment-list p {
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  color: rgba(232, 228, 220, 0.6);
+  line-height: 1.82;
+  margin: 0;
+}
+
+/* ============================================================
+   Tool Illustration SVG — #equipment section
+   ============================================================ */
+.tool-diagram {
+  margin-top: 3rem;
+  width: 100%;
+  border: 1px solid var(--clr-border);
+  border-radius: 2px;
+  background: rgba(8, 10, 8, 0.5);
+  padding: 1.25rem 1rem;
+  overflow: hidden;
+}
+
+.tool-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke: var(--clr-lichen);
+  color: var(--clr-lichen);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+/* ============================================================
+   Responsive additions
+   ============================================================ */
+@media (max-width: 860px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .inventory-item {
+    gap: 1.25rem;
+  }
+
+  .inventory-item__status {
+    width: 58px;
+  }
+}
