@@ -904,12 +904,57 @@
 }
 
 /* ============================================================
+   Photo Placeholders — #remediation section
+   ============================================================ */
+.remediation-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.photo-placeholder {
+  margin: 0;
+}
+
+.photo-placeholder__frame {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--clr-border);
+  background: rgba(8, 10, 8, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.photo-placeholder__frame span {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(138, 145, 122, 0.35);
+}
+
+.photo-placeholder figcaption {
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  color: rgba(232, 228, 220, 0.42);
+  line-height: 1.55;
+}
+
+/* ============================================================
    Responsive additions
    ============================================================ */
 @media (max-width: 860px) {
   .equipment-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .remediation-photos {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -920,5 +965,11 @@
 
   .inventory-item__status {
     width: 58px;
+  }
+}
+
+@media (max-width: 440px) {
+  .remediation-photos {
+    grid-template-columns: 1fr;
   }
 }
