@@ -495,12 +495,13 @@ ul, ol { list-style: none; }
 }
 
 /* Individual illustration max-widths */
-.illus--forest  { max-width: 560px; }
-.illus--practice{ max-width: 480px; }
-.illus--art     { max-width: 380px; }
-.illus--garden  { max-width: 540px; }
-.illus--gather  { max-width: 400px; }
-.illus--science { max-width: 400px; }
+.illus--forest   { max-width: 560px; }
+.illus--wildlife { max-width: 520px; }
+.illus--practice { max-width: 480px; }
+.illus--art      { max-width: 380px; }
+.illus--garden   { max-width: 540px; }
+.illus--gather   { max-width: 400px; }
+.illus--science  { max-width: 400px; }
 
 /* SVG text labels inside illustrations */
 .illus-label {
@@ -523,6 +524,17 @@ ul, ol { list-style: none; }
 
 .section--forest .section-title { color: #9fc49f; }
 .section--forest .section-lead  { color: #7a9a7a; }
+
+/* ============================================================
+   Section — The Wildlife
+   ============================================================ */
+.section--wildlife {
+  background: linear-gradient(180deg, #080d0c 0%, #0a0f0d 50%, var(--clr-humus) 100%);
+  color: #7aaabb;
+}
+
+.section--wildlife .section-title { color: #a8cdd6; }
+.section--wildlife .section-lead  { color: #7aaabb; opacity: 0.85; }
 
 /* ============================================================
    Section — The Practice

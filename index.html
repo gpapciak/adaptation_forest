@@ -27,6 +27,7 @@
       </button>
       <ul class="nav-links" role="list">
         <li><a href="#forest">The Forest</a></li>
+        <li><a href="#wildlife">The Wildlife</a></li>
         <li><a href="#practice">The Practice</a></li>
         <li><a href="#art">Art</a></li>
         <li><a href="#garden">Garden</a></li>
@@ -231,11 +232,174 @@
   </section>
 
   <!-- ============================================================
-       02 — The Practice
+       02 — The Wildlife
+       ============================================================ -->
+  <section id="wildlife" class="section section--wildlife">
+    <div class="container">
+      <span class="section-num reveal" aria-hidden="true">02</span>
+      <div class="section-grid section-grid--flip">
+
+        <!-- SVG: Forest wildlife scene — owl, deer, wood thrush, brook trout, red eft -->
+        <div class="section-visual">
+          <div class="illus-wrap svg-animate">
+            <svg class="section-illus illus--wildlife" viewBox="0 0 520 400"
+                 aria-label="Forest wildlife scene showing a barred owl on a branch, a white-tailed deer, a wood thrush, a brook trout in a stream, and a red eft salamander on a rock"
+                 role="img">
+
+              <!-- TREE 1 (owl tree, left) -->
+              <line class="draw" x1="75" y1="300" x2="73" y2="15" stroke-width="6"/>
+              <!-- Branch for owl -->
+              <line class="draw" x1="73" y1="153" x2="195" y2="146"/>
+              <!-- Canopy -->
+              <path class="draw" d="M 56,88 Q 74,50 92,88" opacity="0.45"/>
+              <path class="draw" d="M 48,118 Q 74,72 100,118" opacity="0.32"/>
+
+              <!-- TREE 2 (background center) -->
+              <line class="draw" x1="255" y1="300" x2="257" y2="35" stroke-width="7"/>
+              <path class="draw" d="M 232,108 Q 256,64 280,108" opacity="0.4"/>
+              <path class="draw" d="M 238,82 Q 257,52 276,82" opacity="0.28"/>
+
+              <!-- TREE 3 (right, wood thrush tree) -->
+              <line class="draw" x1="464" y1="300" x2="462" y2="40" stroke-width="5"/>
+              <!-- Branch for wood thrush -->
+              <line class="draw" x1="462" y1="196" x2="374" y2="190"/>
+              <!-- Canopy -->
+              <path class="draw" d="M 444,94 Q 463,55 482,94" opacity="0.45"/>
+
+              <!-- GROUND LINE -->
+              <line class="draw" x1="0" y1="300" x2="520" y2="300" stroke-width="1.4"/>
+
+              <!-- STREAM (wavy lines) -->
+              <path class="draw" d="M 0,313 Q 50,306 105,313 Q 160,320 215,313 Q 270,306 325,311 Q 380,316 435,311 Q 478,307 520,312" stroke-width="1.2"/>
+              <path class="draw" d="M 0,324 Q 65,317 130,324 Q 195,331 260,324 Q 325,317 390,322 Q 445,326 520,320" stroke-width="0.8" opacity="0.55"/>
+
+              <!-- BARRED OWL (on branch at ~145, 146) -->
+              <!-- Feet/talons gripping branch -->
+              <path class="draw" d="M 132,147 Q 127,151 124,155"/>
+              <path class="draw" d="M 136,147 Q 132,153 128,156"/>
+              <path class="draw" d="M 156,147 Q 160,153 164,156"/>
+              <path class="draw" d="M 160,147 Q 165,151 168,154"/>
+              <!-- Body (barrel-shaped) -->
+              <path class="draw" d="M 126,146 Q 123,154 123,168 Q 123,180 132,187 Q 144,193 156,187 Q 164,180 164,168 Q 164,154 161,146"/>
+              <!-- Chest bars -->
+              <line class="draw" x1="126" y1="162" x2="162" y2="162" stroke-width="0.7" opacity="0.42"/>
+              <line class="draw" x1="125" y1="170" x2="163" y2="170" stroke-width="0.7" opacity="0.36"/>
+              <line class="draw" x1="126" y1="179" x2="162" y2="179" stroke-width="0.7" opacity="0.28"/>
+              <!-- Head (large, round) -->
+              <circle class="draw" cx="143" cy="130" r="22"/>
+              <!-- Facial disc -->
+              <path class="draw" d="M 123,128 Q 126,114 143,112 Q 160,114 163,128 Q 160,143 143,145 Q 126,143 123,128 Z" stroke-width="0.7" opacity="0.42"/>
+              <!-- Eyes (forward-facing) -->
+              <circle class="draw" cx="135" cy="126" r="7"/>
+              <circle class="draw" cx="151" cy="126" r="7"/>
+              <!-- Iris -->
+              <circle class="draw" cx="135" cy="126" r="3.2" stroke-width="1.3"/>
+              <circle class="draw" cx="151" cy="126" r="3.2" stroke-width="1.3"/>
+              <!-- Beak -->
+              <path class="draw" d="M 141,133 L 143,138 L 145,133"/>
+
+              <!-- DEER (profile facing left, center) -->
+              <!-- Body -->
+              <path class="draw" d="M 188,298 Q 183,262 196,246 Q 210,232 230,230 Q 252,228 266,242 Q 278,255 274,280 Q 272,296 268,300"/>
+              <!-- Neck -->
+              <path class="draw" d="M 196,248 Q 192,228 198,214"/>
+              <!-- Head -->
+              <path class="draw" d="M 198,214 Q 202,206 212,202 Q 224,199 232,206 Q 239,215 234,226 Q 227,236 214,238 Q 202,239 196,230 Q 193,222 198,214 Z"/>
+              <!-- Muzzle -->
+              <path class="draw" d="M 232,214 Q 240,214 243,218"/>
+              <!-- Eye -->
+              <circle class="draw" cx="217" cy="212" r="3"/>
+              <!-- Ear -->
+              <path class="draw" d="M 204,202 Q 198,191 204,187 Q 212,186 214,194"/>
+              <!-- Legs -->
+              <line class="draw" x1="202" y1="296" x2="198" y2="326"/>
+              <line class="draw" x1="217" y1="298" x2="214" y2="326"/>
+              <line class="draw" x1="252" y1="294" x2="248" y2="324"/>
+              <line class="draw" x1="265" y1="290" x2="262" y2="320"/>
+              <!-- Hooves -->
+              <line class="draw" x1="198" y1="326" x2="194" y2="331" stroke-width="1.8"/>
+              <line class="draw" x1="214" y1="326" x2="210" y2="331" stroke-width="1.8"/>
+              <line class="draw" x1="248" y1="324" x2="244" y2="329" stroke-width="1.8"/>
+              <line class="draw" x1="262" y1="320" x2="258" y2="325" stroke-width="1.8"/>
+              <!-- White tail (raised) -->
+              <path class="draw" d="M 272,240 Q 279,232 284,232 Q 285,240 280,244"/>
+
+              <!-- WOOD THRUSH (on branch at ~400, 190) -->
+              <!-- Body -->
+              <path class="draw" d="M 383,203 Q 380,196 382,190 Q 385,184 391,182 Q 398,180 403,184 Q 408,188 407,196 Q 406,204 400,207 Q 393,210 387,207 Q 383,205 383,203 Z"/>
+              <!-- Head -->
+              <circle class="draw" cx="405" cy="186" r="9"/>
+              <!-- Beak (singing) -->
+              <path class="draw" d="M 412,183 L 420,180 L 414,188"/>
+              <!-- Eye with ring -->
+              <circle class="draw" cx="408" cy="184" r="2.2"/>
+              <circle class="draw" cx="408" cy="184" r="3.8" stroke-width="0.6" opacity="0.6"/>
+              <!-- Spotted breast -->
+              <circle class="draw" cx="389" cy="194" r="1.5" opacity="0.6"/>
+              <circle class="draw" cx="394" cy="200" r="1.5" opacity="0.5"/>
+              <circle class="draw" cx="399" cy="195" r="1.5" opacity="0.5"/>
+              <!-- Tail -->
+              <path class="draw" d="M 383,206 Q 377,210 375,216"/>
+              <path class="draw" d="M 385,209 Q 379,214 377,221"/>
+              <!-- Feet on branch -->
+              <path class="draw" d="M 391,208 Q 387,213 384,216"/>
+              <path class="draw" d="M 396,209 Q 393,214 390,217"/>
+
+              <!-- BROOK TROUT (in stream, lower center-left) -->
+              <path class="draw" d="M 140,320 Q 158,313 178,316 Q 195,319 204,316 Q 196,323 178,326 Q 158,328 142,323 Z"/>
+              <!-- Caudal fin -->
+              <path class="draw" d="M 140,320 Q 131,314 127,317 Q 131,321 140,323"/>
+              <!-- Dorsal fin -->
+              <path class="draw" d="M 163,315 Q 168,309 175,310 Q 175,315 170,318"/>
+              <!-- Eye -->
+              <circle class="draw" cx="200" cy="318" r="2.5"/>
+              <!-- Worm-like markings of brook trout -->
+              <path class="draw" d="M 156,318 Q 158,316 160,318" stroke-width="1.2" opacity="0.5"/>
+              <path class="draw" d="M 166,320 Q 168,318 170,320" stroke-width="1.2" opacity="0.45"/>
+              <path class="draw" d="M 150,321 Q 152,319 154,321" stroke-width="1.2" opacity="0.5"/>
+
+              <!-- ROCK near stream -->
+              <path class="draw" d="M 374,300 Q 384,292 406,292 Q 428,292 436,300 Q 428,307 406,307 Q 384,307 374,300 Z" stroke-width="0.9" opacity="0.52"/>
+              <!-- RED EFT (salamander on rock) -->
+              <path class="draw" d="M 381,298 Q 392,292 408,293 Q 421,294 430,299 Q 421,304 408,303 Q 393,302 381,298 Z" stroke-width="1.3"/>
+              <!-- Head -->
+              <path class="draw" d="M 428,299 Q 435,295 442,297 Q 440,302 434,303"/>
+              <!-- Tail -->
+              <path class="draw" d="M 381,298 Q 371,301 366,306 Q 370,309 376,306"/>
+              <!-- Legs -->
+              <line class="draw" x1="393" y1="293" x2="391" y2="288" stroke-width="1"/>
+              <line class="draw" x1="404" y1="292" x2="402" y2="287" stroke-width="1"/>
+              <line class="draw" x1="408" y1="303" x2="406" y2="308" stroke-width="1"/>
+              <line class="draw" x1="420" y1="302" x2="418" y2="307" stroke-width="1"/>
+              <!-- Eye -->
+              <circle class="draw" cx="438" cy="297" r="1.5"/>
+              <!-- Spots -->
+              <circle class="draw" cx="395" cy="297" r="1.5" opacity="0.5"/>
+              <circle class="draw" cx="408" cy="297" r="1.5" opacity="0.5"/>
+              <circle class="draw" cx="421" cy="298" r="1.5" opacity="0.5"/>
+
+            </svg>
+          </div>
+        </div>
+
+        <div class="section-text">
+          <h2 class="section-title reveal">The Wildlife</h2>
+          <p class="section-lead reveal">This forest is not only trees. It is the barred owl holding a territory of thirty acres, the brook trout holding the cold water, the red eft on the forest floor connecting two worlds.</p>
+          <p class="reveal">Forty-three bird species breed here. Brook trout run in every accessible reach of the headwater streams. White-tailed deer, black bear, fisher, bobcat, river otter — the full cast of a healthy northeastern forest is present, and their presence is not incidental. Each animal is a measure of something the forest is doing right: the owls need old trees with cavities; the brook trout need cold, clean water; the wood thrush needs large unfragmented forest.</p>
+          <p class="reveal">What lives here is contingent on what we do here. Managing this land for forest interior habitat, maintaining the stream buffers, leaving the dead trees standing — these are decisions with wildlife consequences. We are beginning to track those consequences systematically, through bird surveys, trail cameras, and stream macroinvertebrate sampling. What we find tells us what our tending is actually doing.</p>
+          <a href="pages/wildlife.html" class="go-deeper reveal">Go Deeper</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 — The Practice
        ============================================================ -->
   <section id="practice" class="section section--practice">
     <div class="container">
-      <span class="section-num reveal" aria-hidden="true">02</span>
+      <span class="section-num reveal" aria-hidden="true">03</span>
       <div class="section-grid section-grid--flip">
 
         <!-- SVG: Exploded axonometric shelter diagram -->
@@ -329,11 +493,11 @@
   </section>
 
   <!-- ============================================================
-       03 — Art in the Forest
+       04 — Art in the Forest
        ============================================================ -->
   <section id="art" class="section section--art">
     <div class="container">
-      <span class="section-num reveal" aria-hidden="true">03</span>
+      <span class="section-num reveal" aria-hidden="true">04</span>
       <div class="section-grid">
 
         <div class="section-text">
@@ -407,11 +571,11 @@
   </section>
 
   <!-- ============================================================
-       04 — The Garden
+       05 — The Garden
        ============================================================ -->
   <section id="garden" class="section section--garden">
     <div class="container">
-      <span class="section-num reveal" aria-hidden="true">04</span>
+      <span class="section-num reveal" aria-hidden="true">05</span>
       <div class="section-grid section-grid--flip">
 
         <!-- SVG: 7-layer food forest cross-section -->
@@ -501,11 +665,11 @@
   </section>
 
   <!-- ============================================================
-       05 — Gather
+       06 — Gather
        ============================================================ -->
   <section id="gather" class="section section--gather">
     <div class="container">
-      <span class="section-num reveal" aria-hidden="true">05</span>
+      <span class="section-num reveal" aria-hidden="true">06</span>
       <div class="section-grid">
 
         <div class="section-text">
@@ -601,11 +765,11 @@
   </section>
 
   <!-- ============================================================
-       06 — The Science
+       07 — The Science
        ============================================================ -->
   <section id="science" class="section section--science">
     <div class="container">
-      <span class="section-num reveal" aria-hidden="true">06</span>
+      <span class="section-num reveal" aria-hidden="true">07</span>
       <div class="section-grid">
 
         <div class="section-text">
