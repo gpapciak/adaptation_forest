@@ -704,8 +704,8 @@ ul, ol { list-style: none; }
   font-family: var(--ff-display);
   font-style: italic;
   font-weight: 300;
-  font-size: 0.75rem;
-  color: rgba(232, 228, 220, 0.7);
+  font-size: 0.77rem;
+  color: var(--clr-birch);
   max-width: 400px;
   line-height: 1.75;
   letter-spacing: 0.01em;
