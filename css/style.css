@@ -860,11 +860,11 @@ ul, ol { list-style: none; }
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(138, 145, 122, 0.30);
+  border: 1px solid rgba(138, 145, 122, 0.55);
   background: rgba(10, 10, 8, 0.80);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  color: rgba(138, 145, 122, 0.50);
+  color: rgba(138, 145, 122, 0.75);
   cursor: pointer;
   display: flex;
   align-items: center;
