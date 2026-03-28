@@ -1,9 +1,12 @@
 /**
  * Adaptation Forest — Ambient Audio Player
- * Small fixed player (bottom-right) cycling through nature recordings.
+ * Small fixed player (bottom-right). Each click advances to the next
+ * track; the last click stops playback. Tracks loop until advanced.
  *
- * Planned: stream.mp3, wind-hardwoods.mp3,
- * wind-softwoods.mp3, rain-canopy.mp3, night.mp3
+ * Cycle: off → Spring Birds → Stream → off → …
+ *
+ * Planned additions: wind-hardwoods.mp3, wind-softwoods.mp3,
+ * rain-canopy.mp3, night.mp3
  */
 
 'use strict';
@@ -12,11 +15,7 @@
 
   // ── Playlist ───────────────────────────────────────────────────
   // Add future tracks here as { file, label } objects.
-  // When more than one track is present the player crossfades
-  // between them automatically; with one track it loops seamlessly.
-  //
-  // Planned: stream.mp3, wind-hardwoods.mp3,
-  // wind-softwoods.mp3, rain-canopy.mp3, night.mp3
+  // Each click steps forward one track; after the last, playback stops.
   const PLAYLIST = [
     { file: 'AF - Birds - May 2025.mp4',    label: 'Spring Birds' },
     { file: 'AF - Stream - March 2026.mp4', label: 'Stream'       },
@@ -34,7 +33,7 @@
     : 'assets/audio/';
 
   // ── State ──────────────────────────────────────────────────────
-  let currentIdx  = 0;
+  let currentIdx  = -1;   // -1 = stopped
   let volume      = INIT_VOLUME;
   let playing     = false;
   let crossfading = false;
@@ -51,7 +50,7 @@
     a.src     = AUDIO_BASE + PLAYLIST[trackIdx].file;
     a.volume  = 0;
     a.preload = 'auto';
-    a.loop    = PLAYLIST.length === 1;
+    a.loop    = true;   // every track loops until the user advances
     a.load();
   }
 
@@ -105,7 +104,7 @@
     if (playing) {
       wrap.classList.add('is-playing');
       label.textContent = PLAYLIST[currentIdx].label;
-      btn.setAttribute('aria-label', 'Pause forest sounds');
+      btn.setAttribute('aria-label', 'Switch forest sound');
     } else {
       wrap.classList.remove('is-playing');
       label.textContent = 'Forest Sounds';
@@ -113,7 +112,7 @@
     }
   }
 
-  // ── Crossfade (multi-track) ────────────────────────────────────
+  // ── Crossfade ─────────────────────────────────────────────────
   function crossfadeTo(nextTrackIdx) {
     if (crossfading) return;
     crossfading = true;
@@ -146,58 +145,61 @@
     }, FADE_TICK_MS);
   }
 
-  // ── Playback ───────────────────────────────────────────────────
-  function play() {
-    audios[active].volume = volume;
-    audios[active].play().catch(() => {});
-    playing = true;
-    updateUI();
+  // ── Stop (fade out current track) ─────────────────────────────
+  function stop() {
+    const outAudio = audios[active];
+    const startVol = outAudio.volume;
+    const steps    = Math.round((CROSSFADE_S * 1000) / FADE_TICK_MS);
+    let   step     = 0;
+
+    const tick = setInterval(() => {
+      step++;
+      outAudio.volume = Math.max(0, startVol * (1 - step / steps));
+      if (step >= steps) {
+        clearInterval(tick);
+        outAudio.pause();
+        outAudio.currentTime = 0;
+        playing    = false;
+        currentIdx = -1;
+        updateUI();
+      }
+    }, FADE_TICK_MS);
   }
 
-  function pause() {
-    audios[active].pause();
-    playing = false;
-    updateUI();
-  }
+  // ── Cycle on click ────────────────────────────────────────────
+  // off → track 0 → track 1 → … → off → track 0 → …
+  function advance() {
+    if (crossfading) return;
 
-  function toggle() { playing ? pause() : play(); }
-
-  // ── Near-end detection (used when PLAYLIST.length > 1) ────────
-  function onTimeUpdate() {
-    if (PLAYLIST.length < 2 || crossfading || !playing) return;
-    const a = audios[active];
-    if (!a.duration) return;
-    if ((a.duration - a.currentTime) <= CROSSFADE_S + 0.2) {
-      crossfadeTo((currentIdx + 1) % PLAYLIST.length);
+    if (!playing) {
+      // Start from the first track
+      currentIdx = 0;
+      loadTrack(active, 0);
+      audios[active].volume = volume;
+      audios[active].play().catch(() => {});
+      playing = true;
+      updateUI();
+    } else if (currentIdx < PLAYLIST.length - 1) {
+      // Crossfade to next track
+      crossfadeTo(currentIdx + 1);
+    } else {
+      // Was on last track — fade out and stop
+      stop();
     }
-  }
-
-  // Fallback: if timeupdate missed the window, handle ended event
-  function onEnded() {
-    if (!playing) return;
-    if (PLAYLIST.length > 1) {
-      crossfadeTo((currentIdx + 1) % PLAYLIST.length);
-    }
-    // Single-track: loop attribute handles restart automatically
   }
 
   // ── Init ───────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     buildPlayer();
+
+    // Pre-load both slots so the first crossfade is instant
     loadTrack(0, 0);
-
-    // Pre-load second slot with track 1 when playlist has multiple tracks
     if (PLAYLIST.length > 1) loadTrack(1, 1);
-
-    audios.forEach(a => {
-      a.addEventListener('timeupdate', onTimeUpdate);
-      a.addEventListener('ended', onEnded);
-    });
 
     const btn  = document.getElementById('ambient-btn');
     const wrap = document.getElementById('ambient-player');
 
-    btn.addEventListener('click', toggle);
+    btn.addEventListener('click', advance);
 
     // Scroll wheel adjusts volume while hovering the player
     wrap.addEventListener('wheel', e => {
