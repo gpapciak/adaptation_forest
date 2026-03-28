@@ -18,7 +18,8 @@
   // Planned: stream.mp3, wind-hardwoods.mp3,
   // wind-softwoods.mp3, rain-canopy.mp3, night.mp3
   const PLAYLIST = [
-    { file: 'AF - Birds - May 2025.mp4', label: 'Spring Birds' },
+    { file: 'AF - Birds - May 2025.mp4',    label: 'Spring Birds' },
+    { file: 'AF - Stream - March 2026.mp4', label: 'Stream'       },
   ];
 
   const CROSSFADE_S  = 3;     // crossfade duration in seconds
