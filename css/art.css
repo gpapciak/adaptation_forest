@@ -658,3 +658,56 @@
     border-bottom: 1px solid var(--clr-border);
   }
 }
+
+/* ============================================================
+   Open Call
+   ============================================================ */
+.art-section--open-call {
+  border-top: 1px solid var(--clr-border);
+}
+
+.open-call-contact {
+  max-width: 640px;
+  margin: 3.5rem auto 0;
+  text-align: center;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+.open-call-contact__label {
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-lichen);
+  margin-bottom: 0.8rem;
+}
+
+.open-call-contact__email {
+  display: inline-block;
+  font-family: var(--ff-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+  font-weight: 400;
+  color: var(--clr-amber);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba(196, 136, 58, 0.3);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.open-call-contact__email:hover {
+  color: var(--clr-amber-lt);
+  border-color: rgba(196, 136, 58, 0.7);
+}
+
+.open-call-contact__note {
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(232, 228, 220, 0.55);
+  line-height: 1.7;
+  margin-top: 1.6rem;
+  max-width: 480px;
+  margin-inline: auto;
+}

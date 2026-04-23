@@ -551,6 +551,47 @@
   border-color: rgba(196, 136, 58, 0.7);
 }
 
+.involved-card__activities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  padding-block: 1rem;
+}
+
+.involved-card__activities li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--ff-body);
+  line-height: 1.4;
+}
+
+.involved-card__activities .activity-name {
+  font-size: 0.85rem;
+  color: var(--clr-birch);
+  letter-spacing: 0.01em;
+}
+
+.involved-card__activities .activity-note {
+  font-size: 0.78rem;
+  color: rgba(232, 228, 220, 0.5);
+  font-style: italic;
+}
+
+.involved-card__dates {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--clr-lichen);
+  text-transform: uppercase;
+  margin: 0;
+}
+
 /* Social links row */
 .social-row {
   display: flex;
