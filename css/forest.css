@@ -840,3 +840,99 @@
   }
   .partner-icon-svg { width: 40px; height: 40px; }
 }
+
+/* ============================================================
+   Named Places
+   ============================================================ */
+.named-places-list {
+  list-style: none;
+  padding: 0;
+  margin: 3.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.named-place {
+  padding-block: 2.4rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.named-place:first-child { border-top: 1px solid var(--clr-border); }
+
+.named-place__name {
+  font-family: var(--ff-display);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--clr-amber);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+.named-place__description {
+  font-family: var(--ff-body);
+  font-size: 0.95rem;
+  color: rgba(232, 228, 220, 0.78);
+  line-height: 1.85;
+  margin-bottom: 0.9rem;
+}
+
+.named-place__rationale {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--clr-lichen);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.named-places-invitation {
+  max-width: 640px;
+  margin: 4rem auto 0;
+  padding-top: 3rem;
+  border-top: 1px solid var(--clr-border);
+  text-align: center;
+}
+
+.named-places-invitation__lead {
+  font-family: var(--ff-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--clr-birch);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.named-places-invitation__body {
+  font-family: var(--ff-body);
+  font-size: 0.92rem;
+  color: rgba(232, 228, 220, 0.68);
+  line-height: 1.88;
+  margin-bottom: 2rem;
+}
+
+.named-places-invitation__email {
+  display: inline-block;
+  font-family: var(--ff-display);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 400;
+  color: var(--clr-amber);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba(196, 136, 58, 0.3);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.named-places-invitation__email:hover {
+  color: var(--clr-amber-lt, var(--clr-amber));
+  border-color: rgba(196, 136, 58, 0.7);
+}
+
+@media (max-width: 640px) {
+  .named-place { padding-block: 2rem; }
+  .named-places-invitation { margin-top: 3rem; padding-top: 2.4rem; }
+}
