@@ -823,6 +823,88 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================================
+   Inline link (used in body copy)
+   ============================================================ */
+.inline-link {
+  color: var(--clr-amber);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196, 136, 58, 0.35);
+  padding-bottom: 0.05em;
+  transition: border-color 0.2s;
+}
+.inline-link:hover { border-color: rgba(196, 136, 58, 0.8); }
+
+/* ============================================================
+   Seasonal Note (homepage "This season" block)
+   ============================================================ */
+.seasonal-note {
+  padding-block: 3.5rem 4rem;
+  background: var(--clr-humus);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.seasonal-note__inner {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.seasonal-note__dateline {
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.seasonal-note__heading {
+  font-family: var(--ff-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--clr-birch);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.seasonal-note__body {
+  font-family: var(--ff-body);
+  font-size: clamp(0.92rem, 1.5vw, 1rem);
+  color: rgba(232, 228, 220, 0.72);
+  line-height: 1.95;
+}
+
+/* ============================================================
+   Stats Section (site-specific numbers)
+   ============================================================ */
+.stats-section {
+  padding-block: 5rem 4rem;
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+}
+
+/* ============================================================
+   Methods Note (closing science link)
+   ============================================================ */
+.methods-note {
+  padding-block: 3rem 4rem;
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+}
+
+.methods-note__text {
+  max-width: 660px;
+  margin-inline: auto;
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  color: rgba(232, 228, 220, 0.6);
+  line-height: 1.88;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================================
    SVG Draw Animation
    CSS provides transition; JS sets initial dasharray/dashoffset
    ============================================================ */
