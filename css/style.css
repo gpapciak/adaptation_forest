@@ -836,25 +836,29 @@ ul, ol { list-style: none; }
 /* SVG #1 — animations paused until the element enters the viewport */
 .attention-svg--1 .phone-outline,
 .attention-svg--1 .phone-screen,
-.attention-svg--1 .phone-glow,
-.attention-svg--1 .notif-1,
-.attention-svg--1 .notif-2,
-.attention-svg--1 .notif-3,
+.attention-svg--1 .cord-bottom,
+.attention-svg--1 .cord-top,
+.attention-svg--1 .signal-arc,
 .attention-svg--1 .conifer,
-.attention-svg--1 .light-shaft,
-.attention-svg--1 .understory {
+.attention-svg--1 .stream-bank,
+.attention-svg--1 .ripple,
+.attention-svg--1 .understory,
+.attention-svg--1 .caption-1,
+.attention-svg--1 .caption-2 {
   animation-play-state: paused;
 }
 
 .attention-svg--1.is-visible .phone-outline,
 .attention-svg--1.is-visible .phone-screen,
-.attention-svg--1.is-visible .phone-glow,
-.attention-svg--1.is-visible .notif-1,
-.attention-svg--1.is-visible .notif-2,
-.attention-svg--1.is-visible .notif-3,
+.attention-svg--1.is-visible .cord-bottom,
+.attention-svg--1.is-visible .cord-top,
+.attention-svg--1.is-visible .signal-arc,
 .attention-svg--1.is-visible .conifer,
-.attention-svg--1.is-visible .light-shaft,
-.attention-svg--1.is-visible .understory {
+.attention-svg--1.is-visible .stream-bank,
+.attention-svg--1.is-visible .ripple,
+.attention-svg--1.is-visible .understory,
+.attention-svg--1.is-visible .caption-1,
+.attention-svg--1.is-visible .caption-2 {
   animation-play-state: running;
 }
 
@@ -1217,12 +1221,15 @@ ul, ol { list-style: none; }
     stroke-dashoffset: 0 !important;
   }
 
-  /* Attention SVG #1 — jump to final state (forest visible, phone gone) */
-  .phone-outline, .phone-screen, .phone-glow,
-  .notif-1, .notif-2, .notif-3 { animation: none !important; opacity: 0 !important; }
-  .conifer  { animation: none !important; opacity: var(--final-opacity, 0.75) !important; }
-  .light-shaft { animation: none !important; opacity: 0.18 !important; }
-  .understory  { animation: none !important; opacity: var(--final-opacity, 0.5)  !important; }
+  /* Attention SVG #1 — jump to final state (forest visible, phone/cord/signal gone) */
+  .phone-outline, .phone-screen,
+  .cord-bottom, .cord-top, .signal-arc { animation: none !important; opacity: 0 !important; }
+  .conifer     { animation: none !important; stroke-dashoffset: 0 !important; opacity: var(--final-opacity, 0.85) !important; }
+  .stream-bank { animation: none !important; stroke-dashoffset: 0 !important; opacity: var(--final-opacity, 0.7)  !important; }
+  .ripple      { animation: none !important; opacity: 0.5 !important; }
+  .understory  { animation: none !important; opacity: var(--final-opacity, 0.55) !important; }
+  .caption-1   { animation: none !important; opacity: 0   !important; }
+  .caption-2   { animation: none !important; opacity: 0.7 !important; }
 
   /* Attention SVG #2 — show both fields static */
   .grid-shape { animation: none !important; opacity: 0.6 !important; }
