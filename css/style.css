@@ -818,6 +818,46 @@ ul, ol { list-style: none; }
   .attention-closer { margin-top: 2.4rem; padding-top: 1.8rem; }
 }
 
+/* ============================================================
+   Attention SVGs — token mapping + play-state control
+   ============================================================ */
+.attention-svg {
+  /* Map design-system tokens to site variables */
+  --color-text-secondary:  var(--clr-lichen);
+  --color-text-tertiary:   rgba(138, 145, 122, 0.42);
+  --color-border-tertiary: rgba(138, 145, 122, 0.18);
+  --font-sans: var(--ff-body);
+  max-width: 640px;
+  margin-inline: auto;
+  margin-block: 2.5rem;
+  display: block;
+}
+
+/* SVG #1 — animations paused until the element enters the viewport */
+.attention-svg--1 .phone-outline,
+.attention-svg--1 .phone-screen,
+.attention-svg--1 .phone-glow,
+.attention-svg--1 .notif-1,
+.attention-svg--1 .notif-2,
+.attention-svg--1 .notif-3,
+.attention-svg--1 .conifer,
+.attention-svg--1 .light-shaft,
+.attention-svg--1 .understory {
+  animation-play-state: paused;
+}
+
+.attention-svg--1.is-visible .phone-outline,
+.attention-svg--1.is-visible .phone-screen,
+.attention-svg--1.is-visible .phone-glow,
+.attention-svg--1.is-visible .notif-1,
+.attention-svg--1.is-visible .notif-2,
+.attention-svg--1.is-visible .notif-3,
+.attention-svg--1.is-visible .conifer,
+.attention-svg--1.is-visible .light-shaft,
+.attention-svg--1.is-visible .understory {
+  animation-play-state: running;
+}
+
 .text-amber {
   color: var(--clr-amber);
 }
@@ -1176,4 +1216,15 @@ ul, ol { list-style: none; }
   .svg-animate .draw {
     stroke-dashoffset: 0 !important;
   }
+
+  /* Attention SVG #1 — jump to final state (forest visible, phone gone) */
+  .phone-outline, .phone-screen, .phone-glow,
+  .notif-1, .notif-2, .notif-3 { animation: none !important; opacity: 0 !important; }
+  .conifer  { animation: none !important; opacity: var(--final-opacity, 0.75) !important; }
+  .light-shaft { animation: none !important; opacity: 0.18 !important; }
+  .understory  { animation: none !important; opacity: var(--final-opacity, 0.5)  !important; }
+
+  /* Attention SVG #2 — show both fields static */
+  .grid-shape { animation: none !important; opacity: 0.6 !important; }
+  .organic    { animation: none !important; }
 }

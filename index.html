@@ -234,12 +234,169 @@
   <section class="attention-passage" aria-label="A note on attention">
     <div class="container">
 
+      <!-- SVG #1: phone fades, forest emerges — plays once on scroll-into-view -->
+      <div class="attention-svg attention-svg--1 reveal">
+        <svg width="100%" viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+          <title>A phone gives way to a forest of conifers</title>
+          <desc>A phone sits visible at the start, glows briefly, then slowly fades as a forest of conifer silhouettes emerges behind it, with a clearing opening where the phone was.</desc>
+          <defs>
+            <style>
+              @keyframes phone-hold-fade { 0%{opacity:1}20%{opacity:1}45%{opacity:0.85}70%{opacity:0.3}90%,100%{opacity:0} }
+              @keyframes screen-hold-fade { 0%{opacity:0.7}20%{opacity:0.7}45%{opacity:0.55}70%{opacity:0.18}90%,100%{opacity:0} }
+              @keyframes glow-pulse { 0%{opacity:0}8%{opacity:0.5}18%{opacity:0.25}28%{opacity:0.45}40%,100%{opacity:0} }
+              @keyframes notification-rise { 0%{opacity:0;transform:translateY(0)}10%{opacity:0.7;transform:translateY(-2px)}25%{opacity:0;transform:translateY(-18px)}100%{opacity:0;transform:translateY(-18px)} }
+              @keyframes conifer-fade { 0%,35%{opacity:0}90%{opacity:var(--final-opacity,0.75)}100%{opacity:var(--final-opacity,0.75)} }
+              @keyframes light-fade { 0%,50%{opacity:0}92%{opacity:0.18}100%{opacity:0.18} }
+              @keyframes detail-fade { 0%,60%{opacity:0}100%{opacity:var(--final-opacity,0.5)} }
+              .phone-outline{fill:none;stroke:var(--color-text-secondary);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;animation:phone-hold-fade 11s ease-in-out forwards}
+              .phone-screen{fill:none;stroke:var(--color-text-tertiary);stroke-width:0.75;animation:screen-hold-fade 11s ease-in-out forwards}
+              .phone-glow{fill:var(--color-text-secondary);opacity:0;animation:glow-pulse 11s ease-in-out forwards}
+              .notification{fill:var(--color-text-secondary);opacity:0;transform-origin:center;transform-box:fill-box}
+              .notif-1{animation:notification-rise 11s ease-in-out forwards;animation-delay:0.4s}
+              .notif-2{animation:notification-rise 11s ease-in-out forwards;animation-delay:0.6s}
+              .notif-3{animation:notification-rise 11s ease-in-out forwards;animation-delay:0.8s}
+              .conifer{fill:var(--color-text-secondary);opacity:0;animation:conifer-fade 11s ease-out forwards}
+              .light-shaft{fill:var(--color-text-secondary);opacity:0;animation:light-fade 11s ease-out forwards}
+              .understory{fill:var(--color-text-secondary);opacity:0;animation:detail-fade 11s ease-out forwards}
+            </style>
+          </defs>
+          <g style="--final-opacity:0.18"><polygon class="light-shaft" points="318,90 358,90 376,275 300,275"/><polygon class="light-shaft" points="278,95 308,95 320,275 268,275"/><polygon class="light-shaft" points="372,95 400,95 412,275 360,275"/></g>
+          <g style="--final-opacity:0.8"><polygon class="conifer" points="35,275 50,275 50,225 58,225 42,180 50,180 36,140 44,140 35,95 26,140 34,140 20,180 28,180 12,225 20,225 20,275"/></g>
+          <g style="--final-opacity:0.85"><polygon class="conifer" points="80,275 100,275 100,210 112,210 90,160 102,160 84,115 94,115 80,70 66,115 76,115 58,160 70,160 48,210 60,210 60,275"/></g>
+          <g style="--final-opacity:0.7"><polygon class="conifer" points="135,275 148,275 148,235 156,235 142,200 150,200 138,165 144,165 135,130 126,165 132,165 120,200 128,200 114,235 122,235 122,275"/></g>
+          <g style="--final-opacity:0.85"><polygon class="conifer" points="180,275 200,275 200,215 212,215 192,165 204,165 186,120 196,120 180,75 164,120 174,120 156,165 168,165 148,215 160,215 160,275"/></g>
+          <g style="--final-opacity:0.75"><polygon class="conifer" points="235,275 250,275 250,225 258,225 242,180 250,180 236,140 244,140 235,95 226,140 234,140 220,180 228,180 212,225 220,225 220,275"/></g>
+          <g style="--final-opacity:0.5"><polygon class="conifer" points="282,275 292,275 292,235 298,235 286,205 292,205 282,170 278,170 282,140 274,170 278,170 266,205 272,205 260,235 266,235 266,275"/></g>
+          <g style="--final-opacity:0.5"><polygon class="conifer" points="392,275 400,275 400,235 406,235 396,205 400,205 392,170 388,170 392,140 384,170 388,170 376,205 382,205 372,235 378,235 378,275"/></g>
+          <g style="--final-opacity:0.75"><polygon class="conifer" points="445,275 460,275 460,225 468,225 452,180 460,180 446,140 454,140 445,95 436,140 444,140 430,180 438,180 422,225 430,225 430,275"/></g>
+          <g style="--final-opacity:0.85"><polygon class="conifer" points="500,275 520,275 520,215 532,215 512,165 524,165 506,120 516,120 500,75 484,120 494,120 476,165 488,165 468,215 480,215 480,275"/></g>
+          <g style="--final-opacity:0.7"><polygon class="conifer" points="555,275 568,275 568,235 576,235 562,200 570,200 558,165 564,165 555,130 546,165 552,165 540,200 548,200 534,235 542,235 542,275"/></g>
+          <g style="--final-opacity:0.85"><polygon class="conifer" points="605,275 625,275 625,210 637,210 615,160 627,160 609,115 619,115 605,70 591,115 601,115 583,160 595,160 573,210 585,210 585,275"/></g>
+          <g style="--final-opacity:0.8"><polygon class="conifer" points="660,275 672,275 672,230 678,230 666,195 670,195 662,160 660,125 658,160 650,195 654,195 642,230 648,230 648,275"/></g>
+          <g style="--final-opacity:0.55">
+            <ellipse class="understory" cx="60"  cy="285" rx="14" ry="3"   transform="rotate(-8 60 285)"/>
+            <ellipse class="understory" cx="135" cy="288" rx="11" ry="2.5" transform="rotate(5 135 288)"/>
+            <ellipse class="understory" cx="540" cy="287" rx="13" ry="3"   transform="rotate(-6 540 287)"/>
+            <ellipse class="understory" cx="610" cy="289" rx="10" ry="2.5" transform="rotate(7 610 289)"/>
+            <circle  class="understory" cx="220" cy="290" r="2"/>
+            <circle  class="understory" cx="475" cy="290" r="2.5"/>
+          </g>
+          <g transform="translate(310,90)">
+            <rect class="phone-glow"    x="2"  y="2"   width="56" height="116" rx="9" ry="9"/>
+            <rect class="phone-outline" x="0"  y="0"   width="60" height="120" rx="10" ry="10"/>
+            <rect class="phone-screen"  x="6"  y="14"  width="48" height="92"  rx="2"  ry="2"/>
+            <circle class="phone-screen" cx="30" cy="111" r="2.5"/>
+          </g>
+          <g transform="translate(310,90)">
+            <circle class="notification notif-1" cx="20" cy="40" r="2"/>
+            <circle class="notification notif-2" cx="40" cy="40" r="2"/>
+            <circle class="notification notif-3" cx="30" cy="40" r="2"/>
+          </g>
+        </svg>
+      </div>
+
       <p class="attention-eyebrow reveal">A note on attention</p>
 
       <div class="attention-body">
-        <p class="reveal">There is a state of mind that shows up reliably when people spend time in a landscape without a screen in their pocket — looser, more associative, more willing to make unexpected connections. Writers and researchers have been describing it for a long time under different names: mind-wandering, the default mode, the state where walks produce ideas that desks don't. It is not mystical. It is the ordinary functioning of a brain that has been given room to do what it evolved to do.</p>
+        <p class="reveal">There is a state of mind that shows up reliably when people spend time in a landscape without a screen in their pocket — looser, more associative, more willing to make unexpected connections. Writers and researchers have been describing it for a long time under different names: mind-wandering, the default mode, the state where walks produce ideas that desks don't. It is the ordinary functioning of a brain that has been given room to do what it evolved to do.</p>
 
-        <p class="reveal">The rest is mechanics. The algorithms that shape most screen time are designed to hold attention continuously, which means they foreclose exactly the gaps where that state opens up. A forest does the opposite — not because it is magical, but because it is indifferent. It has nowhere to direct your attention and no incentive to. The openness you feel in it is the absence of something rather than the presence of something.</p>
+        <p class="reveal">The rest is mechanics. The algorithms that shape most screen time are designed to hold attention continuously, which means they foreclose exactly the gaps where that state opens up. Monotony fatigues the mind; so does the relentless pull of something engineered to be unmissable. A forest works on different terms. It is in constant low motion — light shifting, leaves turning over, something moving at the edge of sight — but none of it is addressed to you. The novelty restores attention; the lack of demand lets it wander. You can look or not look.</p>
+
+        <!-- SVG #2: two fields of attention — loops continuously -->
+        <div class="attention-svg attention-svg--2 reveal">
+          <svg width="100%" viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+            <title>Two fields of attention</title>
+            <desc>On the left, a tight uniform grid of identical shapes pulses in unison, representing algorithmic attention capture. On the right, varied organic forms drift visibly at different rates and orientations, representing a forest's unaddressed attention.</desc>
+            <defs>
+              <style>
+                .attn-label{font-family:var(--font-sans),-apple-system,sans-serif;font-size:12px;fill:var(--color-text-tertiary);letter-spacing:0.04em;text-transform:lowercase}
+                .grid-shape{fill:var(--color-text-secondary);opacity:0.85;animation:attn-pulse 2.4s ease-in-out infinite}
+                @keyframes attn-pulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:0.45;transform:scale(0.92)}}
+                .organic{fill:var(--color-text-secondary)}
+                .drift-1{animation:drift1 9s  ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-2{animation:drift2 12s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-3{animation:drift3 7s  ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-4{animation:drift4 14s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-5{animation:drift5 10s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(9px,-7px) rotate(14deg)}}
+                @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.55}50%{transform:translate(-8px,9px) rotate(-18deg);opacity:1}}
+                @keyframes drift3{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.4}50%{transform:translate(11px,4px) rotate(22deg);opacity:0.95}}
+                @keyframes drift4{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.5}50%{transform:translate(-10px,-8px) rotate(-12deg);opacity:0.95}}
+                @keyframes drift5{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(7px,6px) rotate(16deg)}66%{transform:translate(-6px,-4px) rotate(-14deg)}}
+              </style>
+            </defs>
+            <text x="40"  y="32" class="attn-label">directed</text>
+            <text x="640" y="32" class="attn-label" text-anchor="end">unaddressed</text>
+            <g transform="translate(60,70)">
+              <g class="grid-shape"><rect x="0"   y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.10s"><rect x="36"  y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.20s"><rect x="72"  y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.30s"><rect x="108" y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.40s"><rect x="144" y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.50s"><rect x="180" y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.05s"><rect x="0"   y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.15s"><rect x="36"  y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.25s"><rect x="72"  y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.35s"><rect x="108" y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.45s"><rect x="144" y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.55s"><rect x="180" y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.10s"><rect x="0"   y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.20s"><rect x="36"  y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.30s"><rect x="72"  y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.40s"><rect x="108" y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.50s"><rect x="144" y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.60s"><rect x="180" y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.15s"><rect x="0"   y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.25s"><rect x="36"  y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.35s"><rect x="72"  y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.45s"><rect x="108" y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.55s"><rect x="144" y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.65s"><rect x="180" y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.20s"><rect x="0"   y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.30s"><rect x="36"  y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.40s"><rect x="72"  y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.50s"><rect x="108" y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.60s"><rect x="144" y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.70s"><rect x="180" y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.25s"><rect x="0"   y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.35s"><rect x="36"  y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.45s"><rect x="72"  y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.55s"><rect x="108" y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.65s"><rect x="144" y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.75s"><rect x="180" y="180" width="14" height="14" rx="2"/></g>
+            </g>
+            <line x1="340" y1="70" x2="340" y2="290" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.5"/>
+            <g transform="translate(380,70)">
+              <ellipse class="organic drift-1" cx="40"  cy="20"  rx="9"   ry="4"   opacity="0.80" transform="rotate(-15 40 20)"/>
+              <circle  class="organic drift-3" cx="120" cy="35"  r="2.5"           opacity="0.60"/>
+              <path    class="organic drift-2" d="M 180 15 Q 188 10 196 18 Q 192 26 184 22 Z" opacity="0.75"/>
+              <ellipse class="organic drift-4" cx="240" cy="28"  rx="6"   ry="3"   opacity="0.55" transform="rotate(25 240 28)"/>
+              <circle  class="organic drift-2" cx="20"  cy="65"  r="3.5"           opacity="0.70"/>
+              <path    class="organic drift-5" d="M 70 55 Q 80 52 85 62 Q 78 70 68 65 Z" opacity="0.65"/>
+              <ellipse class="organic drift-1" cx="150" cy="70"  rx="11"  ry="3"   opacity="0.85" transform="rotate(8 150 70)"/>
+              <circle  class="organic drift-4" cx="220" cy="58"  r="1.8"           opacity="0.50"/>
+              <ellipse class="organic drift-3" cx="265" cy="75"  rx="4"   ry="7"   opacity="0.70" transform="rotate(-20 265 75)"/>
+              <path    class="organic drift-2" d="M 35 105 Q 45 98 52 108 Q 48 118 38 113 Z" opacity="0.60"/>
+              <circle  class="organic drift-5" cx="95"  cy="115" r="2.2"           opacity="0.85"/>
+              <ellipse class="organic drift-1" cx="170" cy="108" rx="7"   ry="2.5" opacity="0.50" transform="rotate(-30 170 108)"/>
+              <path    class="organic drift-3" d="M 230 100 Q 242 105 240 118 Q 228 120 225 110 Z" opacity="0.75"/>
+              <circle  class="organic drift-4" cx="280" cy="120" r="3"             opacity="0.55"/>
+              <ellipse class="organic drift-4" cx="55"  cy="155" rx="5"   ry="2"   opacity="0.70" transform="rotate(40 55 155)"/>
+              <circle  class="organic drift-2" cx="125" cy="148" r="4"             opacity="0.60"/>
+              <path    class="organic drift-1" d="M 195 145 Q 205 140 212 152 Q 205 160 196 156 Z" opacity="0.85"/>
+              <ellipse class="organic drift-5" cx="255" cy="160" rx="8"   ry="3"   opacity="0.55" transform="rotate(-12 255 160)"/>
+              <circle  class="organic drift-3" cx="30"  cy="200" r="2.8"           opacity="0.65"/>
+              <path    class="organic drift-2" d="M 80 195 Q 92 192 95 205 Q 85 212 78 203 Z" opacity="0.75"/>
+              <ellipse class="organic drift-4" cx="160" cy="195" rx="3.5" ry="6"   opacity="0.50" transform="rotate(15 160 195)"/>
+              <circle  class="organic drift-1" cx="225" cy="208" r="1.5"           opacity="0.85"/>
+              <ellipse class="organic drift-5" cx="280" cy="200" rx="9"   ry="3.5" opacity="0.70" transform="rotate(-25 280 200)"/>
+            </g>
+            <text x="40"  y="320" class="attn-label">algorithmic feed</text>
+            <text x="640" y="320" class="attn-label" text-anchor="end">forest</text>
+          </svg>
+        </div>
+
+        <p class="reveal">And forests are stranger than they appear. Trees move sugars and warnings to each other through fungal networks in the soil; canopies coordinate flowering across miles; the system you are standing in is doing more than it shows. None of this requires belief. It is just what is happening, mostly out of sight, while you walk through it.</p>
       </div>
 
       <p class="attention-closer reveal">This is part of what a forest is <em>for</em>. Not the only thing, and not a cure for anything. But a place the mind can go when it needs to do the work only an unheld attention can do.</p>
