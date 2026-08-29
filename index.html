@@ -229,196 +229,6 @@
   </div>
 
   <!-- ============================================================
-       A Note on Attention
-       ============================================================ -->
-  <section class="attention-passage" aria-label="A note on attention">
-    <div class="container">
-
-      <p class="attention-eyebrow reveal">A note on attention</p>
-
-      <!-- SVG #1: phone fades, outlined forest draws in — plays once on scroll-into-view -->
-      <div class="attention-svg attention-svg--1 reveal">
-        <svg width="100%" viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
-          <title>From always connected to opening ourselves to what is already happening</title>
-          <desc>A phone with a charging cord and a signal line sits at the start. The cords retract and the phone slowly fades. As it does, an outlined forest of conifers draws itself in behind, with a clearing where the phone was, and a tapered stream emerging from within the forest and meandering through the clearing toward the viewer. The caption changes from "always connected" to "opening ourselves to what is already happening."</desc>
-          <defs>
-            <style>
-              @keyframes phone-slow-fade{0%,25%{opacity:1}45%{opacity:0.7}65%{opacity:0.35}85%,100%{opacity:0}}
-              @keyframes cord-bottom-retract{0%,18%{opacity:0.9;stroke-dashoffset:0;transform:translateY(0)}30%{opacity:0.9;stroke-dashoffset:0;transform:translateY(0)}42%{opacity:0.6;stroke-dashoffset:70;transform:translateY(8px)}55%,100%{opacity:0;stroke-dashoffset:70;transform:translateY(14px)}}
-              @keyframes cord-top-retract{0%,18%{opacity:0.9;stroke-dashoffset:0}28%{opacity:0.9;stroke-dashoffset:0}40%{opacity:0.5;stroke-dashoffset:-50}52%,100%{opacity:0;stroke-dashoffset:-50}}
-              @keyframes signal-arc-fade{0%,18%{opacity:0.4}35%{opacity:0.2}48%,100%{opacity:0}}
-              @keyframes conifer-draw{0%,35%{stroke-dashoffset:var(--dash-length,400);opacity:0}50%{opacity:0.4}90%{stroke-dashoffset:0;opacity:var(--final-opacity,0.85)}100%{stroke-dashoffset:0;opacity:var(--final-opacity,0.85)}}
-              @keyframes understory-fade{0%,70%{opacity:0}100%{opacity:var(--final-opacity,0.5)}}
-              @keyframes stream-draw{0%,75%{stroke-dashoffset:var(--dash-length,320);opacity:0}85%{opacity:0.5}100%{stroke-dashoffset:0;opacity:var(--final-opacity,0.7)}}
-              @keyframes ripple-fade{0%,92%{opacity:0}100%{opacity:0.5}}
-              @keyframes label-out{0%,25%{opacity:0.7}35%{opacity:0.4}45%,100%{opacity:0}}
-              @keyframes label-in{0%,45%{opacity:0}60%{opacity:0.4}78%{opacity:0.7}100%{opacity:0.7}}
-              .phone-outline{fill:none;stroke:var(--color-text-secondary);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;animation:phone-slow-fade 13s ease-in-out forwards}
-              .phone-screen{fill:none;stroke:var(--color-text-tertiary);stroke-width:0.75;animation:phone-slow-fade 13s ease-in-out forwards}
-              .cord-bottom{fill:none;stroke:var(--color-text-secondary);stroke-width:1.25;stroke-linecap:round;stroke-dasharray:70;stroke-dashoffset:0;opacity:0.9;animation:cord-bottom-retract 13s ease-in-out forwards;transform-origin:center top;transform-box:fill-box}
-              .cord-top{fill:none;stroke:var(--color-text-secondary);stroke-width:1.25;stroke-linecap:round;stroke-dasharray:50;stroke-dashoffset:0;opacity:0.9;animation:cord-top-retract 13s ease-in-out forwards}
-              .signal-arc{fill:none;stroke:var(--color-text-secondary);stroke-width:0.75;stroke-linecap:round;opacity:0.4;animation:signal-arc-fade 13s ease-in-out forwards}
-              .conifer{fill:none;stroke:var(--color-text-secondary);stroke-width:1;stroke-linejoin:round;stroke-linecap:round;opacity:0;animation:conifer-draw 13s ease-out forwards}
-              .understory{fill:none;stroke:var(--color-text-secondary);stroke-width:0.75;stroke-linecap:round;opacity:0;animation:understory-fade 13s ease-out forwards}
-              .stream-bank{fill:none;stroke:var(--color-text-secondary);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;opacity:0;animation:stream-draw 13s ease-out forwards}
-              .ripple{fill:none;stroke:var(--color-text-secondary);stroke-width:0.6;stroke-linecap:round;opacity:0;animation:ripple-fade 13s ease-out forwards}
-              .caption{font-family:var(--font-sans),-apple-system,sans-serif;font-size:13px;fill:var(--color-text-tertiary);letter-spacing:0.04em;text-transform:lowercase}
-              .caption-1{animation:label-out 13s ease-in-out forwards}
-              .caption-2{opacity:0;animation:label-in 13s ease-in-out forwards}
-            </style>
-          </defs>
-          <g style="--final-opacity:0.85;--dash-length:460"><polygon class="conifer" points="35,290 50,290 50,240 58,240 42,195 50,195 36,155 44,155 35,110 26,155 34,155 20,195 28,195 12,240 20,240 20,290" stroke-dasharray="460"/></g>
-          <g style="--final-opacity:0.9;--dash-length:540"><polygon class="conifer" points="80,290 100,290 100,225 112,225 90,175 102,175 84,130 94,130 80,85 66,130 76,130 58,175 70,175 48,225 60,225 60,290" stroke-dasharray="540"/></g>
-          <g style="--final-opacity:0.75;--dash-length:380"><polygon class="conifer" points="135,290 148,290 148,250 156,250 142,215 150,215 138,180 144,180 135,145 126,180 132,180 120,215 128,215 114,250 122,250 122,290" stroke-dasharray="380"/></g>
-          <g style="--final-opacity:0.9;--dash-length:560"><polygon class="conifer" points="180,290 200,290 200,230 212,230 192,180 204,180 186,135 196,135 180,90 164,135 174,135 156,180 168,180 148,230 160,230 160,290" stroke-dasharray="560"/></g>
-          <g style="--final-opacity:0.8;--dash-length:460"><polygon class="conifer" points="235,290 250,290 250,240 258,240 242,195 250,195 236,155 244,155 235,110 226,155 234,155 220,195 228,195 212,240 220,240 220,290" stroke-dasharray="460"/></g>
-          <g style="--final-opacity:0.5;--dash-length:320"><polygon class="conifer" points="282,290 282,250 290,250 280,220 286,220 278,185 282,185 282,155 282,185 286,185 278,220 284,220 274,250 282,250 282,290" stroke-dasharray="320"/></g>
-          <g style="--final-opacity:0.5;--dash-length:320"><polygon class="conifer" points="396,290 396,250 404,250 394,220 400,220 392,185 396,185 396,155 396,185 400,185 392,220 398,220 388,250 396,250 396,290" stroke-dasharray="320"/></g>
-          <g style="--final-opacity:0.8;--dash-length:460"><polygon class="conifer" points="445,290 460,290 460,240 468,240 452,195 460,195 446,155 454,155 445,110 436,155 444,155 430,195 438,195 422,240 430,240 430,290" stroke-dasharray="460"/></g>
-          <g style="--final-opacity:0.9;--dash-length:560"><polygon class="conifer" points="500,290 520,290 520,230 532,230 512,180 524,180 506,135 516,135 500,90 484,135 494,135 476,180 488,180 468,230 480,230 480,290" stroke-dasharray="560"/></g>
-          <g style="--final-opacity:0.75;--dash-length:380"><polygon class="conifer" points="555,290 568,290 568,250 576,250 562,215 570,215 558,180 564,180 555,145 546,180 552,180 540,215 548,215 534,250 542,250 542,290" stroke-dasharray="380"/></g>
-          <g style="--final-opacity:0.9;--dash-length:540"><polygon class="conifer" points="605,290 625,290 625,225 637,225 615,175 627,175 609,130 619,130 605,85 591,130 601,130 583,175 595,175 573,225 585,225 585,290" stroke-dasharray="540"/></g>
-          <g style="--final-opacity:0.85;--dash-length:420"><polygon class="conifer" points="660,290 672,290 672,245 678,245 666,210 670,210 662,175 660,140 658,175 650,210 654,210 642,245 648,245 648,290 660,290" stroke-dasharray="420"/></g>
-          <g style="--final-opacity:0.7;--dash-length:320">
-            <path class="stream-bank" d="M 305 175 C 295 205, 320 230, 318 260 C 316 285, 332 290, 336 295" stroke-dasharray="320"/>
-            <path class="stream-bank" d="M 316 175 C 308 205, 340 230, 342 260 C 344 285, 358 290, 364 295" stroke-dasharray="320"/>
-          </g>
-          <g>
-            <path class="ripple" d="M 312 220 Q 326 217 340 220"/>
-            <path class="ripple" d="M 320 260 Q 334 257 348 260"/>
-            <path class="ripple" d="M 340 285 Q 350 282 360 285"/>
-          </g>
-          <g style="--final-opacity:0.55">
-            <path class="understory" d="M 50 298 Q 56 294 62 298 Q 68 294 74 298"/>
-            <path class="understory" d="M 130 300 Q 136 296 142 300 Q 148 296 154 300"/>
-            <path class="understory" d="M 530 299 Q 538 295 546 299 Q 554 295 562 299"/>
-            <path class="understory" d="M 600 301 Q 606 297 612 301 Q 618 297 624 301"/>
-            <circle class="understory" cx="220" cy="302" r="2.5"/>
-            <circle class="understory" cx="475" cy="302" r="3"/>
-          </g>
-          <g transform="translate(310,110)">
-            <path class="cord-top"    d="M 30 0 Q 32 -10 34 -22 Q 36 -34 30 -50"/>
-            <path class="signal-arc"  d="M 22 -30 Q 30 -38 38 -30"/>
-            <path class="signal-arc"  d="M 17 -38 Q 30 -50 43 -38"/>
-            <rect  class="phone-outline" x="0" y="0"  width="60" height="120" rx="10" ry="10"/>
-            <rect  class="phone-screen"  x="6" y="14" width="48" height="92"  rx="2"  ry="2"/>
-            <circle class="phone-screen" cx="30" cy="111" r="2.5"/>
-            <path class="cord-bottom" d="M 30 120 Q 32 132 28 144 Q 26 158 32 170"/>
-          </g>
-          <text x="340" y="340" class="caption caption-1" text-anchor="middle">always connected</text>
-          <text x="340" y="340" class="caption caption-2" text-anchor="middle">opening ourselves to what is already happening</text>
-        </svg>
-      </div>
-
-      <div class="attention-body">
-        <p class="reveal">A state of mind shows up reliably when people spend time in a landscape without a screen in their pocket — looser, more associative, more willing to make unexpected connections. Writers and researchers have called it many things: mind-wandering, the default mode, the state where walks produce ideas that desks don't. It is the ordinary functioning of a brain given room to do what it evolved to do.</p>
-
-        <p class="reveal">The rest is mechanics. Algorithms are designed to hold attention continuously, foreclosing exactly the gaps where that state opens up. A forest works on different terms. It is in constant low motion — light shifting, leaves turning over, something moving at the edge of sight — but none of it is addressed to you. The novelty restores attention; the lack of demand lets it wander.</p>
-
-        <!-- SVG #2: two fields of attention — loops continuously -->
-        <div class="attention-svg attention-svg--2 reveal">
-          <svg width="100%" viewBox="0 0 680 390" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
-            <title>Two fields of attention</title>
-            <desc>On the left, a tight uniform grid of identical shapes pulses in unison, representing algorithmic attention capture. On the right, varied organic forms drift visibly at different rates and orientations, representing a forest's unaddressed attention.</desc>
-            <defs>
-              <style>
-                .attn-label{font-family:var(--font-sans),-apple-system,sans-serif;font-size:12px;fill:var(--color-text-tertiary);letter-spacing:0.04em;text-transform:lowercase}
-                .grid-shape{fill:var(--color-text-secondary);opacity:0.85;animation:attn-pulse 2.4s ease-in-out infinite}
-                @keyframes attn-pulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:0.45;transform:scale(0.92)}}
-                .organic{fill:var(--color-text-secondary)}
-                .drift-1{animation:drift1 9s  ease-in-out infinite;transform-origin:center;transform-box:fill-box}
-                .drift-2{animation:drift2 12s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
-                .drift-3{animation:drift3 7s  ease-in-out infinite;transform-origin:center;transform-box:fill-box}
-                .drift-4{animation:drift4 14s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
-                .drift-5{animation:drift5 10s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
-                @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(9px,-7px) rotate(14deg)}}
-                @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.55}50%{transform:translate(-8px,9px) rotate(-18deg);opacity:1}}
-                @keyframes drift3{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.4}50%{transform:translate(11px,4px) rotate(22deg);opacity:0.95}}
-                @keyframes drift4{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.5}50%{transform:translate(-10px,-8px) rotate(-12deg);opacity:0.95}}
-                @keyframes drift5{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(7px,6px) rotate(16deg)}66%{transform:translate(-6px,-4px) rotate(-14deg)}}
-              </style>
-            </defs>
-            <text x="40"  y="32" class="attn-label">directed</text>
-            <text x="640" y="32" class="attn-label" text-anchor="end">unaddressed</text>
-            <g transform="translate(60,70)">
-              <g class="grid-shape"><rect x="0"   y="0"   width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.10s"><rect x="36"  y="0"   width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.20s"><rect x="72"  y="0"   width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.30s"><rect x="108" y="0"   width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.40s"><rect x="144" y="0"   width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.50s"><rect x="180" y="0"   width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.05s"><rect x="0"   y="36"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.15s"><rect x="36"  y="36"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.25s"><rect x="72"  y="36"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.35s"><rect x="108" y="36"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.45s"><rect x="144" y="36"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.55s"><rect x="180" y="36"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.10s"><rect x="0"   y="72"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.20s"><rect x="36"  y="72"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.30s"><rect x="72"  y="72"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.40s"><rect x="108" y="72"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.50s"><rect x="144" y="72"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.60s"><rect x="180" y="72"  width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.15s"><rect x="0"   y="108" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.25s"><rect x="36"  y="108" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.35s"><rect x="72"  y="108" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.45s"><rect x="108" y="108" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.55s"><rect x="144" y="108" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.65s"><rect x="180" y="108" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.20s"><rect x="0"   y="144" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.30s"><rect x="36"  y="144" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.40s"><rect x="72"  y="144" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.50s"><rect x="108" y="144" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.60s"><rect x="144" y="144" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.70s"><rect x="180" y="144" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.25s"><rect x="0"   y="180" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.35s"><rect x="36"  y="180" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.45s"><rect x="72"  y="180" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.55s"><rect x="108" y="180" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.65s"><rect x="144" y="180" width="14" height="14" rx="2"/></g>
-              <g class="grid-shape" style="animation-delay:0.75s"><rect x="180" y="180" width="14" height="14" rx="2"/></g>
-            </g>
-            <line x1="340" y1="70" x2="340" y2="290" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.5"/>
-            <g transform="translate(380,70)">
-              <ellipse class="organic drift-1" cx="40"  cy="20"  rx="9"   ry="4"   opacity="0.80" transform="rotate(-15 40 20)"/>
-              <circle  class="organic drift-3" cx="120" cy="35"  r="2.5"           opacity="0.60"/>
-              <path    class="organic drift-2" d="M 180 15 Q 188 10 196 18 Q 192 26 184 22 Z" opacity="0.75"/>
-              <ellipse class="organic drift-4" cx="240" cy="28"  rx="6"   ry="3"   opacity="0.55" transform="rotate(25 240 28)"/>
-              <circle  class="organic drift-2" cx="20"  cy="65"  r="3.5"           opacity="0.70"/>
-              <path    class="organic drift-5" d="M 70 55 Q 80 52 85 62 Q 78 70 68 65 Z" opacity="0.65"/>
-              <ellipse class="organic drift-1" cx="150" cy="70"  rx="11"  ry="3"   opacity="0.85" transform="rotate(8 150 70)"/>
-              <circle  class="organic drift-4" cx="220" cy="58"  r="1.8"           opacity="0.50"/>
-              <ellipse class="organic drift-3" cx="265" cy="75"  rx="4"   ry="7"   opacity="0.70" transform="rotate(-20 265 75)"/>
-              <path    class="organic drift-2" d="M 35 105 Q 45 98 52 108 Q 48 118 38 113 Z" opacity="0.60"/>
-              <circle  class="organic drift-5" cx="95"  cy="115" r="2.2"           opacity="0.85"/>
-              <ellipse class="organic drift-1" cx="170" cy="108" rx="7"   ry="2.5" opacity="0.50" transform="rotate(-30 170 108)"/>
-              <path    class="organic drift-3" d="M 230 100 Q 242 105 240 118 Q 228 120 225 110 Z" opacity="0.75"/>
-              <circle  class="organic drift-4" cx="280" cy="120" r="3"             opacity="0.55"/>
-              <ellipse class="organic drift-4" cx="55"  cy="155" rx="5"   ry="2"   opacity="0.70" transform="rotate(40 55 155)"/>
-              <circle  class="organic drift-2" cx="125" cy="148" r="4"             opacity="0.60"/>
-              <path    class="organic drift-1" d="M 195 145 Q 205 140 212 152 Q 205 160 196 156 Z" opacity="0.85"/>
-              <ellipse class="organic drift-5" cx="255" cy="160" rx="8"   ry="3"   opacity="0.55" transform="rotate(-12 255 160)"/>
-              <circle  class="organic drift-3" cx="30"  cy="200" r="2.8"           opacity="0.65"/>
-              <path    class="organic drift-2" d="M 80 195 Q 92 192 95 205 Q 85 212 78 203 Z" opacity="0.75"/>
-              <ellipse class="organic drift-4" cx="160" cy="195" rx="3.5" ry="6"   opacity="0.50" transform="rotate(15 160 195)"/>
-              <circle  class="organic drift-1" cx="225" cy="208" r="1.5"           opacity="0.85"/>
-              <ellipse class="organic drift-5" cx="280" cy="200" rx="9"   ry="3.5" opacity="0.70" transform="rotate(-25 280 200)"/>
-            </g>
-            <text x="40"  y="320" class="attn-label">algorithmic feed</text>
-            <text x="640" y="320" class="attn-label" text-anchor="end">forest</text>
-            <text x="340" y="378" class="attn-label" text-anchor="middle" style="font-style:italic;">on one side, attention is taken. on the other, it is allowed to wander.</text>
-          </svg>
-        </div>
-
-        <p class="reveal">And forests are stranger than they appear. Trees move sugars and warnings through fungal networks in the soil; canopies coordinate flowering across miles. The system you are standing in is doing more than it shows.</p>
-      </div>
-
-      <p class="attention-closer reveal">This is part of what a forest is <em>for</em>. Not the only thing, and not a cure for anything. But a place the mind can go when it needs to do the work only an unheld attention can do.</p>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
        THIS SEASON
        Auto-generated: js/main.js reads the visitor's local date, picks
        the current meteorological season, and swaps in generic copy for
@@ -893,6 +703,196 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       A Note on Attention
+       ============================================================ -->
+  <section class="attention-passage" aria-label="A note on attention">
+    <div class="container">
+
+      <p class="attention-eyebrow reveal">A note on attention</p>
+
+      <!-- SVG #1: phone fades, outlined forest draws in — plays once on scroll-into-view -->
+      <div class="attention-svg attention-svg--1 reveal">
+        <svg width="100%" viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+          <title>From always connected to opening ourselves to what is already happening</title>
+          <desc>A phone with a charging cord and a signal line sits at the start. The cords retract and the phone slowly fades. As it does, an outlined forest of conifers draws itself in behind, with a clearing where the phone was, and a tapered stream emerging from within the forest and meandering through the clearing toward the viewer. The caption changes from "always connected" to "opening ourselves to what is already happening."</desc>
+          <defs>
+            <style>
+              @keyframes phone-slow-fade{0%,25%{opacity:1}45%{opacity:0.7}65%{opacity:0.35}85%,100%{opacity:0}}
+              @keyframes cord-bottom-retract{0%,18%{opacity:0.9;stroke-dashoffset:0;transform:translateY(0)}30%{opacity:0.9;stroke-dashoffset:0;transform:translateY(0)}42%{opacity:0.6;stroke-dashoffset:70;transform:translateY(8px)}55%,100%{opacity:0;stroke-dashoffset:70;transform:translateY(14px)}}
+              @keyframes cord-top-retract{0%,18%{opacity:0.9;stroke-dashoffset:0}28%{opacity:0.9;stroke-dashoffset:0}40%{opacity:0.5;stroke-dashoffset:-50}52%,100%{opacity:0;stroke-dashoffset:-50}}
+              @keyframes signal-arc-fade{0%,18%{opacity:0.4}35%{opacity:0.2}48%,100%{opacity:0}}
+              @keyframes conifer-draw{0%,35%{stroke-dashoffset:var(--dash-length,400);opacity:0}50%{opacity:0.4}90%{stroke-dashoffset:0;opacity:var(--final-opacity,0.85)}100%{stroke-dashoffset:0;opacity:var(--final-opacity,0.85)}}
+              @keyframes understory-fade{0%,70%{opacity:0}100%{opacity:var(--final-opacity,0.5)}}
+              @keyframes stream-draw{0%,75%{stroke-dashoffset:var(--dash-length,320);opacity:0}85%{opacity:0.5}100%{stroke-dashoffset:0;opacity:var(--final-opacity,0.7)}}
+              @keyframes ripple-fade{0%,92%{opacity:0}100%{opacity:0.5}}
+              @keyframes label-out{0%,25%{opacity:0.7}35%{opacity:0.4}45%,100%{opacity:0}}
+              @keyframes label-in{0%,45%{opacity:0}60%{opacity:0.4}78%{opacity:0.7}100%{opacity:0.7}}
+              .phone-outline{fill:none;stroke:var(--color-text-secondary);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;animation:phone-slow-fade 13s ease-in-out forwards}
+              .phone-screen{fill:none;stroke:var(--color-text-tertiary);stroke-width:0.75;animation:phone-slow-fade 13s ease-in-out forwards}
+              .cord-bottom{fill:none;stroke:var(--color-text-secondary);stroke-width:1.25;stroke-linecap:round;stroke-dasharray:70;stroke-dashoffset:0;opacity:0.9;animation:cord-bottom-retract 13s ease-in-out forwards;transform-origin:center top;transform-box:fill-box}
+              .cord-top{fill:none;stroke:var(--color-text-secondary);stroke-width:1.25;stroke-linecap:round;stroke-dasharray:50;stroke-dashoffset:0;opacity:0.9;animation:cord-top-retract 13s ease-in-out forwards}
+              .signal-arc{fill:none;stroke:var(--color-text-secondary);stroke-width:0.75;stroke-linecap:round;opacity:0.4;animation:signal-arc-fade 13s ease-in-out forwards}
+              .conifer{fill:none;stroke:var(--color-text-secondary);stroke-width:1;stroke-linejoin:round;stroke-linecap:round;opacity:0;animation:conifer-draw 13s ease-out forwards}
+              .understory{fill:none;stroke:var(--color-text-secondary);stroke-width:0.75;stroke-linecap:round;opacity:0;animation:understory-fade 13s ease-out forwards}
+              .stream-bank{fill:none;stroke:var(--color-text-secondary);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;opacity:0;animation:stream-draw 13s ease-out forwards}
+              .ripple{fill:none;stroke:var(--color-text-secondary);stroke-width:0.6;stroke-linecap:round;opacity:0;animation:ripple-fade 13s ease-out forwards}
+              .caption{font-family:var(--font-sans),-apple-system,sans-serif;font-size:13px;fill:var(--color-text-tertiary);letter-spacing:0.04em;text-transform:lowercase}
+              .caption-1{animation:label-out 13s ease-in-out forwards}
+              .caption-2{opacity:0;animation:label-in 13s ease-in-out forwards}
+            </style>
+          </defs>
+          <g style="--final-opacity:0.85;--dash-length:460"><polygon class="conifer" points="35,290 50,290 50,240 58,240 42,195 50,195 36,155 44,155 35,110 26,155 34,155 20,195 28,195 12,240 20,240 20,290" stroke-dasharray="460"/></g>
+          <g style="--final-opacity:0.9;--dash-length:540"><polygon class="conifer" points="80,290 100,290 100,225 112,225 90,175 102,175 84,130 94,130 80,85 66,130 76,130 58,175 70,175 48,225 60,225 60,290" stroke-dasharray="540"/></g>
+          <g style="--final-opacity:0.75;--dash-length:380"><polygon class="conifer" points="135,290 148,290 148,250 156,250 142,215 150,215 138,180 144,180 135,145 126,180 132,180 120,215 128,215 114,250 122,250 122,290" stroke-dasharray="380"/></g>
+          <g style="--final-opacity:0.9;--dash-length:560"><polygon class="conifer" points="180,290 200,290 200,230 212,230 192,180 204,180 186,135 196,135 180,90 164,135 174,135 156,180 168,180 148,230 160,230 160,290" stroke-dasharray="560"/></g>
+          <g style="--final-opacity:0.8;--dash-length:460"><polygon class="conifer" points="235,290 250,290 250,240 258,240 242,195 250,195 236,155 244,155 235,110 226,155 234,155 220,195 228,195 212,240 220,240 220,290" stroke-dasharray="460"/></g>
+          <g style="--final-opacity:0.5;--dash-length:320"><polygon class="conifer" points="282,290 282,250 290,250 280,220 286,220 278,185 282,185 282,155 282,185 286,185 278,220 284,220 274,250 282,250 282,290" stroke-dasharray="320"/></g>
+          <g style="--final-opacity:0.5;--dash-length:320"><polygon class="conifer" points="396,290 396,250 404,250 394,220 400,220 392,185 396,185 396,155 396,185 400,185 392,220 398,220 388,250 396,250 396,290" stroke-dasharray="320"/></g>
+          <g style="--final-opacity:0.8;--dash-length:460"><polygon class="conifer" points="445,290 460,290 460,240 468,240 452,195 460,195 446,155 454,155 445,110 436,155 444,155 430,195 438,195 422,240 430,240 430,290" stroke-dasharray="460"/></g>
+          <g style="--final-opacity:0.9;--dash-length:560"><polygon class="conifer" points="500,290 520,290 520,230 532,230 512,180 524,180 506,135 516,135 500,90 484,135 494,135 476,180 488,180 468,230 480,230 480,290" stroke-dasharray="560"/></g>
+          <g style="--final-opacity:0.75;--dash-length:380"><polygon class="conifer" points="555,290 568,290 568,250 576,250 562,215 570,215 558,180 564,180 555,145 546,180 552,180 540,215 548,215 534,250 542,250 542,290" stroke-dasharray="380"/></g>
+          <g style="--final-opacity:0.9;--dash-length:540"><polygon class="conifer" points="605,290 625,290 625,225 637,225 615,175 627,175 609,130 619,130 605,85 591,130 601,130 583,175 595,175 573,225 585,225 585,290" stroke-dasharray="540"/></g>
+          <g style="--final-opacity:0.85;--dash-length:420"><polygon class="conifer" points="660,290 672,290 672,245 678,245 666,210 670,210 662,175 660,140 658,175 650,210 654,210 642,245 648,245 648,290 660,290" stroke-dasharray="420"/></g>
+          <g style="--final-opacity:0.7;--dash-length:320">
+            <path class="stream-bank" d="M 305 175 C 295 205, 320 230, 318 260 C 316 285, 332 290, 336 295" stroke-dasharray="320"/>
+            <path class="stream-bank" d="M 316 175 C 308 205, 340 230, 342 260 C 344 285, 358 290, 364 295" stroke-dasharray="320"/>
+          </g>
+          <g>
+            <path class="ripple" d="M 312 220 Q 326 217 340 220"/>
+            <path class="ripple" d="M 320 260 Q 334 257 348 260"/>
+            <path class="ripple" d="M 340 285 Q 350 282 360 285"/>
+          </g>
+          <g style="--final-opacity:0.55">
+            <path class="understory" d="M 50 298 Q 56 294 62 298 Q 68 294 74 298"/>
+            <path class="understory" d="M 130 300 Q 136 296 142 300 Q 148 296 154 300"/>
+            <path class="understory" d="M 530 299 Q 538 295 546 299 Q 554 295 562 299"/>
+            <path class="understory" d="M 600 301 Q 606 297 612 301 Q 618 297 624 301"/>
+            <circle class="understory" cx="220" cy="302" r="2.5"/>
+            <circle class="understory" cx="475" cy="302" r="3"/>
+          </g>
+          <g transform="translate(310,110)">
+            <path class="cord-top"    d="M 30 0 Q 32 -10 34 -22 Q 36 -34 30 -50"/>
+            <path class="signal-arc"  d="M 22 -30 Q 30 -38 38 -30"/>
+            <path class="signal-arc"  d="M 17 -38 Q 30 -50 43 -38"/>
+            <rect  class="phone-outline" x="0" y="0"  width="60" height="120" rx="10" ry="10"/>
+            <rect  class="phone-screen"  x="6" y="14" width="48" height="92"  rx="2"  ry="2"/>
+            <circle class="phone-screen" cx="30" cy="111" r="2.5"/>
+            <path class="cord-bottom" d="M 30 120 Q 32 132 28 144 Q 26 158 32 170"/>
+          </g>
+          <text x="340" y="340" class="caption caption-1" text-anchor="middle">always connected</text>
+          <text x="340" y="340" class="caption caption-2" text-anchor="middle">opening ourselves to what is already happening</text>
+        </svg>
+      </div>
+
+      <div class="attention-body">
+        <p class="reveal">A state of mind shows up reliably when people spend time in a landscape without a screen in their pocket — looser, more associative, more willing to make unexpected connections. Writers and researchers have called it many things: mind-wandering, the default mode, the state where walks produce ideas that desks don't. It is the ordinary functioning of a brain given room to do what it evolved to do.</p>
+
+        <p class="reveal">The rest is mechanics. Algorithms are designed to hold attention continuously, foreclosing exactly the gaps where that state opens up. A forest works on different terms. It is in constant low motion — light shifting, leaves turning over, something moving at the edge of sight — but none of it is addressed to you. The novelty restores attention; the lack of demand lets it wander.</p>
+
+        <!-- SVG #2: two fields of attention — loops continuously -->
+        <div class="attention-svg attention-svg--2 reveal">
+          <svg width="100%" viewBox="0 0 680 390" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+            <title>Two fields of attention</title>
+            <desc>On the left, a tight uniform grid of identical shapes pulses in unison, representing algorithmic attention capture. On the right, varied organic forms drift visibly at different rates and orientations, representing a forest's unaddressed attention.</desc>
+            <defs>
+              <style>
+                .attn-label{font-family:var(--font-sans),-apple-system,sans-serif;font-size:12px;fill:var(--color-text-tertiary);letter-spacing:0.04em;text-transform:lowercase}
+                .grid-shape{fill:var(--color-text-secondary);opacity:0.85;animation:attn-pulse 2.4s ease-in-out infinite}
+                @keyframes attn-pulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:0.45;transform:scale(0.92)}}
+                .organic{fill:var(--color-text-secondary)}
+                .drift-1{animation:drift1 9s  ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-2{animation:drift2 12s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-3{animation:drift3 7s  ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-4{animation:drift4 14s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                .drift-5{animation:drift5 10s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+                @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(9px,-7px) rotate(14deg)}}
+                @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.55}50%{transform:translate(-8px,9px) rotate(-18deg);opacity:1}}
+                @keyframes drift3{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.4}50%{transform:translate(11px,4px) rotate(22deg);opacity:0.95}}
+                @keyframes drift4{0%,100%{transform:translate(0,0) rotate(0deg);opacity:0.5}50%{transform:translate(-10px,-8px) rotate(-12deg);opacity:0.95}}
+                @keyframes drift5{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(7px,6px) rotate(16deg)}66%{transform:translate(-6px,-4px) rotate(-14deg)}}
+              </style>
+            </defs>
+            <text x="40"  y="32" class="attn-label">directed</text>
+            <text x="640" y="32" class="attn-label" text-anchor="end">unaddressed</text>
+            <g transform="translate(60,70)">
+              <g class="grid-shape"><rect x="0"   y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.10s"><rect x="36"  y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.20s"><rect x="72"  y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.30s"><rect x="108" y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.40s"><rect x="144" y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.50s"><rect x="180" y="0"   width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.05s"><rect x="0"   y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.15s"><rect x="36"  y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.25s"><rect x="72"  y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.35s"><rect x="108" y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.45s"><rect x="144" y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.55s"><rect x="180" y="36"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.10s"><rect x="0"   y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.20s"><rect x="36"  y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.30s"><rect x="72"  y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.40s"><rect x="108" y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.50s"><rect x="144" y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.60s"><rect x="180" y="72"  width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.15s"><rect x="0"   y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.25s"><rect x="36"  y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.35s"><rect x="72"  y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.45s"><rect x="108" y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.55s"><rect x="144" y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.65s"><rect x="180" y="108" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.20s"><rect x="0"   y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.30s"><rect x="36"  y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.40s"><rect x="72"  y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.50s"><rect x="108" y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.60s"><rect x="144" y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.70s"><rect x="180" y="144" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.25s"><rect x="0"   y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.35s"><rect x="36"  y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.45s"><rect x="72"  y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.55s"><rect x="108" y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.65s"><rect x="144" y="180" width="14" height="14" rx="2"/></g>
+              <g class="grid-shape" style="animation-delay:0.75s"><rect x="180" y="180" width="14" height="14" rx="2"/></g>
+            </g>
+            <line x1="340" y1="70" x2="340" y2="290" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.5"/>
+            <g transform="translate(380,70)">
+              <ellipse class="organic drift-1" cx="40"  cy="20"  rx="9"   ry="4"   opacity="0.80" transform="rotate(-15 40 20)"/>
+              <circle  class="organic drift-3" cx="120" cy="35"  r="2.5"           opacity="0.60"/>
+              <path    class="organic drift-2" d="M 180 15 Q 188 10 196 18 Q 192 26 184 22 Z" opacity="0.75"/>
+              <ellipse class="organic drift-4" cx="240" cy="28"  rx="6"   ry="3"   opacity="0.55" transform="rotate(25 240 28)"/>
+              <circle  class="organic drift-2" cx="20"  cy="65"  r="3.5"           opacity="0.70"/>
+              <path    class="organic drift-5" d="M 70 55 Q 80 52 85 62 Q 78 70 68 65 Z" opacity="0.65"/>
+              <ellipse class="organic drift-1" cx="150" cy="70"  rx="11"  ry="3"   opacity="0.85" transform="rotate(8 150 70)"/>
+              <circle  class="organic drift-4" cx="220" cy="58"  r="1.8"           opacity="0.50"/>
+              <ellipse class="organic drift-3" cx="265" cy="75"  rx="4"   ry="7"   opacity="0.70" transform="rotate(-20 265 75)"/>
+              <path    class="organic drift-2" d="M 35 105 Q 45 98 52 108 Q 48 118 38 113 Z" opacity="0.60"/>
+              <circle  class="organic drift-5" cx="95"  cy="115" r="2.2"           opacity="0.85"/>
+              <ellipse class="organic drift-1" cx="170" cy="108" rx="7"   ry="2.5" opacity="0.50" transform="rotate(-30 170 108)"/>
+              <path    class="organic drift-3" d="M 230 100 Q 242 105 240 118 Q 228 120 225 110 Z" opacity="0.75"/>
+              <circle  class="organic drift-4" cx="280" cy="120" r="3"             opacity="0.55"/>
+              <ellipse class="organic drift-4" cx="55"  cy="155" rx="5"   ry="2"   opacity="0.70" transform="rotate(40 55 155)"/>
+              <circle  class="organic drift-2" cx="125" cy="148" r="4"             opacity="0.60"/>
+              <path    class="organic drift-1" d="M 195 145 Q 205 140 212 152 Q 205 160 196 156 Z" opacity="0.85"/>
+              <ellipse class="organic drift-5" cx="255" cy="160" rx="8"   ry="3"   opacity="0.55" transform="rotate(-12 255 160)"/>
+              <circle  class="organic drift-3" cx="30"  cy="200" r="2.8"           opacity="0.65"/>
+              <path    class="organic drift-2" d="M 80 195 Q 92 192 95 205 Q 85 212 78 203 Z" opacity="0.75"/>
+              <ellipse class="organic drift-4" cx="160" cy="195" rx="3.5" ry="6"   opacity="0.50" transform="rotate(15 160 195)"/>
+              <circle  class="organic drift-1" cx="225" cy="208" r="1.5"           opacity="0.85"/>
+              <ellipse class="organic drift-5" cx="280" cy="200" rx="9"   ry="3.5" opacity="0.70" transform="rotate(-25 280 200)"/>
+            </g>
+            <text x="40"  y="320" class="attn-label">algorithmic feed</text>
+            <text x="640" y="320" class="attn-label" text-anchor="end">forest</text>
+            <text x="340" y="378" class="attn-label" text-anchor="middle" style="font-style:italic;">on one side, attention is taken. on the other, it is allowed to wander.</text>
+          </svg>
+        </div>
+
+        <p class="reveal">And forests are stranger than they appear. Trees move sugars and warnings through fungal networks in the soil; canopies coordinate flowering across miles. The system you are standing in is doing more than it shows.</p>
+      </div>
+
+      <p class="attention-closer reveal">This is part of what a forest is <em>for</em>. Not the only thing, and not a cure for anything. But a place the mind can go when it needs to do the work only an unheld attention can do.</p>
+
     </div>
   </section>
 
