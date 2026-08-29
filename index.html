@@ -420,15 +420,17 @@
 
   <!-- ============================================================
        THIS SEASON
-       Seasonal update cadence: late winter (Feb), spring (May), summer (Aug), autumn (Nov)
-       To update: change the dateline and replace the body paragraph below.
+       Auto-generated: js/main.js reads the visitor's local date, picks
+       the current meteorological season, and swaps in generic copy for
+       it (see SEASONAL_CONTENT in main.js). No manual updates needed.
+       The text below is a no-JS fallback only.
        ============================================================ -->
   <section class="seasonal-note" aria-label="This season at Adaptation Forest">
     <div class="container">
       <div class="seasonal-note__inner">
-        <p class="seasonal-note__dateline">Spring 2026</p>
+        <p class="seasonal-note__dateline" id="seasonal-dateline"></p>
         <h2 class="seasonal-note__heading">This season</h2>
-        <p class="seasonal-note__body reveal">Spring is arriving on schedule and ahead of it at the same time — buds breaking, the first ephemerals up through the leaf litter. The early weeks are going into invasive species removal in the project areas, targeting barberry thickets and buckthorn margins before they leaf out. In the Norway spruce stand, thinning is underway — clearing dense growth in a two-acre block and opening ground for a seedling planting later this spring. Some crop-tree release work is continuing in Stand 3, freeing the most promising oaks from lateral competition. A new trail is being cut along one of the main stream drainages, opening year-round access to the corridor and to the cold-water habitat and quiet that comes with it. The lower trails are being cleared of winter's accumulated blowdown. The season feels, as it usually does here, like there is more work than time — which is exactly right.</p>
+        <p class="seasonal-note__body reveal" id="seasonal-body">The work here follows the forest's own calendar: invasive species removal and crop-tree release in spring, monitoring and trail maintenance through summer, planting and stand-improvement thinning in autumn, and heavier logging once the ground freezes in winter. There is always something happening — it just depends on the season.</p>
       </div>
     </div>
   </section>

@@ -194,7 +194,46 @@ function initReveal() {
 }
 
 // ============================================================
-// 5. Smooth scroll polyfill (for older browsers)
+// 5. "This season" — auto-generated from the visitor's local date
+// ============================================================
+
+// Generic seasonal copy for a northeastern hardwood forest.
+// Not tied to specific stands/acreage — describes the kind of
+// work and forest change that usually happens in each season.
+const SEASONAL_CONTENT = {
+  spring: "Spring arrives here in stages — the first ephemerals up through last year's leaf litter before the canopy has fully closed. This is the season for invasive species removal, when barberry and buckthorn are still bare and easy to spot before they leaf out and hide among the natives. It's also prime time for crop-tree release — freeing the most promising young oaks and maples from the trees crowding them — and for planting seedlings into ground opened by winter thinning. Trail crews are usually out clearing the blowdown that accumulated over winter. There is more work than there is time for, which is more or less the normal condition here.",
+  summer: "By summer the canopy has closed and the understory is thick with growth. Forestry work slows during the growing season — the priority shifts to monitoring rather than cutting: watching for emerald ash borer, beech bark disease, and the invasive plants that took hold in the open ground left by winter and spring work. Trails get walked and maintained rather than built. It's the season for observing what took, what didn't, and what the forest is doing with the openings it was given. Later in summer, seed collection begins in earnest, ahead of the fall planting window.",
+  autumn: "Autumn brings the mast — acorns and beechnuts dropping in a pattern that shifts from year to year — and, not long after, the color change and the long defoliation that follows it. Forestry work resumes once the growing season ends: stand-improvement thinning, tree planting in the cool, moist ground that favors root establishment, and a final push on invasive species removal before frost hardens the soil. Trail crews are usually out ahead of winter, clearing the season's deadfall and staging drainage work before the ground freezes.",
+  winter: "Winter is when the ground itself becomes useful — once it freezes hard enough to carry equipment without rutting the soil, most of the heavier thinning and timber-stand-improvement work happens. Trees are marked for removal ahead of the growing season, brush is cleared, and storm damage from ice and wind gets cleaned up. It's also the best season for reading the forest in another way: tracks in snow reveal who has been moving through — deer, coyote, fisher, the occasional bobcat — in a level of detail the other three seasons don't offer. Planning for spring planting and invasive removal usually starts here too.",
+};
+
+// Meteorological (not astronomical) seasons, Northern Hemisphere.
+function getSeasonInfo(date) {
+  const month = date.getMonth() + 1; // 1–12
+  const year  = date.getFullYear();
+
+  if (month === 12)                   return { key: 'winter', label: `Winter ${year + 1}` };
+  if (month === 1 || month === 2)     return { key: 'winter', label: `Winter ${year}` };
+  if (month >= 3 && month <= 5)       return { key: 'spring', label: `Spring ${year}` };
+  if (month >= 6 && month <= 8)       return { key: 'summer', label: `Summer ${year}` };
+  return                                     { key: 'autumn', label: `Autumn ${year}` };
+}
+
+function initSeasonalNote() {
+  const dateline = qs('#seasonal-dateline');
+  const body     = qs('#seasonal-body');
+  if (!dateline || !body) return;
+
+  const { key, label } = getSeasonInfo(new Date());
+  const text = SEASONAL_CONTENT[key];
+  if (!text) return;
+
+  dateline.textContent = label;
+  body.textContent = text;
+}
+
+// ============================================================
+// 6. Smooth scroll polyfill (for older browsers)
 // ============================================================
 
 function initSmoothScroll() {
@@ -219,5 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHero();
   initSVGDraw();
   initReveal();
+  initSeasonalNote();
   initSmoothScroll();
 });
